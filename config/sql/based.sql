@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2017 at 05:45 PM
+-- Generation Time: Aug 16, 2017 at 10:23 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -19,6 +19,69 @@ SET time_zone = "+00:00";
 --
 -- Database: `based`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `create_project`
+--
+
+CREATE TABLE `create_project` (
+  `id` varchar(40) NOT NULL,
+  `title` varchar(256) NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `create_project`
+--
+
+INSERT INTO `create_project` (`id`, `title`, `description`) VALUES
+('{10A59859-3100-4882-B13C-F658492E694A}', 'Khulna University Automation', 'Trying to do it');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pms_course`
+--
+
+CREATE TABLE `pms_course` (
+  `id` varchar(40) NOT NULL,
+  `courseNo` varchar(256) NOT NULL,
+  `Name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pms_project`
+--
+
+CREATE TABLE `pms_project` (
+  `id` varchar(40) NOT NULL,
+  `title` varchar(256) NOT NULL,
+  `description` text NOT NULL,
+  `link` text NOT NULL,
+  `language` varchar(256) NOT NULL,
+  `year_id` varchar(40) NOT NULL,
+  `term_id` varchar(40) NOT NULL,
+  `course_id` varchar(40) NOT NULL,
+  `teacher` varchar(256) NOT NULL,
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pms_student_project`
+--
+
+CREATE TABLE `pms_student_project` (
+  `id` varchar(40) NOT NULL,
+  `user_id` varchar(40) NOT NULL,
+  `project_id` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -132,6 +195,10 @@ CREATE TABLE `tbl_permission` (
 --
 
 INSERT INTO `tbl_permission` (`ID`, `Name`, `Category`) VALUES
+('COURSE_C', 'COURSE_C', 'COURSE'),
+('COURSE_D', 'COURSE_D', 'COURSE'),
+('COURSE_R', 'COURSE_R', 'COURSE'),
+('COURSE_U', 'COURSE_U', 'COURSE'),
 ('DISCIPLINE_C', 'DISCIPLINE_C', 'DISCIPLINE'),
 ('DISCIPLINE_D', 'DISCIPLINE_D', 'DISCIPLINE'),
 ('DISCIPLINE_R', 'DISCIPLINE_R', 'DISCIPLINE'),
@@ -156,6 +223,10 @@ INSERT INTO `tbl_permission` (`ID`, `Name`, `Category`) VALUES
 ('POSITION_D', 'POSITION_D', 'POSITION'),
 ('POSITION_R', 'POSITION_R', 'POSITION'),
 ('POSITION_U', 'POSITION_U', 'POSITION'),
+('PROJECT_C', 'PROJECT_C', 'PROJECT'),
+('PROJECT_D', 'PROJECT_D', 'PROJECT'),
+('PROJECT_R', 'PROJECT_R', 'PROJECT'),
+('PROJECT_U', 'PROJECT_U', 'PROJECT'),
 ('ROLE_C', 'ROLE_C', 'ROLE'),
 ('ROLE_D', 'ROLE_D', 'ROLE'),
 ('ROLE_R', 'ROLE_R', 'ROLE'),
@@ -164,6 +235,10 @@ INSERT INTO `tbl_permission` (`ID`, `Name`, `Category`) VALUES
 ('SCHOOL_D', 'SCHOOL_D', 'SCHOOL'),
 ('SCHOOL_R', 'SCHOOL_R', 'SCHOOL'),
 ('SCHOOL_U', 'SCHOOL_U', 'SCHOOL'),
+('STUDENT_PROJECT_C', 'STUDENT_PROJECT_C', 'STUDENT PROJECT'),
+('STUDENT_PROJECT_D', 'STUDENT_PROJECT_D', 'STUDENT PROJECT'),
+('STUDENT_PROJECT_R', 'STUDENT_PROJECT_R', 'STUDENT PROJECT'),
+('STUDENT_PROJECT_U', 'STUDENT_PROJECT_U', 'STUDENT PROJECT'),
 ('TERM_C', 'TERM_C', 'TERM'),
 ('TERM_D', 'TERM_D', 'TERM'),
 ('TERM_R', 'TERM_R', 'TERM'),
@@ -247,50 +322,62 @@ CREATE TABLE `tbl_role_permission` (
 --
 
 INSERT INTO `tbl_role_permission` (`Row`, `RoleID`, `PermissionID`) VALUES
-(1514, 'administrator', 'DISCIPLINE_C'),
-(1515, 'administrator', 'DISCIPLINE_D'),
-(1516, 'administrator', 'DISCIPLINE_R'),
-(1517, 'administrator', 'DISCIPLINE_U'),
-(1518, 'administrator', 'DISCUSSION_C'),
-(1519, 'administrator', 'DISCUSSION_D'),
-(1520, 'administrator', 'DISCUSSION_R'),
-(1521, 'administrator', 'DISCUSSION_U'),
-(1522, 'administrator', 'DISCUSSION_CAT_C'),
-(1523, 'administrator', 'DISCUSSION_CAT_D'),
-(1524, 'administrator', 'DISCUSSION_CAT_R'),
-(1525, 'administrator', 'DISCUSSION_CAT_U'),
-(1526, 'administrator', 'DISCUSSION_COMMENT_C'),
-(1527, 'administrator', 'DISCUSSION_COMMENT_D'),
-(1528, 'administrator', 'DISCUSSION_COMMENT_R'),
-(1529, 'administrator', 'DISCUSSION_COMMENT_U'),
-(1530, 'administrator', 'PERMISSION_C'),
-(1531, 'administrator', 'PERMISSION_D'),
-(1532, 'administrator', 'PERMISSION_R'),
-(1533, 'administrator', 'PERMISSION_U'),
-(1534, 'administrator', 'POSITION_C'),
-(1535, 'administrator', 'POSITION_D'),
-(1536, 'administrator', 'POSITION_R'),
-(1537, 'administrator', 'POSITION_U'),
-(1538, 'administrator', 'ROLE_C'),
-(1539, 'administrator', 'ROLE_D'),
-(1540, 'administrator', 'ROLE_R'),
-(1541, 'administrator', 'ROLE_U'),
-(1542, 'administrator', 'SCHOOL_C'),
-(1543, 'administrator', 'SCHOOL_D'),
-(1544, 'administrator', 'SCHOOL_R'),
-(1545, 'administrator', 'SCHOOL_U'),
-(1546, 'administrator', 'TERM_C'),
-(1547, 'administrator', 'TERM_D'),
-(1548, 'administrator', 'TERM_R'),
-(1549, 'administrator', 'TERM_U'),
-(1550, 'administrator', 'USER_C'),
-(1551, 'administrator', 'USER_D'),
-(1552, 'administrator', 'USER_R'),
-(1553, 'administrator', 'USER_U'),
-(1554, 'administrator', 'YEAR_C'),
-(1555, 'administrator', 'YEAR_D'),
-(1556, 'administrator', 'YEAR_R'),
-(1557, 'administrator', 'YEAR_U');
+(1558, 'administrator', 'COURSE_C'),
+(1559, 'administrator', 'COURSE_D'),
+(1560, 'administrator', 'COURSE_R'),
+(1561, 'administrator', 'COURSE_U'),
+(1562, 'administrator', 'DISCIPLINE_C'),
+(1563, 'administrator', 'DISCIPLINE_D'),
+(1564, 'administrator', 'DISCIPLINE_R'),
+(1565, 'administrator', 'DISCIPLINE_U'),
+(1566, 'administrator', 'DISCUSSION_C'),
+(1567, 'administrator', 'DISCUSSION_D'),
+(1568, 'administrator', 'DISCUSSION_R'),
+(1569, 'administrator', 'DISCUSSION_U'),
+(1570, 'administrator', 'DISCUSSION_CAT_C'),
+(1571, 'administrator', 'DISCUSSION_CAT_D'),
+(1572, 'administrator', 'DISCUSSION_CAT_R'),
+(1573, 'administrator', 'DISCUSSION_CAT_U'),
+(1574, 'administrator', 'DISCUSSION_COMMENT_C'),
+(1575, 'administrator', 'DISCUSSION_COMMENT_D'),
+(1576, 'administrator', 'DISCUSSION_COMMENT_R'),
+(1577, 'administrator', 'DISCUSSION_COMMENT_U'),
+(1578, 'administrator', 'PERMISSION_C'),
+(1579, 'administrator', 'PERMISSION_D'),
+(1580, 'administrator', 'PERMISSION_R'),
+(1581, 'administrator', 'PERMISSION_U'),
+(1582, 'administrator', 'POSITION_C'),
+(1583, 'administrator', 'POSITION_D'),
+(1584, 'administrator', 'POSITION_R'),
+(1585, 'administrator', 'POSITION_U'),
+(1586, 'administrator', 'PROJECT_C'),
+(1587, 'administrator', 'PROJECT_D'),
+(1588, 'administrator', 'PROJECT_R'),
+(1589, 'administrator', 'PROJECT_U'),
+(1590, 'administrator', 'ROLE_C'),
+(1591, 'administrator', 'ROLE_D'),
+(1592, 'administrator', 'ROLE_R'),
+(1593, 'administrator', 'ROLE_U'),
+(1594, 'administrator', 'SCHOOL_C'),
+(1595, 'administrator', 'SCHOOL_D'),
+(1596, 'administrator', 'SCHOOL_R'),
+(1597, 'administrator', 'SCHOOL_U'),
+(1598, 'administrator', 'STUDENT_PROJECT_C'),
+(1599, 'administrator', 'STUDENT_PROJECT_D'),
+(1600, 'administrator', 'STUDENT_PROJECT_R'),
+(1601, 'administrator', 'STUDENT_PROJECT_U'),
+(1602, 'administrator', 'TERM_C'),
+(1603, 'administrator', 'TERM_D'),
+(1604, 'administrator', 'TERM_R'),
+(1605, 'administrator', 'TERM_U'),
+(1606, 'administrator', 'USER_C'),
+(1607, 'administrator', 'USER_D'),
+(1608, 'administrator', 'USER_R'),
+(1609, 'administrator', 'USER_U'),
+(1610, 'administrator', 'YEAR_C'),
+(1611, 'administrator', 'YEAR_D'),
+(1612, 'administrator', 'YEAR_R'),
+(1613, 'administrator', 'YEAR_U');
 
 -- --------------------------------------------------------
 
@@ -359,6 +446,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`ID`, `UniversityID`, `Email`, `Password`, `FirstName`, `LastName`, `Status`, `IsLogged`, `IsArchived`, `IsDeleted`) VALUES
+('pranta.cse@gmail.com', '150215', 'pranta.cse@gmail.com', '123', 'Pranta', 'Protik', 'approved', NULL, NULL, NULL),
 ('test@test.com', '020201', 'test@test.com', '123', 'I AM', 'ADMIN', 'approved', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -382,6 +470,7 @@ CREATE TABLE `tbl_user_details` (
 --
 
 INSERT INTO `tbl_user_details` (`ID`, `FatherName`, `MotherName`, `PermanentAddress`, `HomePhone`, `CurrentAddress`, `MobilePhone`) VALUES
+('pranta.cse@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
 ('test@test.com', 'My father', 'My mother', 'My address', '04100000', 'Same', '0171100000');
 
 -- --------------------------------------------------------
@@ -440,7 +529,8 @@ CREATE TABLE `tbl_user_role` (
 
 INSERT INTO `tbl_user_role` (`ID`, `UserID`, `RoleID`) VALUES
 (98, 'test@test.com', 'administrator'),
-(99, 'test@test.com', 'teacher');
+(99, 'test@test.com', 'teacher'),
+(102, 'pranta.cse@gmail.com', 'student');
 
 -- --------------------------------------------------------
 
@@ -472,6 +562,35 @@ INSERT INTO `tbl_year` (`ID`, `Name`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `create_project`
+--
+ALTER TABLE `create_project`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pms_course`
+--
+ALTER TABLE `pms_course`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pms_project`
+--
+ALTER TABLE `pms_project`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `year_id` (`year_id`),
+  ADD KEY `term_id` (`term_id`),
+  ADD KEY `course_id` (`course_id`);
+
+--
+-- Indexes for table `pms_student_project`
+--
+ALTER TABLE `pms_student_project`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `project_id` (`project_id`);
 
 --
 -- Indexes for table `tbl_discipline`
@@ -567,7 +686,7 @@ ALTER TABLE `tbl_year`
 -- AUTO_INCREMENT for table `tbl_role_permission`
 --
 ALTER TABLE `tbl_role_permission`
-  MODIFY `Row` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1558;
+  MODIFY `Row` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1614;
 --
 -- AUTO_INCREMENT for table `tbl_user_position`
 --
@@ -577,7 +696,26 @@ ALTER TABLE `tbl_user_position`
 -- AUTO_INCREMENT for table `tbl_user_role`
 --
 ALTER TABLE `tbl_user_role`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `pms_project`
+--
+ALTER TABLE `pms_project`
+  ADD CONSTRAINT `pms_project_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `pms_course` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pms_project_ibfk_2` FOREIGN KEY (`term_id`) REFERENCES `tbl_term` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pms_project_ibfk_3` FOREIGN KEY (`year_id`) REFERENCES `tbl_year` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `pms_student_project`
+--
+ALTER TABLE `pms_student_project`
+  ADD CONSTRAINT `pms_student_project_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pms_student_project_ibfk_2` FOREIGN KEY (`project_id`) REFERENCES `pms_project` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

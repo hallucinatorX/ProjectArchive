@@ -15,7 +15,7 @@ if(isset($_POST['create']))
     $Project->setDescription($_DB->secureInput($_POST['description']));
 
 
-    $Result=$_ProjectBao->newProject($Project);
+    $Result=$_ProjectBao->createProject($Project);
 
     if($Result->getIsSuccess())
         echo '<strong>'.$Result->getResultObject().'</strong>';

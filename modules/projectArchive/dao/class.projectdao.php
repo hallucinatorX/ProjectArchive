@@ -16,7 +16,7 @@ Class ProjectDao
         $this->_Project = new CreateProject();
     }
 
-    public function newProject($Project){
+    public function createProject($Project){
 
         $ID=$Project->getProjectId();
         $Title=$Project->getTitle();
@@ -37,14 +37,13 @@ Class ProjectDao
     public function getAllProject(){
         $ProjectList=array();
 
-        $SQL="SELECT * FROM create_project";
+        $SQL="SELECT create_project.title,create_project.description FROM create_project";
         $this->_DB->doQuery($SQL);
 
         $rows=$this->_DB->getAllRows();
 
         for($i = 0; $i < sizeof($rows); $i++) {
             $row = $rows[$i];
-            $this->_Project = new CreateProject();
 
             $this->_Project->setTitle( $row['title']);
             $this->_Project->setDescription( $row['description'] );

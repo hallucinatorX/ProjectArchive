@@ -210,7 +210,9 @@ class PageUtil{
     public static $USER_SEARCH='user_search.php';
     public static $USER_FORGOT_PASSWORD='forgot_password.php';
 
+    //Project Archive
     public static $PROJECT='project.php';
+    public static $COURSE='course.php';
    
 }
 
@@ -255,8 +257,9 @@ class RouteUtil{
          self::$s_Routes[PageUtil::$USER_SEARCH] =   "/modules/user/ui/view.user_search.php";
          self::$s_Routes[PageUtil::$USER_FORGOT_PASSWORD] =   "/modules/user/ui/view.forgot_password.php";
 
-
+         //Project Archive Routes
          self::$s_Routes[PageUtil::$PROJECT]="modules/projectArchive/ui/view.project.php";
+         self::$s_Routes[PageUtil::$COURSE]="modules/projectArchive/ui/view.course.php";
 
  
 
@@ -313,7 +316,9 @@ class MiddlewareUtil{
 
          self::$s_Routes[PageUtil::$DISCIPLINE]   =  PageUtil::$LOGIN ;
 
+         //Project Archive Middleware
          self::$s_Routes[PageUtil::$PROJECT] = PageUtil::$LOGIN;
+         self::$s_Routes[PageUtil::$COURSE]=PageUtil::$COURSE;
 
     }
 

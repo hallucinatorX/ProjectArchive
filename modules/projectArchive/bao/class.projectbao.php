@@ -20,10 +20,10 @@ Class ProjectBao
     }
 
     //new Project creation
-    public function newProject($Project){
+    public function createProject($Project){
 
         $Result = new Result();
-        $Result = $this->_ProjectDao->newProject($Project);
+        $Result = $this->_ProjectDao->createProject($Project);
 
         if(!$Result->getIsSuccess())
             $Result->setResultObject("Database failure in ProjectDao.newProject()");
