@@ -212,7 +212,6 @@ class PageUtil{
 
     //Project Archive
     public static $PROJECT='project.php';
-    public static $COURSE='course.php';
    
 }
 
@@ -259,7 +258,6 @@ class RouteUtil{
 
          //Project Archive Routes
          self::$s_Routes[PageUtil::$PROJECT]="modules/projectArchive/ui/view.project.php";
-         self::$s_Routes[PageUtil::$COURSE]="modules/projectArchive/ui/view.course.php";
 
  
 
@@ -318,7 +316,6 @@ class MiddlewareUtil{
 
          //Project Archive Middleware
          self::$s_Routes[PageUtil::$PROJECT] = PageUtil::$LOGIN;
-         self::$s_Routes[PageUtil::$COURSE]=PageUtil::$COURSE;
 
     }
 

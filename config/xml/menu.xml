@@ -306,25 +306,4 @@
 			<Permission>PROJECT_D</Permission>
 		</Permissions>
 	</Menu>
-	<Menu>
-		<ParentMenu>Project Archive</ParentMenu>
-		<Title>Courses</Title>
-		<Permissions>
-			<Permission>COURSE_C</Permission>
-			<Permission>COURSE_R</Permission>
-			<Permission>COURSE_U</Permission>
-			<Permission>COURSE_D</Permission>
-		</Permissions>
-	</Menu>
-	<Menu>
-		<ParentMenu>Courses</ParentMenu>
-		<Title>Create</Title>
-		<Link>course.php</Link>
-		<Permissions>
-			<Permission>COURSE_C</Permission>
-			<Permission>COURSE_R</Permission>
-			<Permission>COURSE_U</Permission>
-			<Permission>COURSE_D</Permission>
-		</Permissions>
-	</Menu>
 </Menus>

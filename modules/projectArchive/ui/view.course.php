@@ -36,6 +36,7 @@ include_once './common/class.common.php';
             </div>
         </form>
 
+<!--        Show the courses-->
         <div class="panel-body">
             <table class="table table-bordered">
                 <tr>

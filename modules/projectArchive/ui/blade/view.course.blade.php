@@ -5,6 +5,8 @@ include_once '/../../bao/class.coursebao.php';
 $_CourseBao=new CourseBao();
 $_DB=DBUtil::getInstance();
 
+
+//Create a Course
 if(isset($_POST['create'])){
     $Course=new Course();
 
@@ -18,6 +20,8 @@ if(isset($_POST['create'])){
         echo '<strong>'.$Result->getResultObject().'</strong>';
 }
 
+
+//Edit a Course
 if (isset($_GET['edit'])){
     $Course=new Course();
 
@@ -25,15 +29,8 @@ if (isset($_GET['edit'])){
     $getROW=$_CourseBao->getCourse($Course)->getResultObject();
 }
 
-if (isset($_GET['del'])){
-    $Course=new Course();
 
-    $Course->setCourseId($_GET['del']);
-    $_CourseBao->deleteCourse($Course);
-
-    header("Location:".PageUtil::$COURSE);
-}
-
+//Update a Course
 if (isset($_POST['update'])){
     $Course=new Course();
 
@@ -45,4 +42,16 @@ if (isset($_POST['update'])){
 
     header("Location:".PageUtil::$COURSE);
 }
+
+
+//Delete a Course
+if (isset($_GET['del'])){
+    $Course=new Course();
+
+    $Course->setCourseId($_GET['del']);
+    $_CourseBao->deleteCourse($Course);
+
+    header("Location:".PageUtil::$COURSE);
+}
+
 ?>

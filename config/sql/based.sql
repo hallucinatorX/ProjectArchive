@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 16, 2017 at 10:23 AM
+-- Generation Time: Aug 17, 2017 at 10:41 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -23,37 +23,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `create_project`
---
-
-CREATE TABLE `create_project` (
-  `id` varchar(40) NOT NULL,
-  `title` varchar(256) NOT NULL,
-  `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `create_project`
---
-
-INSERT INTO `create_project` (`id`, `title`, `description`) VALUES
-('{10A59859-3100-4882-B13C-F658492E694A}', 'Khulna University Automation', 'Trying to do it');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pms_course`
---
-
-CREATE TABLE `pms_course` (
-  `id` varchar(40) NOT NULL,
-  `courseNo` varchar(256) NOT NULL,
-  `Name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `pms_project`
 --
 
@@ -66,7 +35,8 @@ CREATE TABLE `pms_project` (
   `year_id` varchar(40) NOT NULL,
   `term_id` varchar(40) NOT NULL,
   `course_id` varchar(40) NOT NULL,
-  `teacher` varchar(256) NOT NULL,
+  `discipline_id` varchar(40) NOT NULL,
+  `teacher_id` varchar(40) NOT NULL,
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -79,9 +49,80 @@ CREATE TABLE `pms_project` (
 
 CREATE TABLE `pms_student_project` (
   `id` varchar(40) NOT NULL,
-  `user_id` varchar(40) NOT NULL,
+  `student_id` varchar(40) NOT NULL,
   `project_id` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_course`
+--
+
+CREATE TABLE `tbl_course` (
+  `ID` varchar(40) NOT NULL,
+  `CourseNo` varchar(40) NOT NULL,
+  `Title` varchar(100) NOT NULL,
+  `Credit` double NOT NULL,
+  `CourseTypeID` varchar(40) NOT NULL,
+  `DisciplineID` varchar(40) NOT NULL,
+  `IsDeleted` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_course`
+--
+
+INSERT INTO `tbl_course` (`ID`, `CourseNo`, `Title`, `Credit`, `CourseTypeID`, `DisciplineID`, `IsDeleted`) VALUES
+('1', 'MATH 3218', 'Vector', 3, '1', '{0CF37516-06FE-41CD-93AD-D2D1652509D6}', 0),
+('2', 'CSE 2101', 'Data Structure', 3, '2', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0),
+('3', 'CSE 3101', 'Database', 1.5, '4', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0),
+('4', 'CSE 3212', 'Digital Image Processing', 3, '3', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0),
+('5', 'CSE 3200', 'Web Programming Laboratory', 1.5, '1', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_course_sessional_type`
+--
+
+CREATE TABLE `tbl_course_sessional_type` (
+  `ID` varchar(40) NOT NULL,
+  `Name` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_course_sessional_type`
+--
+
+INSERT INTO `tbl_course_sessional_type` (`ID`, `Name`) VALUES
+('1', 60),
+('2', 30),
+('3', 15),
+('4', 100);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_course_type`
+--
+
+CREATE TABLE `tbl_course_type` (
+  `ID` varchar(40) NOT NULL,
+  `Name` varchar(30) NOT NULL,
+  `SessionalTypeID` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_course_type`
+--
+
+INSERT INTO `tbl_course_type` (`ID`, `Name`, `SessionalTypeID`) VALUES
+('1', 'Project', '1'),
+('2', 'Thesis', '2'),
+('3', 'Research', '3'),
+('4', 'Project', '4'),
+('5', 'Thesis', '3');
 
 -- --------------------------------------------------------
 
@@ -101,13 +142,12 @@ CREATE TABLE `tbl_discipline` (
 --
 
 INSERT INTO `tbl_discipline` (`ID`, `Name`, `ShortCode`, `SchoolID`) VALUES
-('{0CF37516-06FE-41CD-93AD-D2D1652509D6}', 'Mathematics', 'MATH', '{39DDC0C2-CFC2-4246-8748-8812B1751A5C}'),
-('{560A0FC0-6221-497D-8D41-E584EE4BBEE3}', 'Architecture', 'ARCH', '{39DDC0C2-CFC2-4246-8748-8812B1751A5C}'),
-('{63F3C00B-6168-4FBD-AB01-7A1FE413BDDE}', 'Forestry and Wood Technology', 'FWT', '{4D46079B-AFA3-40F1-B8D1-6CC9E9F56812}'),
-('{AF41CC9F-3BCD-4952-9D02-17184CC40C79}', 'Urban and Rural Planning', 'URP', '{4D46079B-AFA3-40F1-B8D1-6CC9E9F56812}'),
-('{E065BBA7-D0C5-4DFA-9768-81B6F056EB4A}', 'Foresty and Marine Resource Technology', 'FMRT', '{4D46079B-AFA3-40F1-B8D1-6CC9E9F56812}'),
-('{E7280448-E379-424E-A11D-357F4334AC8D}', 'Physics', 'PHY', '{39DDC0C2-CFC2-4246-8748-8812B1751A5C}'),
-('{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 'Computer Science and Engineering', 'CSE', '{39DDC0C2-CFC2-4246-8748-8812B1751A5C}');
+('{0CF37516-06FE-41CD-93AD-D2D1652509D6}', 'Mathematics', 'MATH', '39DDC0C2-CFC2-4246-8748-8812B1751A5C'),
+('{560A0FC0-6221-497D-8D41-E584EE4BBEE3}', 'Architecture', 'ARCHI', '39DDC0C2-CFC2-4246-8748-8812B1751A5C'),
+('{AF41CC9F-3BCD-4952-9D02-17184CC40C79}', 'Biotechnology & Genetic Engineering', 'BGE', '4D46079B-AFA3-40F1-B8D1-6CC9E9F56812'),
+('{B34A0580-0B92-49BD-84FB-929297B104C5}', 'Pharmacy', 'PHA', '4D46079B-AFA3-40F1-B8D1-6CC9E9F56812'),
+('{E03C2DC3-CAF3-477E-A851-0C11DF93FD3B}', 'Chemistry', 'CHEM', '39DDC0C2-CFC2-4246-8748-8812B1751A5C'),
+('{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 'Computer Science and Engineering', 'CSE', '39DDC0C2-CFC2-4246-8748-8812B1751A5C');
 
 -- --------------------------------------------------------
 
@@ -396,11 +436,10 @@ CREATE TABLE `tbl_school` (
 --
 
 INSERT INTO `tbl_school` (`ID`, `Name`, `DeanID`) VALUES
-('{39DDC0C2-CFC2-4246-8748-8812B1751A5C}', 'Science Engineering and Technology', ''),
-('{4D46079B-AFA3-40F1-B8D1-6CC9E9F56812}', 'Life Science', ''),
-('{86E0F021-B30D-48D2-B177-247180633C5E}', 'Social Science', ''),
-('{879375F7-0A15-4705-AC90-C6786D279EF1}', 'Law and Humanities', ''),
-('{CE09AA38-205B-4F50-A0E0-14DB8686C912}', 'Fine Arts', '');
+('39DDC0C2-CFC2-4246-8748-8812B1751A5C', 'Science Engineering and Technology', 'dean@gmail.com'),
+('4D46079B-AFA3-40F1-B8D1-6CC9E9F56812', 'Life Science', 'dean@gmail.com'),
+('86E0F021-B30D-48D2-B177-247180633C5E', 'Social Science', 'dean@gmail.com'),
+('879375F7-0A15-4705-AC90-C6786D279EF1', 'Law and Humanities', 'dean@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -418,9 +457,11 @@ CREATE TABLE `tbl_term` (
 --
 
 INSERT INTO `tbl_term` (`ID`, `Name`) VALUES
-('{6DE3CF58-3A1A-4D6A-88CF-83F22C27E0BA}', 'Special'),
-('{AF8B217E-4E76-41B8-A02A-7115BD4A6BE6}', '2nd'),
-('{F9121C67-1E89-4F0B-80AA-89FD3B6BD665}', '1st');
+('{19B15CDF-264C-4924-8608-258673BCC448}', 'B.Sc 1st'),
+('{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', 'B.Sc 2nd'),
+('{298E9628-8DE2-4742-8F93-0491C01BB152}', 'M.Sc 1st'),
+('{9C84629E-11FA-4459-A593-C9AD9CF0D3F2}', 'B.Sc 3rd'),
+('{9D35C1A5-8091-47BE-AF7E-160C95789EC3}', 'B.Sc 4th');
 
 -- --------------------------------------------------------
 
@@ -446,6 +487,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`ID`, `UniversityID`, `Email`, `Password`, `FirstName`, `LastName`, `Status`, `IsLogged`, `IsArchived`, `IsDeleted`) VALUES
+('dean@gmail.com', '020202', 'dean@gmail.com', '123', 'I AM', 'DEAN ', 'approved', NULL, NULL, NULL),
 ('pranta.cse@gmail.com', '150215', 'pranta.cse@gmail.com', '123', 'Pranta', 'Protik', 'approved', NULL, NULL, NULL),
 ('test@test.com', '020201', 'test@test.com', '123', 'I AM', 'ADMIN', 'approved', NULL, NULL, NULL);
 
@@ -470,6 +512,7 @@ CREATE TABLE `tbl_user_details` (
 --
 
 INSERT INTO `tbl_user_details` (`ID`, `FatherName`, `MotherName`, `PermanentAddress`, `HomePhone`, `CurrentAddress`, `MobilePhone`) VALUES
+('dean@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
 ('pranta.cse@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
 ('test@test.com', 'My father', 'My mother', 'My address', '04100000', 'Same', '0171100000');
 
@@ -509,7 +552,8 @@ INSERT INTO `tbl_user_position` (`ID`, `UserID`, `PositionID`) VALUES
 (21, '{8B24B76D-9969-4F71-ABC4-6EE59355C686}', '{64D25DDA-16B6-47B8-BBFC-4E2AAF5680C7}'),
 (24, '{9E2E6363-A0FF-4C0F-B58F-D162725FB702}', '{C27B6BCF-FB83-4F3D-85CA-B7870D8B12D0}'),
 (30, 'mohidul@gmail.com', '{64D25DDA-16B6-47B8-BBFC-4E2AAF5680C7}'),
-(37, 'mkazi078@uottawa.ca', '{64D25DDA-16B6-47B8-BBFC-4E2AAF5680C7}');
+(37, 'mkazi078@uottawa.ca', '{64D25DDA-16B6-47B8-BBFC-4E2AAF5680C7}'),
+(38, 'dean@gmail.com', '{818DE12F-60CC-42E4-BAEC-48EAAED65179}');
 
 -- --------------------------------------------------------
 
@@ -530,7 +574,8 @@ CREATE TABLE `tbl_user_role` (
 INSERT INTO `tbl_user_role` (`ID`, `UserID`, `RoleID`) VALUES
 (98, 'test@test.com', 'administrator'),
 (99, 'test@test.com', 'teacher'),
-(102, 'pranta.cse@gmail.com', 'student');
+(102, 'pranta.cse@gmail.com', 'student'),
+(104, 'dean@gmail.com', 'teacher');
 
 -- --------------------------------------------------------
 
@@ -548,32 +593,14 @@ CREATE TABLE `tbl_year` (
 --
 
 INSERT INTO `tbl_year` (`ID`, `Name`) VALUES
-('{1FAC0F1A-9D60-43F6-AB07-C933D5A4AA30}', 'Phd 1st'),
-('{326B168F-58CC-42F3-B71A-DFE8DBBC05E8}', 'MSc 1st'),
-('{6780C884-E112-4F58-9503-E2110B615547}', '4th'),
-('{9F3A6CBC-0115-4EC2-ABB3-8CCA431F6C2B}', '1st'),
-('{A21965E4-4FE4-43AC-A77F-DABAC9B356F2}', '3rd'),
-('{ADBEDD3E-D8EA-47AA-A068-C4C703DB4AE6}', 'MSc 2nd'),
-('{B9D6CC05-7AD4-4666-80AB-80797A872743}', 'Phd 2nd'),
-('{CBE08035-94CD-4610-B4E2-A0E844184056}', 'Phd 4th'),
-('{E3823AA6-6BE5-4A07-93EA-FA59DE4F616F}', 'Phd 3rd'),
-('{EA335D18-A1A8-4D15-9C7B-4A4700AD4543}', '2nd');
+('1', '1st'),
+('2', '2nd'),
+('3', '3rd'),
+('4', '4th');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `create_project`
---
-ALTER TABLE `create_project`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `pms_course`
---
-ALTER TABLE `pms_course`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pms_project`
@@ -582,21 +609,45 @@ ALTER TABLE `pms_project`
   ADD PRIMARY KEY (`id`),
   ADD KEY `year_id` (`year_id`),
   ADD KEY `term_id` (`term_id`),
-  ADD KEY `course_id` (`course_id`);
+  ADD KEY `course_id` (`course_id`),
+  ADD KEY `discipline_id` (`discipline_id`),
+  ADD KEY `teacher_id` (`teacher_id`);
 
 --
 -- Indexes for table `pms_student_project`
 --
 ALTER TABLE `pms_student_project`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`),
+  ADD KEY `student_id` (`student_id`),
   ADD KEY `project_id` (`project_id`);
+
+--
+-- Indexes for table `tbl_course`
+--
+ALTER TABLE `tbl_course`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `CourseTypeID` (`CourseTypeID`),
+  ADD KEY `DisciplineID` (`DisciplineID`);
+
+--
+-- Indexes for table `tbl_course_sessional_type`
+--
+ALTER TABLE `tbl_course_sessional_type`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tbl_course_type`
+--
+ALTER TABLE `tbl_course_type`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `SessionalTypeID` (`SessionalTypeID`);
 
 --
 -- Indexes for table `tbl_discipline`
 --
 ALTER TABLE `tbl_discipline`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `SchoolID` (`SchoolID`);
 
 --
 -- Indexes for table `tbl_discussion`
@@ -639,6 +690,13 @@ ALTER TABLE `tbl_role`
 --
 ALTER TABLE `tbl_role_permission`
   ADD PRIMARY KEY (`Row`);
+
+--
+-- Indexes for table `tbl_school`
+--
+ALTER TABLE `tbl_school`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `DeanID` (`DeanID`);
 
 --
 -- Indexes for table `tbl_term`
@@ -691,12 +749,12 @@ ALTER TABLE `tbl_role_permission`
 -- AUTO_INCREMENT for table `tbl_user_position`
 --
 ALTER TABLE `tbl_user_position`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `tbl_user_role`
 --
 ALTER TABLE `tbl_user_role`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 --
 -- Constraints for dumped tables
 --
@@ -705,16 +763,43 @@ ALTER TABLE `tbl_user_role`
 -- Constraints for table `pms_project`
 --
 ALTER TABLE `pms_project`
-  ADD CONSTRAINT `pms_project_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `pms_course` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pms_project_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `tbl_course` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pms_project_ibfk_2` FOREIGN KEY (`term_id`) REFERENCES `tbl_term` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `pms_project_ibfk_3` FOREIGN KEY (`year_id`) REFERENCES `tbl_year` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `pms_project_ibfk_3` FOREIGN KEY (`year_id`) REFERENCES `tbl_year` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pms_project_ibfk_4` FOREIGN KEY (`discipline_id`) REFERENCES `tbl_discipline` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pms_project_ibfk_5` FOREIGN KEY (`teacher_id`) REFERENCES `tbl_user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `pms_student_project`
 --
 ALTER TABLE `pms_student_project`
-  ADD CONSTRAINT `pms_student_project_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pms_student_project_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `tbl_user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pms_student_project_ibfk_2` FOREIGN KEY (`project_id`) REFERENCES `pms_project` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_course`
+--
+ALTER TABLE `tbl_course`
+  ADD CONSTRAINT `tbl_course_ibfk_1` FOREIGN KEY (`CourseTypeID`) REFERENCES `tbl_course_type` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_course_ibfk_2` FOREIGN KEY (`DisciplineID`) REFERENCES `tbl_discipline` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_course_type`
+--
+ALTER TABLE `tbl_course_type`
+  ADD CONSTRAINT `tbl_course_type_ibfk_1` FOREIGN KEY (`SessionalTypeID`) REFERENCES `tbl_course_sessional_type` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_discipline`
+--
+ALTER TABLE `tbl_discipline`
+  ADD CONSTRAINT `tbl_discipline_ibfk_1` FOREIGN KEY (`SchoolID`) REFERENCES `tbl_school` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tbl_school`
+--
+ALTER TABLE `tbl_school`
+  ADD CONSTRAINT `tbl_school_ibfk_1` FOREIGN KEY (`DeanID`) REFERENCES `tbl_user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

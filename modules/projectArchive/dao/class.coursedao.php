@@ -29,6 +29,7 @@ class CourseDao{
         return $Result;
     }
 
+    //Get all Course information
     public function getAllCourses(){
         $CourseList=array();
         $SQL="SELECT * FROM pms_course";
@@ -53,6 +54,7 @@ class CourseDao{
         return $Result;
     }
 
+    //Get the requested course
     public function getCourse($Course){
         $SQL="SELECT * FROM pms_course WHERE pms_course.id='".$Course->getCourseId()."'";
         $this->_DB->doQuery($SQL);
@@ -72,17 +74,7 @@ class CourseDao{
         return $Result;
     }
 
-    public function deleteCourse($Course){
-        $SQL="DELETE FROM pms_course WHERE pms_course.id='".$Course->getCourseId()."'";
-        $SQL=$this->_DB->doQuery($SQL);
-
-        $Result=new Result();
-        $Result->setIsSuccess(1);
-        $Result->setResultObject($SQL);
-
-        return $Result;
-    }
-
+    //Update the requested course
     public function updateCourse($Course){
         $SQL="UPDATE pms_course SET pms_course.courseNo='".$Course->getCourseNumber()."',pms_course.Name='".$Course->getCourseName()."' 
         WHERE pms_course.id='".$Course->getCourseId()."'";
@@ -95,6 +87,19 @@ class CourseDao{
 
         return $Result;
     }
+
+    //Delete the requested course
+    public function deleteCourse($Course){
+        $SQL="DELETE FROM pms_course WHERE pms_course.id='".$Course->getCourseId()."'";
+        $SQL=$this->_DB->doQuery($SQL);
+
+        $Result=new Result();
+        $Result->setIsSuccess(1);
+        $Result->setResultObject($SQL);
+
+        return $Result;
+    }
+
 }
 
 ?>

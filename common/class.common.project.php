@@ -2,16 +2,17 @@
 
 class Project{
     private $_projectId;
-    private $_title;
-    private $_description;
-    private $_link;
-    private $_language;
-    private $_yearId;
-    private $_termId;
-    private $_courseId;
-    private $_teacher;
-    private $_createdAt;
-    private $_updatedAt;
+    private $_projectTitle;
+    private $_projectDescription;
+    private $_projectLink;
+    private $_projectLanguage;
+    private $_projectYearId;
+    private $_projectTermId;
+    private $_projectCourseId;
+    private $_projectDisciplineId;
+    private $_projectTeacherId;
+    private $_projectCreatedAt;
+    private $_projectUpdatedAt;
 
     //Id
     public function getProjectId(){
@@ -22,83 +23,102 @@ class Project{
     }
 
     //Title
-    public function getTitle(){
-        return $this->_title;
+    public function getProjectTitle(){
+        return $this->_projectTitle;
     }
-    public function setTitle($title){
-        $this->_title=$title;
+
+    public function setProjectTitle($projectTitle){
+        $this->_projectTitle=$projectTitle;
     }
 
     //Description
-    public function getDescription(){
-        return $this->_description;
+    public function getProjectDescription(){
+        return $this->_projectDescription;
     }
-    public function setDescription($description){
-        $this->_description=$description;
+
+    public function setProjectDescription($projectDescription){
+        $this->_projectDescription=$projectDescription;
     }
 
     //Link
-    public function getLink(){
-        return $this->_link;
+    public function getProjectLink(){
+        return $this->_projectLink;
     }
-    public function setLink($link){
-        $this->_link=$link;
+
+    public function setProjectLink($projectLink){
+        $this->_projectLink=$projectLink;
     }
 
     //Language
-    public function getLanguage(){
-        return $this->_language;
-    }
-    public function setLanguage($language){
-        $this->_language=$language;
+    public function getProjectLanguage(){
+        return $this->_projectLanguage;
     }
 
-    //YearId
-    public function getYearId(){
-        return $this->_yearId;
-    }
-    public function setYearId($yearId){
-        $this->_yearId=$yearId;
+    public function setProjectLanguage($projectLanguage){
+        $this->_projectLanguage=$projectLanguage;
     }
 
-    //TermId
-    public function getTermId(){
-        return $this->_termId;
+    //YearID
+    public function getProjectYearId(){
+        return $this->_projectYearId;
     }
-    public function setTermId($termId){
-        $this->_termId=$termId;
+
+    public function setProjectYearId($projectYearId){
+        $this->_projectYearId=$projectYearId;
+    }
+
+    //TermID
+    public function getProjectTermId(){
+        return $this->_projectTermId;
+    }
+
+    public function setProjectTermId($projectTermId){
+        $this->_projectTermId=$projectTermId;
     }
 
     //CourseId
-    public function getCourseId(){
-        return $this->_courseId;
+    public function getProjectCourseId(){
+        return $this->_projectCourseId;
     }
-    public function setCourseId($courseId){
-        $this->_courseId=$courseId;
+
+    public function setProjectCourseId($projectCourseId){
+        $this->_projectCourseId=$projectCourseId;
+    }
+
+    //DisciplineId
+    public function getProjectDisciplineId(){
+        return $this->_projectDisciplineId;
+    }
+
+    public function setProjectDisciplineId($projectDisciplineId){
+        $this->_projectDisciplineId=$projectDisciplineId;
     }
 
     //Teacher
-    public function getTeacher(){
-        return $this->_teacher;
-    }
-    public function setTeacher($teacher){
-        $this->_teacher=$teacher;
+    public function getProjectTeacherId(){
+        return $this->_projectTeacherId;
     }
 
-    //CreatedAt
-    public function getCreatedAt(){
-        return $this->_createdAt;
-    }
-    public function setCreatedAt($createdAt){
-        $this->_createdAt=$createdAt;
+    public function setProjectTeacherId($projectTeacherId){
+        $this->_projectTeacherId=$projectTeacherId;
     }
 
-    //UpdatedAt
-    public function getUpdatedAt(){
-        return $this->_updatedAt;
+    //Created At
+    public function getProjectCreatedAt(){
+        return $this->_projectCreatedAt;
     }
-    public function setUpdatedAt($updatedAt){
-        $this->_updatedAt=$updatedAt;
+
+    public function setProjectCreatedAt($projectCreatedAt){
+        $this->_projectCreatedAt=$projectCreatedAt;
+    }
+
+    //Updated At
+    public function getProjectUpdatedAt(){
+        return $this->_projectUpdatedAt;
+    }
+
+    public function setProjectUpdatedAt($projectUpdatedAt){
+        $this->_projectUpdatedAt=$projectUpdatedAt;
     }
 }
 
@@ -146,8 +166,12 @@ class Term{
 
 class Course{
     private $_courseId;
-    private $_courseNumber;
-    private $_courseName;
+    private $_courseNo;
+    private $_courseTitle;
+    private $_courseCredit;
+    private $_courseTypeId;
+    private $_courseDisciplineId;
+    private $_courseIsDeleted;
 
     //CourseId
     public function getCourseId(){
@@ -157,26 +181,64 @@ class Course{
         $this->_courseId=$courseId;
     }
 
-    //CourseNumber
-    public function getCourseNumber(){
-        return $this->_courseNumber;
-    }
-    public function setCourseNumber($courseNumber){
-        $this->_courseNumber=$courseNumber;
+    //Course No
+    public function getCourseNo(){
+        return $this->_courseNo;
     }
 
-    //CourseName
-    public function getCourseName(){
-        return $this->_courseName;
+    public function setCourseNo($courseNo){
+        $this->_courseNo=$courseNo;
     }
-    public function setCourseName($courseName){
-        $this->_courseName=$courseName;
+
+    //Course Title
+    public function getCourseTitle(){
+        return $this->_courseTitle;
+    }
+
+    public function setCourseTitle($courseTitle){
+        $this->_courseTitle=$courseTitle;
+    }
+
+    //Course Credit
+    public function getCourseCredit(){
+        return $this->_courseCredit;
+    }
+
+    public function setCourseCredit($courseCredit){
+        $this->_courseCredit=$courseCredit;
+    }
+
+    //Course Type Id
+    public function getCourseTypeId(){
+        return $this->_courseTypeId;
+    }
+
+    public function setCourseTypeId($courseTypeId){
+        $this->_courseTypeId=$courseTypeId;
+    }
+
+    //Course Discipline Id
+    public function getCourseDisciplineId(){
+        return $this->_courseDisciplineId;
+    }
+
+    public function setCourseDisciplineId($courseDisciplineId){
+        $this->_courseDisciplineId=$courseDisciplineId;
+    }
+
+    //Course IsDeleted
+    public function getCourseIsDeleted(){
+        return $this->_courseIsDeleted;
+    }
+
+    public function setCourseIsDeleted($courseIsDeleted){
+        $this->_courseIsDeleted=$courseIsDeleted;
     }
 }
 
 class StudentProject{
     private $_studentProjectId;
-    private $_userId;
+    private $_studentId;
     private $_projectId;
 
     //StudentProjectId
@@ -188,11 +250,11 @@ class StudentProject{
     }
 
     //UserId
-    public function getUserId(){
-        return $this->_userId;
+    public function getStudentId(){
+        return $this->_studentId;
     }
-    public function setUserId($userId){
-        $this->_userId=$userId;
+    public function setStudentId($studentId){
+        $this->_studentId=$studentId;
     }
 
     //ProjectId
@@ -204,32 +266,46 @@ class StudentProject{
     }
 }
 
-class CreateProject{
-    private $_projectId;
-    private $_title;
-    private $_description;
-
+class Discipline{
+    private $_disciplineId;
+    private $_disciplineName;
+    private $_disciplineShortCode;
+    private $_disciplineSchoolId;
+    
     //Id
-    public function getProjectId(){
-        return $this->_projectId;
+    public function getDisciplineId(){
+        return $this->_disciplineId;
     }
-    public function setProjectId($projectId){
-        $this->_projectId=$projectId;
+    
+    public function setDisciplineId($disciplineId){
+        $this->_disciplineId=$disciplineId;
+    } 
+    
+    //Name
+    public function getDisciplineName(){
+        return $this->_disciplineName;
     }
-
-    //Title
-    public function getTitle(){
-        return $this->_title;
+    
+    public function setDisciplineName($disciplineName){
+        $this->_disciplineName=$disciplineName;
+    } 
+    
+    //Short Code
+    public function getDisciplineShortCode(){
+        return $this->_disciplineShortCode;
     }
-    public function setTitle($title){
-        $this->_title=$title;
+    
+    public function setDisciplineShortCode($disciplineShortCode){
+        $this->_disciplineShortCode=$disciplineShortCode;
+    } 
+    
+    //School Id
+    public function getDisciplineSchoolId(){
+        return $this->_disciplineSchoolId;
     }
-
-    //Description
-    public function getDescription(){
-        return $this->_description;
-    }
-    public function setDescription($description){
-        $this->_description=$description;
+    
+    public function setDisciplineSchoolId($disciplineSchoolId){
+        $this->_disciplineSchoolId=$disciplineSchoolId;
     }
 }
+

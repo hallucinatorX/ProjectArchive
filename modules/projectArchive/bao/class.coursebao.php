@@ -19,7 +19,6 @@ Class CourseBao
 
     //new Course creation
     public function createCourse($Course){
-       // $Result=new Result();
         $Result=$this->_CourseDao->createCourse($Course);
 
         if(!$Result->getIsSuccess())
@@ -28,9 +27,9 @@ Class CourseBao
         return $Result;
     }
 
-    //get All Courses
+
+    //get All Courses information
     public function getAllCourses(){
-       // $Result=new Result();
         $Result=$this->_CourseDao->getAllCourses();
         if(!$Result->getIsSuccess())
             $Result->setResultObject("Database failure in CourseDao.getAllCourse()");
@@ -38,8 +37,8 @@ Class CourseBao
         return $Result;
     }
 
+    //Get the requested Course
     public function getCourse($Course){
-       // $Result=new Result();
         $Result=$this->_CourseDao->getCourse($Course);
 
         if(!$Result->getIsSuccess()){
@@ -49,21 +48,21 @@ Class CourseBao
         return $Result;
     }
 
-    public function deleteCourse($Course){
-        //$Result=new Result();
-        $Result=$this->_CourseDao->deleteCourse($Course);
-        if(!$Result->getIsSuccess())
-            $Result->setResultObject("Database failure in CourseDao.deleteCourse()");
-
-        return $Result;
-    }
-
+    //Update the requested course
     public function updateCourse($Course){
-        //$Result=new Result();
         $Result=$this->_CourseDao->updateCourse($Course);
 
         if(!$Result->getIsSuccess())
             $Result->getResultObject("Database failure in CourseDao.updateCourse()");
+
+        return $Result;
+    }
+
+    //Delete the requested course
+    public function deleteCourse($Course){
+        $Result=$this->_CourseDao->deleteCourse($Course);
+        if(!$Result->getIsSuccess())
+            $Result->setResultObject("Database failure in CourseDao.deleteCourse()");
 
         return $Result;
     }
