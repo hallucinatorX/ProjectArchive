@@ -6,7 +6,7 @@ include_once './common/class.common.php';
     function jsFunction(course) {
         var xhttp;
         if(course==""){
-            $('#courseTitle').val("");
+            $('#courseTitle').val("No Course Selected");
         }
         xhttp=new XMLHttpRequest();
         xhttp.onreadystatechange=function () {
@@ -167,7 +167,7 @@ include_once './common/class.common.php';
 
 
             <div class="form-group">
-                <input type="submit" class="btn btn-primary col-md-2 col-md-offset-5" name="create" value="Submit">
+                <input type="submit" class="btn btn-primary col-md-2 col-md-offset-5" name="create" value="Create">
             </div>
         </form>
 

@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bce1c9b9-f725-421b-8e21-01f7c9afdf04" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/class.common.php" afterPath="$PROJECT_DIR$/common/class.common.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/class.common.project.php" afterPath="$PROJECT_DIR$/common/class.common.project.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/sql/based.sql" afterPath="$PROJECT_DIR$/config/sql/based.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/xml/menu.xml" afterPath="$PROJECT_DIR$/config/xml/menu.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/log.txt" afterPath="$PROJECT_DIR$/logs/log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/projectArchive/bao/class.coursebao.php" afterPath="$PROJECT_DIR$/modules/projectArchive/bao/class.coursebao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/projectArchive/bao/class.projectbao.php" afterPath="$PROJECT_DIR$/modules/projectArchive/bao/class.projectbao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/projectArchive/dao/class.coursedao.php" afterPath="$PROJECT_DIR$/modules/projectArchive/dao/class.coursedao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/projectArchive/dao/class.projectdao.php" afterPath="$PROJECT_DIR$/modules/projectArchive/dao/class.projectdao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/projectArchive/ui/blade/view.course.blade.php" afterPath="$PROJECT_DIR$/modules/projectArchive/ui/blade/view.course.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/projectArchive/ui/blade/view.project.blade.php" afterPath="$PROJECT_DIR$/modules/projectArchive/ui/blade/view.project.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/projectArchive/ui/responseText.php" afterPath="$PROJECT_DIR$/modules/projectArchive/ui/responseText.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/projectArchive/ui/view.course.php" afterPath="$PROJECT_DIR$/modules/projectArchive/ui/view.course.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/projectArchive/ui/view.project.php" afterPath="$PROJECT_DIR$/modules/projectArchive/ui/view.project.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="view.project.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="view.project.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/view.project.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3588">
-              <caret line="138" column="58" lean-forward="false" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
+            <state relative-caret-position="2054">
+              <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -40,10 +28,10 @@
       <file leaf-file-name="responseText.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/responseText.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+            <state relative-caret-position="598">
+              <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
               <folding>
-                <marker date="1503000443419" expanded="true" signature="308:377" ph="SELECT tbl_c... tbl_course" />
+                <marker date="1503036799159" expanded="true" signature="308:377" ph="SELECT tbl_c... tbl_course" />
               </folding>
             </state>
           </provider>
@@ -53,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/view.course.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1924">
-              <caret line="74" column="17" lean-forward="true" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+              <caret line="74" column="17" lean-forward="false" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -63,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/blade/view.project.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="572">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="class.projectdao.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="class.projectdao.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/projectArchive/dao/class.projectdao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
+            <state relative-caret-position="3796">
               <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
               <folding>
                 <marker date="1503001195465" expanded="true" signature="696:783" ph="INSERT INTO create_project... " />
@@ -158,10 +146,10 @@
         <option value="$PROJECT_DIR$/modules/projectArchive/ui/view.course.php" />
         <option value="$PROJECT_DIR$/modules/projectArchive/ui/blade/view.project.blade.php" />
         <option value="$PROJECT_DIR$/modules/projectArchive/ui/l.php" />
-        <option value="$PROJECT_DIR$/modules/projectArchive/ui/responseText.php" />
-        <option value="$PROJECT_DIR$/modules/projectArchive/ui/view.project.php" />
         <option value="$PROJECT_DIR$/modules/projectArchive/bao/class.projectbao.php" />
         <option value="$PROJECT_DIR$/modules/projectArchive/dao/class.projectdao.php" />
+        <option value="$PROJECT_DIR$/modules/projectArchive/ui/responseText.php" />
+        <option value="$PROJECT_DIR$/modules/projectArchive/ui/view.project.php" />
       </list>
     </option>
   </component>
@@ -196,6 +184,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -297,7 +286,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -341,16 +329,20 @@
       <workItem from="1502946472288" duration="3432000" />
       <workItem from="1502951121183" duration="3282000" />
       <workItem from="1502957533838" duration="22474000" />
-      <workItem from="1503033993185" duration="24000" />
+      <workItem from="1503033993185" duration="94000" />
+      <workItem from="1503036746885" duration="85000" />
+      <workItem from="1503064021887" duration="419000" />
+      <workItem from="1503070409514" duration="1162000" />
+      <workItem from="1503077200712" duration="1210000" />
+      <workItem from="1503125008316" duration="49000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47260000" />
+    <option name="totallyTimeSpent" value="50255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -593,7 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -678,15 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/blade/view.project.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -719,42 +701,16 @@
     <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/view.course.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1924">
-          <caret line="74" column="17" lean-forward="true" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+          <caret line="74" column="17" lean-forward="false" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/response.php" />
     <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/l.php" />
-    <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/responseText.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-          <folding>
-            <marker date="1503000443419" expanded="true" signature="308:377" ph="SELECT tbl_c... tbl_course" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/view.project.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3588">
-          <caret line="138" column="58" lean-forward="false" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/projectArchive/bao/class.projectbao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2210">
-          <caret line="85" column="23" lean-forward="false" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/projectArchive/dao/class.projectdao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
+        <state relative-caret-position="3796">
           <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
           <folding>
             <marker date="1503001195465" expanded="true" signature="696:783" ph="INSERT INTO create_project... " />
@@ -764,6 +720,40 @@
             <marker date="1503001195465" expanded="true" signature="2882:2906" ph="SELECT * FRO... tbl_course" />
             <marker date="1503001195465" expanded="true" signature="3809:3837" ph="SELECT * FRO... tbl_discipline" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/blade/view.project.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/responseText.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <marker date="1503036799159" expanded="true" signature="308:377" ph="SELECT tbl_c... tbl_course" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/projectArchive/ui/view.project.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2054">
+          <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/projectArchive/bao/class.projectbao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2210">
+          <caret line="85" column="23" lean-forward="false" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
