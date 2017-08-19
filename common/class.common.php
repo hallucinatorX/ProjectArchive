@@ -212,6 +212,7 @@ class PageUtil{
 
     //Project Archive
     public static $PROJECT='project.php';
+    public static $ADD_MEMBER='add_member.php';
    
 }
 
@@ -257,8 +258,8 @@ class RouteUtil{
          self::$s_Routes[PageUtil::$USER_FORGOT_PASSWORD] =   "/modules/user/ui/view.forgot_password.php";
 
          //Project Archive Routes
-         self::$s_Routes[PageUtil::$PROJECT]="modules/projectArchive/ui/view.project.php";
-
+         self::$s_Routes[PageUtil::$PROJECT]="/modules/projectArchive/ui/view.project.php";
+         self::$s_Routes[PageUtil::$ADD_MEMBER]="/modules/projectArchive/ui/view.addMember.php";
  
 
         //the page not found will redirect to error page
@@ -316,6 +317,7 @@ class MiddlewareUtil{
 
          //Project Archive Middleware
          self::$s_Routes[PageUtil::$PROJECT] = PageUtil::$LOGIN;
+         self::$s_Routes[PageUtil::$ADD_MEMBER]=PageUtil::$LOGIN;
 
     }
 

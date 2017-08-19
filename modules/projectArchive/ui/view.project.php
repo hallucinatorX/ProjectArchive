@@ -23,7 +23,7 @@ include_once './common/class.common.php';
 <div class="panel col-md-12">
     <div class="panel panel-primary col-md-6 col-md-offset-3">
         <div class="panel-heading" style=" text-align: center">
-            <strong style="font-size: large"><img src="./resources/img/projectIcon2.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Create Project</strong>
+            <strong style="font-size: large"><img src="./resources/img/createproject.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Create Project</strong>
         </div>
         <div class="panel-body">
             <form method="post" class="form-horizontal">
@@ -242,7 +242,7 @@ include_once './common/class.common.php';
                 foreach ($ProjectList as $project) {
                     ?>
                     <tr>
-                        <td><a href="?id=<?php echo $project->getProjectId();?>"><img src="./resources/img/projectIcon.png" alt="Icon" style="height: 20px;width: 20px;"><?php
+                        <td><a href="add_member.php?id=<?php echo $project->getProjectId();?>"><img src="./resources/img/projectIcon.png" alt="Icon" style="height: 20px;width: 20px;"><?php
                                 echo ' '.$project->getProjectTitle(); ?></a></td>
 
                         <td><?php if(strlen($project->getProjectDescription())>50){
