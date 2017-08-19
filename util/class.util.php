@@ -225,7 +225,7 @@ class DBUtil implements I_DBUtil {
 	// Sends the query to the connection
 	public function doQuery($sql) {
 
-		$this->_result = $this->_connection->query($sql) or die(mysqli_error($this->_result));		
+		$this->_result = $this->_connection->query($sql) or die(mysqli_error($this->_connection));
 		return $this->_result;
 
 	}

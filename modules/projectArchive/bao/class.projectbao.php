@@ -31,9 +31,9 @@ Class ProjectBao
     }
 
     //get All Projects
-    public function getAllProject(){
+    public function getAllProjects(){
 
-        $Result=$this->_ProjectDao->getAllProject();
+        $Result=$this->_ProjectDao->getAllProjects();
 
         if(!$Result->getIsSuccess()){
             $Result->setResultObject("Database failure in ProjectDao.getAllProject()");
@@ -85,6 +85,96 @@ Class ProjectBao
 
         return $Result;
     }
+
+    //get All Teachers
+    public function getAllTeachers(){
+        $Result=$this->_ProjectDao->getAllTeachers();
+        
+        if(!$Result->getIsSuccess()){
+            $Result->setResultObject("Database failure in ProjectDao.getAllTeachers()");
+        }
+        return $Result;
+    }
+
+    //get specific year
+    public function getYear($Year){
+        $Result=$this->_ProjectDao->getYear($Year);
+        
+        if(!$Result->getIsSuccess()){
+            $Result->setResultObject("Database failure in ProjectDao.getYear($Year)");
+        }
+        return $Result;
+    }
+
+    //get specific Term
+    public function getTerm($Term){
+        $Result=$this->_ProjectDao->getTerm($Term);
+
+        if(!$Result->getIsSuccess()){
+            $Result->setResultObject("Database failure in ProjectDao.getTerm($Term)");
+        }
+        return $Result;
+    }
+    //get specific course
+    public function getCourse($Course){
+        $Result=$this->_ProjectDao->getCourse($Course);
+
+        if(!$Result->getIsSuccess()){
+            $Result->setResultObject("Database failure in ProjectDao.getCourse($Course)");
+        }
+        return $Result;
+    }
+
+    //get specific discipline
+    public function getDiscipline($Discipline){
+        $Result=$this->_ProjectDao->getDiscipline($Discipline);
+
+        if(!$Result->getIsSuccess()){
+            $Result->setResultObject("Database failure in ProjectDao.getDiscipline($Discipline)");
+        }
+        return $Result;
+    }
+
+    //get specific teacher
+    public function getTeacher($Teacher){
+        $Result=$this->_ProjectDao->getTeacher($Teacher);
+
+        if(!$Result->getIsSuccess()){
+            $Result->setResultObject("Database failure in ProjectDao.getTeacher($Teacher)");
+        }
+        return $Result;
+    }
+
+    //get specific project
+    public function getProject($Project){
+        $Result=$this->_ProjectDao->getProject($Project);
+
+        if(!$Result->getIsSuccess()){
+            $Result->setResultObject("Database failure in ProjectDao.getProject($Project)");
+        }
+        return $Result;
+    }
+    
+    //update previous project
+    public function updateProject($Project){
+        $Result=$this->_ProjectDao->updateProject($Project);
+        
+        if(!$Result->getIsSuccess()){
+            $Result->setResultObject("Database failure in ProjectDao.updateProject($Project)");
+        }
+        return $Result;
+    }
+
+    //delete specific project
+    public function deleteProject($Project){
+        $Result=$this->_ProjectDao->deleteProject($Project);
+
+        if(!$Result->getIsSuccess()){
+            $Result->setResultObject("Database failure in ProjectDao.deleteProject($Project)");
+        }
+        return $Result;
+    }
+
 }
 
 ?>
