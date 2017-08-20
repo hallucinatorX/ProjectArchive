@@ -242,7 +242,7 @@ include_once './common/class.common.php';
                 foreach ($ProjectList as $project) {
                     ?>
                     <tr>
-                        <td><a href="add_member.php?id=<?php echo $project->getProjectId();?>"><img src="./resources/img/projectIcon.png" alt="Icon" style="height: 20px;width: 20px;"><?php
+                        <td><a href="member.php?id=<?php echo $project->getProjectId();?>"><img src="./resources/img/projectIcon.png" alt="Icon" style="height: 20px;width: 20px;"><?php
                                 echo ' '.$project->getProjectTitle(); ?></a></td>
 
                         <td><?php if(strlen($project->getProjectDescription())>50){

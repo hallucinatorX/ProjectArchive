@@ -1,5 +1,6 @@
 <?php
 $Key=$_GET['key'];
+$PId=$_GET['pid'];
 
 if (strlen($Key)>0) {
     $servername = "localhost";
@@ -16,17 +17,18 @@ if (strlen($Key)>0) {
 
     $sql = "SELECT tbl_user.Email FROM tbl_user INNER JOIN tbl_user_role ON tbl_user.ID=tbl_user_role.UserID
     INNER JOIN tbl_role ON tbl_user_role.RoleID=tbl_role.ID WHERE tbl_role.Name='Student'
-    AND tbl_user.Email LIKE '%$Key%'";
+    AND tbl_user.Email NOT IN (SELECT pms_student_project.student_id FROM pms_student_project WHERE 
+    pms_student_project.project_id='".$PId."') AND tbl_user.Email LIKE '%$Key%'";
 
     $hint="";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while ($res=$result->fetch_assoc()){
             if($hint==""){
-                $hint='<a href="'.$res['Email'].'">'.$res['Email'].'</a>';
+                $hint='<a href="?id='.$PId.'&auid='.$res['Email'].'" onclick="return confirm(\'sure to add !\');">'.$res['Email'].'</a>';
 
             }else{
-                $hint=$hint.'<br /><a href="'.$res['Email'].'">'.$res['Email'].'</a>';
+                $hint=$hint.'<br /><a href="?id='.$PId.'&auid='.$res['Email'].'" onclick="return confirm(\'sure to add !\');">'.$res['Email'].'</a>';
 
             }
         }

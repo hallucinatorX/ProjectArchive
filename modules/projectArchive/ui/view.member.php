@@ -1,5 +1,5 @@
 <?php
-include_once 'blade/view.addMember.blade.php';
+include_once 'blade/view.member.blade.php';
 include_once './common/class.common.php';
 ?>
 <script>
@@ -7,21 +7,40 @@ include_once './common/class.common.php';
         $('#shortDescription').hide();
         $('#longDescription').show();
     }
-    
-    function serFunction(emailStr) {
+
+    function addFunction(emailStr) {
+        var val=$('#pid').val();
         if(emailStr.length==0){
-            $('#searchStudent').html("");
-            $('#searchStudent').style.border="0px";
+            $('#addStudent').html("");
+            $('#addStudent').style.border="0px";
             return;
         }
         xmlhttp=new XMLHttpRequest();
         xmlhttp.onreadystatechange=function () {
             if(this.readyState==4&&this.status==200){
-                $('#searchStudent').html(this.responseText);
-                $('#searchStudent').style.border="1px solid";
+                $('#addStudent').html(this.responseText);
+                $('#addStudent').style.border="1px solid";
             }
         }
-        xmlhttp.open("GET","./modules/projectArchive/ui/searchResponse.php?key="+emailStr,true);
+        xmlhttp.open("GET","./modules/projectArchive/ui/addResponse.php?key="+emailStr+"&pid="+val,true);
+        xmlhttp.send();
+    }
+
+    function delFunction(emailStr) {
+        var val=$('#pid').val();
+        if(emailStr.length==0){
+            $('#removeStudent').html("");
+            $('#removeStudent').style.border="0px";
+            return;
+        }
+        xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function () {
+            if(this.readyState==4&&this.status==200){
+                $('#removeStudent').html(this.responseText);
+                $('#removeStudent').style.border="1px solid";
+            }
+        }
+        xmlhttp.open("GET","./modules/projectArchive/ui/removeResponse.php?key="+emailStr+"&pid="+val,true);
         xmlhttp.send();
     }
 </script>
@@ -36,8 +55,14 @@ include_once './common/class.common.php';
                 echo $Result->getProjectTitle()?></strong>
         </div>
         <div class="panel-body">
-
             <div class="form-horizontal">
+
+                <div class="form-group">
+                    <div class=" col-md-7">
+                        <input type="hidden" name="pid" id="pid" class="form-control" value="<?php
+                        echo $Result->getProjectId(); ?>">
+                    </div>
+                </div>
 
                 <div id="shortDescription" class="form-group">
                     <label for="description" class="control-label col-md-3">Description :</label>
@@ -61,7 +86,7 @@ include_once './common/class.common.php';
                         ?>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="link" class="control-label col-md-3">Link :</label>
                     <div id="link" class="control-label col-md-8" style="text-align:justify">
@@ -70,7 +95,7 @@ include_once './common/class.common.php';
                         ?>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="language" class="control-label col-md-3">Language :</label>
                     <div id="language" class="control-label col-md-8" style="text-align:justify">
@@ -116,7 +141,7 @@ include_once './common/class.common.php';
                         ?>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="teacher_id" class="control-label col-md-3">Teacher :</label>
                     <div id="teacher_id" class="control-label col-md-8" style="text-align:justify">
@@ -126,7 +151,7 @@ include_once './common/class.common.php';
                         ?>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="created_at" class="control-label col-md-3">Created At :</label>
                     <div id="created_at" class="control-label col-md-8" style="text-align:justify">
@@ -135,7 +160,7 @@ include_once './common/class.common.php';
                         ?>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="updated_at" class="control-label col-md-3">Updated At :</label>
                     <div id="updated_at" class="control-label col-md-8" style="text-align:justify">
@@ -144,24 +169,44 @@ include_once './common/class.common.php';
                         ?>
                     </div>
                 </div>
-                
-                
+
+
                 <div class="form-group">
                     <label for="member" class="control-label col-md-3">Member(s) :</label>
                     <div id="member" class="control-label col-md-8" style="text-align:justify">
-                        <li>asdsad</li>
-                        <li>asfsad</li>
+                        <?php
+                        $MemberList=$_MemberBao->getMember($Project)->getResultObject();
+                        if ($MemberList!=null) {
+                            foreach ($MemberList as $member) {
+                                ?>
+                                <li><?php $Name = $_MemberBao->getStudent($member->getStudentId())->getResultObject();
+                                    echo $Name->getFirstName() . ' ' . $Name->getLastName() . '<br>&nbsp;&nbsp;&nbsp;&nbsp;(' . $Name->getEmail() . ')' ?></li>
+                                <br>
+                                <?php
+                            }
+                        }else{
+                            echo "No member assigned";
+                        }
+                        ?>
                     </div>
                 </div>
 
                 <hr>
                 <div class="form-group">
-                    <label for="student_id" class="control-label col-md-3">Add Member :</label>
-                    <div class="ui-widgt col-md-6">
-                        <input type="email" name="student_id" id="student_id" class="form-control" onkeyup="serFunction(this.value);" required>
-                        <div id="searchStudent" class="control-label" style="text-align: left"></div>
+                    <label for="student_add" class="control-label col-md-3">Add Member :</label>
+                    <div class="col-md-6">
+                        <input type="search" name="student_add" id="student_add" class="form-control" onkeyup="addFunction(this.value);" placeholder="Search..." required>
+                        <div id="addStudent" class="control-label" style="text-align: left"></div>
                     </div>
-                    <button type="submit" class="btn btn-primary col-md-2">Add</button>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="student_remove" class="control-label col-md-3 text-danger">Remove Member :</label>
+                    <div class="col-md-6">
+                        <input type="search" name="student_remove" id="student_remove" class="form-control alert-danger" onkeyup="delFunction(this.value);" placeholder="Search..." required>
+                        <div id="removeStudent" class="control-label" style="text-align: left"></div>
+                    </div>
                 </div>
 
             </div>
