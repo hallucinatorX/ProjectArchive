@@ -215,9 +215,11 @@ include_once './common/class.common.php';
             </form>
         </div>
     </div>
-
     <!--Display all projects-->
-    <div class="panel-body">
+    <div class="col-md-12">
+        <hr>
+    </div>
+    <div class="col-md-12" style="max-height: 730px;overflow:auto">
         <table class="table table-striped table-bordered table-responsive">
             <tr>
                 <th>Title</th>
