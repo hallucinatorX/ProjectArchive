@@ -1,5 +1,5 @@
 <?php
-
+include_once '/template/basic/navbar.php';
 include_once 'blade/view.home.blade.php';
 
 ?>

@@ -21,7 +21,7 @@ include_once './common/class.common.php';
 
 <hr>
 <div class="panel col-md-12">
-    <div class="panel panel-primary col-md-6 col-md-offset-3">
+    <div class="panel panel-default col-md-6 col-md-offset-3">
         <div class="panel-heading" style=" text-align: center">
             <strong style="font-size: large"><img src="./resources/img/createproject.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Create Project</strong>
         </div>
@@ -58,7 +58,7 @@ include_once './common/class.common.php';
                     <label for="year_id" class="control-label col-md-3">Year :</label>
                     <div class="col-md-7">
                         <select name="year_id" id="year_id" class="form-control" required>
-                            <option value="">Select Year</option>
+                            <option value="" selected="selected" disabled>Select Year</option>
                             <?php
                             $Result=$_ProjectBao->getAllYears();
                             if($Result->getIsSuccess()){
@@ -83,7 +83,7 @@ include_once './common/class.common.php';
                     <label for="term_id" class="control-label col-md-3">Term :</label>
                     <div class="col-md-7">
                         <select name="term_id" id="term_id" class="form-control" required>
-                            <option value="">Select Term</option>
+                            <option value="" selected="selected" disabled>Select Term</option>
                             <?php
                             $Result=$_ProjectBao->getAllTerms();
                             if($Result->getIsSuccess()) {
@@ -108,7 +108,7 @@ include_once './common/class.common.php';
                     <label for="course_id" class="control-label col-md-3">Course No :</label>
                     <div class="col-md-7">
                         <select name="course_id" id="course_id" class="form-control" onchange="jsFunction(this.value);" required>
-                            <option value="">Select Course</option>
+                            <option value="" selected="selected" disabled>Select Course</option>
                             <?php
                             $Result=$_ProjectBao->getAllCourses();
                             if($Result->getIsSuccess()){
@@ -142,7 +142,7 @@ include_once './common/class.common.php';
                     <label for="discipline_id" class="control-label col-md-3">Discipline :</label>
                     <div class="col-md-7">
                         <select name="discipline_id" id="discipline_id" class="form-control" required>
-                            <option value="">Select Discipline</option>
+                            <option value="" selected="selected" disabled>Select Discipline</option>
                             <?php
                             $Result=$_ProjectBao->getAllDisciplines();
                             if($Result->getIsSuccess()){
@@ -167,7 +167,7 @@ include_once './common/class.common.php';
                     <label for="teacher_id" class="control-label col-md-3">Teacher :</label>
                     <div class="col-md-7">
                         <select name="teacher_id" id="teacher_id" class="form-control" required>
-                            <option value="">Select Teacher</option>
+                            <option value="" selected="selected" disabled>Select Teacher</option>
                             <?php
                             $Result=$_ProjectBao->getAllTeachers();
                             if($Result->getIsSuccess()){
@@ -223,14 +223,14 @@ include_once './common/class.common.php';
                 <th>Title</th>
                 <th>Description</th>
                 <th>Link</th>
-                <th>Language</th>
-                <th>Year</th>
-                <th>Term</th>
+                <th style="text-align: center">Language</th>
+                <th style="text-align: center">Year</th>
+                <th style="text-align: center">Term</th>
                 <th>Course</th>
                 <th>Discipline</th>
                 <th>Teacher</th>
-                <th>Created At</th>
-                <th>Updated At</th>
+                <th style="text-align: center">Created At</th>
+                <th style="text-align: center">Updated At</th>
                 <th style="text-align: center"><img src="./resources/img/edit.ico" alt="Edit" style="height: 20px;width: 20px"></th>
                 <th style="text-align: center"><img src="./resources/img/delete.png" alt="Delete" style="height: 20px;width: 20px"></th>
             </tr>

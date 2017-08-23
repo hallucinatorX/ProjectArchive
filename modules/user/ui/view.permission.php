@@ -12,8 +12,9 @@ include_once './common/class.common.php';
 		</script>
 
 	<div class="panel panel-default">
-    
-    <div class="panel-heading">Position Information</div>
+
+        <div class="panel-heading" style="text-align: center;margin-bottom: 25px;font-size: large">
+            <strong><img src="./resources/img/permission.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Permission Information</div>
     
     <div class="panel-body">
 
@@ -21,11 +22,12 @@ include_once './common/class.common.php';
 
 		<form method="post" class="form-horizontal" name="formPermissions">
 					<div class="form-group">
-		              	<label class="control-label col-sm-2" for="selectedRole">Available Roles:</label>		 <div class="col-sm-10">   
+		              	<label class="control-label col-sm-2" for="selectedRole">Available Roles:</label>
+                        <div class="col-sm-8">
 						    <?php
 						    // this block of code prints the list box of roles with current assigned  roles
 						    //window.location.href+=\'?edit=\'+this.value;
-						    $var = '<select name="selectedRole" id="select-from-roles" onChange="onChangeEventHandler(event,this);">';
+						    $var = '<select name="selectedRole" class="form-control" id="select-from-roles" onChange="onChangeEventHandler(event,this);">';
 							$Result = $_RoleBAO->getAllRoles();
 								//if DAO access is successful to load all the Roles then show them one by one
 							if($Result->getIsSuccess()){
@@ -60,7 +62,7 @@ include_once './common/class.common.php';
 						
 						    <?php
 						    // this block of code prints the checkbox of permissions
-						    $var='<table class="table table-bordered">';
+						    $var='<table class="table table-striped table-responsive table-bordered">';
 
 						    $var=$var.'<tr>';
 						    $var=$var.'<th>Permissions</th>';
@@ -121,17 +123,17 @@ include_once './common/class.common.php';
 					</div>	    
 
 					<div class="form-group">        
-	              		<div class="col-sm-5">	
+	              		<div class="col-sm-5">
 				
-									<input type="button" name="checkAll" onclick="SetAllCheckBoxes('formPermissions', 'selectedPermissions[]', true);" value="Check All"/> 
+									<input type="button" class="btn btn-primary" name="checkAll" onclick="SetAllCheckBoxes('formPermissions', 'selectedPermissions[]', true);" value="Check All"/>
 						</div>		
-						<div class="col-sm-5">		
-									<input type="button" name="uncheckAll" onclick="SetAllCheckBoxes('formPermissions', 'selectedPermissions[]', false);" value="Uncheck All"/> 
+						<div class="col-sm-5">
+									<input type="button" class="btn btn-primary" name="uncheckAll" onclick="SetAllCheckBoxes('formPermissions', 'selectedPermissions[]', false);" value="Uncheck All"/>
 						</div>
 					</div>
 					<div class="form-group">        
-	              		<div class="col-sm-10">	
-							<button type="submit" name="save">save</button>
+	              		<div class="col-sm-10">
+							<button type="submit" class="btn btn-primary" name="save">Save</button>
 
 						</div>
 					</div>	

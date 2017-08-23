@@ -47,7 +47,7 @@ include_once './common/class.common.php';
 
 <hr>
 <div class="panel col-md-12">
-    <div class="panel panel-primary col-md-6 col-md-offset-3">
+    <div class="panel panel-default col-md-6 col-md-offset-3">
         <div class="panel-heading" style=" text-align: center">
             <strong style="font-size: large"><img src="./resources/img/projectIcon2.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;<?php
                 $Project->setProjectId($_GET['id']);
@@ -190,25 +190,29 @@ include_once './common/class.common.php';
                         ?>
                     </div>
                 </div>
-
-                <hr>
-                <div class="form-group">
-                    <label for="student_add" class="control-label col-md-3">Add Member :</label>
-                    <div class="col-md-6">
-                        <input type="search" name="student_add" id="student_add" class="form-control" onkeyup="addFunction(this.value);" placeholder="Search..." required>
-                        <div id="addStudent" class="control-label" style="text-align: left"></div>
+                <?php
+                if(isset($_SESSION['login.php'])){
+                    ?>
+                    <hr>
+                    <div class="form-group">
+                        <label for="student_add" class="control-label col-md-3">Add Member :</label>
+                        <div class="col-md-6">
+                            <input type="search" name="student_add" id="student_add" class="form-control" onkeyup="addFunction(this.value);" placeholder="Search..." required>
+                            <div id="addStudent" class="control-label" style="text-align: left"></div>
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="form-group">
-                    <label for="student_remove" class="control-label col-md-3 text-danger">Remove Member :</label>
-                    <div class="col-md-6">
-                        <input type="search" name="student_remove" id="student_remove" class="form-control alert-danger" onkeyup="delFunction(this.value);" placeholder="Search..." required>
-                        <div id="removeStudent" class="control-label" style="text-align: left"></div>
+                    <div class="form-group">
+                        <label for="student_remove" class="control-label col-md-3 text-danger">Remove Member :</label>
+                        <div class="col-md-6">
+                            <input type="search" name="student_remove" id="student_remove" class="form-control alert-danger" onkeyup="delFunction(this.value);" placeholder="Search..." required>
+                            <div id="removeStudent" class="control-label" style="text-align: left"></div>
+                        </div>
                     </div>
-                </div>
-
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>

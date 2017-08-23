@@ -17,18 +17,15 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 $_URI = $_SERVER['REQUEST_URI'];
-
 //finding the page
 $page = unparse_url(parse_url($_URI));
 
-if(isset($page)){
-    //TODO: check whether middleware application is active
-    //apply middleware
-    $page = apply_middleware($page);
-}
+//TODO: check whether middleware application is active
+//apply middleware
+$page=apply_middleware($page);
 
 //if does not match with the stored one then this is a new page
-if(isset($_SESSION['globalPage'])&&strcasecmp($_SESSION['globalPage'],$page)!=0){
+if(isset($_SESSION['globalPage'])&&strcasecmp($_SESSION['globalPage'],$page)){
     $_SESSION['previousPage']=$_SESSION['globalPage'];
 }
 
@@ -36,9 +33,20 @@ if(isset($_SESSION['globalPage'])&&strcasecmp($_SESSION['globalPage'],$page)!=0)
  $_SESSION['globalPage']=$page;
 
 // adding menu code here
-include_once $template_link.'menu.php';
-
-?>
+include_once $template_link.'navbar.php';
+if (isset($_SESSION['login.php'])){
+    ?>
+<div id="menu" style="padding-top: 70px">
+<?php
+}
+else{
+    ?>
+    <div id="menu">
+    <?php
+}
+    include_once $template_link.'menu.php';
+    ?>
+</div>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -49,6 +57,9 @@ include_once $template_link.'menu.php';
         <title>Home Page</title>
         <link rel="stylesheet" href="resources/css/bootstrap.min.css">
         <link rel="stylesheet" href="resources/css/style.css" type="text/css" />
+        <link rel="stylesheet" href="resources/css/navbarStyle.css">
+        <link rel="stylesheet" href="resources/css/dropdownStyle.css">
+        <link rel="stylesheet" href="resources/css/3-col-portfolio.css">
         <script src="resources/js/jquery.min.js"></script>
         <script src="resources/js/bootstrap.min.js"></script>
         <script src="resources/js/myscript.js"></script>
@@ -58,35 +69,26 @@ include_once $template_link.'menu.php';
 <body>
 
 <div class="container-fluid" >
-        <div id="menu" style="background-color:LightSteelBlue">
+        <div id="menu">
             <?php
                 //do not show the menu for login page
-                if(strcasecmp($page, PageUtil::$LOGIN)!=0 && strcasecmp($page, PageUtil::$USER_NEW)!=0
-                    && strcasecmp($page, PageUtil::$USER_FORGOT_PASSWORD)!=0)
-                    echo print_top_menu($globalMenu,$logoutMenu);
-
-
-            ?>
-        </div>
-        <div id="header">
-            <?php
-
-                //do not show the header for login page
-                if(strcasecmp($page, PageUtil::$LOGIN)!=0 && strcasecmp($page, PageUtil::$USER_NEW)!=0
-                    && strcasecmp($page, PageUtil::$USER_FORGOT_PASSWORD)!=0)
-                    include $template_link.'header.php';
-
+            if(isset($_SESSION['login.php'])) {
+//                if(strcasecmp($page,PageUtil::$LOGIN)){
+//
+//                }
+                echo print_top_menu($globalMenu, $logoutMenu);
+            }
             ?>
         </div>
 
-        <div id="body" style="background-color:AliceBlue">
+        <div id="body">
             <?php
                 include $template_link.'body.php';
 
             ?>
         </div>
 
-        <div id="footer" style="background-color:LightSteelBlue">
+        <div id="footer" class="panel-footer" style="color: black;height: 80px;padding-top: 30px">
 
         	<?php
         		include $template_link.'footer.php';

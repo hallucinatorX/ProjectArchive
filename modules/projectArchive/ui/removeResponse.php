@@ -32,7 +32,7 @@ if (strlen($Key)>0) {
         }
     }
     if($hint==""){
-        echo '<p style="color: darkred">No Student Found</p>';
+        echo '<p style="color: darkred">No Student Found</p>'   ;
     }else{
         echo $hint;
     }

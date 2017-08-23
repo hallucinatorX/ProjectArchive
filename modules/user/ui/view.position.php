@@ -6,8 +6,9 @@ include_once './common/class.common.php';
 ?>
 
 <div class="panel panel-default">
-    
-    <div class="panel-heading">Position Information</div>
+
+    <div class="panel-heading" style="text-align: center;margin-bottom: 25px;font-size: large">
+        <strong><img src="./resources/img/position.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Position Information</div>
     
     <div class="panel-body">
 
@@ -15,25 +16,25 @@ include_once './common/class.common.php';
 		<form method="post" class="form-horizontal">
 				
 				<div class="form-group">
-              	<label class="control-label col-sm-2" for="txtName">Position Name:</label>
-              	<div class="col-sm-10"> 
-					<input type="text" name="txtName" placeholder="Position Name" value="<?php 
+              	<label class="control-label col-sm-3" for="txtName">Position Name:</label>
+              	<div class="col-sm-7">
+					<input type="text" name="txtName" class="form-control" placeholder="Position Name" value="<?php
 					if(isset($_GET['edit'])) echo $getROW->getName();  ?>" />
 				</div>
 				</div>
 		        <div class="form-group">        
-	              <div class="col-sm-offset-2 col-sm-10">
+	              <div class="col-sm-offset-3 col-sm-7">
 						<?php
 						if(isset($_GET['edit']))
 						{
 							?>
-							<button type="submit" name="update">update</button>
+							<button type="submit" class="btn btn-primary" name="update">update</button>
 							<?php
 						}
 						else
 						{
 							?>
-							<button type="submit" name="save">save</button>
+							<button type="submit" class="btn btn-primary" name="save">save</button>
 							<?php
 						}
 						?>
@@ -46,7 +47,7 @@ include_once './common/class.common.php';
 	<div class="panel-body">
 
 
-	<table class="table table-bordered">
+	<table class="table table-striped table-bordered">
 
 	<?php
 	
@@ -60,6 +61,8 @@ include_once './common/class.common.php';
 	?>
 		<tr>
 			<th>Position Name</th>
+            <th style="text-align: center"><img src="./resources/img/edit.ico" alt="Edit" style="height: 20px;width: 20px"></th>
+            <th style="text-align: center"><img src="./resources/img/delete.png" alt="Delete" style="height: 20px;width: 20px"></th>
 		</tr>
 		<?php
 		for($i = 0; $i < sizeof($PositionList); $i++) {
@@ -67,8 +70,8 @@ include_once './common/class.common.php';
 			?>
 		    <tr>
 			    <td><?php echo $Position->getName(); ?></td>
-			    <td><a href="?edit=<?php echo $Position->getID(); ?>" onclick="return confirm('sure to edit !'); " >edit</a></td>
-			    <td><a href="?del=<?php echo $Position->getID(); ?>" onclick="return confirm('sure to delete !'); " >delete</a></td>
+			    <td style="text-align: center"><a href="?edit=<?php echo $Position->getID(); ?>" onclick="return confirm('sure to edit !'); " >edit</a></td>
+			    <td style="text-align: center"><a href="?del=<?php echo $Position->getID(); ?>" style="color: darkred" onclick="return confirm('sure to delete !'); " >delete</a></td>
 		    </tr>
 	    <?php
 

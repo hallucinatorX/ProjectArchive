@@ -69,7 +69,7 @@ if(isset($_POST['login']))
 if(isset($_GET['logout'])){
 	session_unset(); 
 	session_destroy();
-	header("Location:".PageUtil::$LOGIN);		
+	header("Location:".PageUtil::$LOGIN);
 }
 
 

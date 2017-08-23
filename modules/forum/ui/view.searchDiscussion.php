@@ -8,8 +8,9 @@ $Discussion1 = $Discussion;
 ?>
 
 <div class="panel panel-default">
-    
-    <div class="panel-heading">Search Discussion</div>
+
+    <div class="panel-heading" style="text-align: center;margin-bottom: 25px;font-size: large">
+        <strong><img src="./resources/img/searchDiscussion.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Search Discussion</div>
     
     <div class="panel-body">
 
@@ -24,8 +25,8 @@ $Discussion1 = $Discussion;
 			</div>
 
 	        <div class="form-group">        
-             	<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" name="search">Search</button>
+             	<div class="col-sm-offset-3 col-sm-7">
+				<button type="submit" class="btn btn-primary" name="search">Search</button>
 				</div>
 			</div>	
 		</form>
@@ -34,7 +35,7 @@ $Discussion1 = $Discussion;
 
 	<div class="panel-body">
 
-	<table class="table table-bordered">
+	<table class="table table-striped table-bordered">
 		
 
 			<?php

@@ -7,8 +7,9 @@ include_once 'blade/view.user_details.blade.php';
 ?>
 
 <div class="panel panel-default">
-    
-    <div class="panel-heading">Detailed User Information</div>
+
+    <div class="panel-heading " style="text-align: center;margin-bottom: 25px;font-size: large">
+        <strong><img src="./resources/img/userInfo.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Detailed User Information</div>
     
     <div class="panel-body">
 
@@ -164,9 +165,9 @@ include_once 'blade/view.user_details.blade.php';
 				</div>
 			</div>
 	        <div class="form-group">        
-              <div class="col-sm-offset-2 col-sm-10">
+              <div class="col-sm-offset-3 col-sm-7">
     
-					<button type="submit" value="update" name="update">Update</button>
+					<button type="submit" value="update" class="btn btn-primary" name="update">Update</button>
 
 			   </div>
             </div> 

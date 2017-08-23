@@ -8,8 +8,9 @@ include_once 'blade/view.user_search.blade.php';
 ?>
 
 <div class="panel panel-default">
-    
-    <div class="panel-heading">Search User</div>
+
+    <div class="panel-heading " style="text-align: center;margin-bottom: 25px;font-size: large">
+        <strong><img src="./resources/img/search.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Search User</div>
     
     <div class="panel-body">
 
@@ -69,9 +70,9 @@ include_once 'blade/view.user_search.blade.php';
 			</div>
 			  
 	        <div class="form-group">        
-              <div class="col-sm-offset-2 col-sm-10">
+              <div class="col-sm-offset-3 col-sm-7">
     
-					<button type="submit" value="search" name="search">Search</button>
+					<button type="submit" value="search" class="btn btn-primary" name="search">Search</button>
 
 			   </div>
             </div> 
@@ -82,7 +83,7 @@ include_once 'blade/view.user_search.blade.php';
 
 	<div class="panel-body">
 
-	<table class="table table-bordered">
+	<table class="table table-striped table-bordered">
 	<?php
 	//search clicked and result loaded
 	if(isset($_POST['search']) && isset($ResultSearch))
@@ -101,6 +102,7 @@ include_once 'blade/view.user_search.blade.php';
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Status</th>
+            <th style="text-align: center"><img src="./resources/img/details.png" alt="Details" style="height: 20px;width: 20px"></th>
 		</tr>
 		<?php
 		for($i = 0; $i < sizeof($UserList); $i++) {
@@ -113,7 +115,7 @@ include_once 'blade/view.user_search.blade.php';
 			    <td><?php echo $User->getFirstName(); ?></td>
 			    <td><?php echo $User->getLastName(); ?></td>
 			    <td><?php echo $User->getStatus(); ?></td>
-			    <td>
+			    <td style="text-align: center">
 				    <a href="user_details.php?id=<?php echo $User->getID(); ?>" onclick="return; " >details</a>
 				    </td>
 

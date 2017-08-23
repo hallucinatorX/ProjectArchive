@@ -5,8 +5,9 @@ include_once './common/class.common.php';
 include_once './common/class.common.forum.php';
 ?>
 <div class="panel panel-default">
-    
-    <div class="panel-heading">Discussion Thread</div>
+
+    <div class="panel-heading" style="text-align: center;margin-bottom: 25px;font-size: large">
+        <strong><img src="./resources/img/thread.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Discussion Thread</div>
     
     <div class="panel-body">
 
@@ -14,7 +15,7 @@ include_once './common/class.common.forum.php';
 
 			<form method="post" class="form-horizontal">
 
-			<table class="table table-bordered">			
+			<table class="table table-striped table-bordered">
 			<?php
 				$id = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
 				$Discussion2 = substr($id, -38);
@@ -101,7 +102,7 @@ include_once './common/class.common.forum.php';
 
 					$CommentList = $Result1->getResultObject();
 						?> 
-						<table class="table table-bordered">
+						<table class="table table-striped table-bordered">
 							<tr><th>Comments By</th></tr>
 							<?php
 							for($i = 0; $i < sizeof($CommentList); $i++) {
@@ -143,7 +144,7 @@ include_once './common/class.common.forum.php';
 				</table>
 				<br/>
 
-			<table class="table table-bordered">
+			<table class="table table-striped table-bordered">
 				
 				<tr>
 					<td><label>Comment : </label></td>
@@ -159,13 +160,13 @@ include_once './common/class.common.forum.php';
 						if(isset($_GET['edit']))
 						{
 							?>
-							<button type="submit" name="update">Update</button>
+							<button type="submit" class="btn btn-primary" name="update">Update</button>
 							<?php
 						}
 						else
 						{
 							?>
-							<button type="submit" name="save">Submit</button>
+							<button type="submit" class="btn btn-primary" name="save">Submit</button>
 							<?php
 						}
 						

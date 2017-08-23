@@ -6,8 +6,9 @@ include_once './common/class.common.php';
 
 
 <div class="panel panel-default">
-    
-    <div class="panel-heading">Discussion</div>
+
+    <div class="panel-heading" style="text-align: center;margin-bottom: 25px;font-size: large">
+        <strong><img src="./resources/img/discussion.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Discussion</div>
     
     <div class="panel-body">
 
@@ -15,8 +16,8 @@ include_once './common/class.common.php';
 		<form method="post" class="form-horizontal">
 
 			<div class="form-group">
-				<label class="control-label col-sm-4" for="txtQuestion">Question Title : </label>
-				<div class="col-sm-6">
+				<label class="control-label col-sm-3" for="txtQuestion">Question Title : </label>
+				<div class="col-sm-7">
 					<input type="text" class="form-control"  name="txtQuestion" placeholder="Question Title" value="<?php 
 					if(isset($_GET['edit'])) echo $getROW->getName();  ?>" />
 				
@@ -24,8 +25,8 @@ include_once './common/class.common.php';
 			</div>	
 
 			<div class="form-group">
-				<label class="control-label col-sm-4" for="txtCat">Category Name : </label>			
-				<div class="col-sm-6">	
+				<label class="control-label col-sm-3" for="txtCat">Category Name : </label>
+				<div class="col-sm-7">
 						    <?php
 						    // this block of code prints the list box of roles with current assigned  roles
 
@@ -54,16 +55,16 @@ include_once './common/class.common.php';
 			</div>
 			
 			<div class="form-group">
-				<label class="control-label col-sm-4" for="txtTag">Tag : </label>
-				<div class="col-sm-6">	
+				<label class="control-label col-sm-3" for="txtTag">Tag : </label>
+				<div class="col-sm-7">
 					<input type="text" class="form-control"  name="txtTag" placeholder="Tag" value="<?php 
 					if(isset($_GET['edit'])) echo $getROW->getTag();  ?>" />
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="control-label col-sm-4" for="txtDes">Description : </label>
-				<div class="col-sm-6">
+				<label class="control-label col-sm-3" for="txtDes">Description : </label>
+				<div class="col-sm-7">
 					<textarea rows="10" cols="40" class="form-control"  name="txtDes" placeholder="Description" 
 					value="<?php 
 					if(isset($_GET['edit'])) echo $getROW->getDescription();  ?>" >					
@@ -71,19 +72,19 @@ include_once './common/class.common.php';
 				</div>
 			</div>	
 	        <div class="form-group">        
-              <div class="col-sm-offset-2 col-sm-10">
+              <div class="col-sm-offset-3 col-sm-7">
 
 						<?php
 						if(isset($_GET['edit']))
 						{
 							?>
-							<button type="submit" name="update">update</button>
+							<button type="submit" class="btn btn-primary" name="update">update</button>
 							<?php
 						}
 						else
 						{
 							?>
-							<button type="submit" name="save">save</button>
+							<button type="submit" class="btn btn-primary" name="save">save</button>
 							<?php
 						}
 						?>
@@ -96,7 +97,7 @@ include_once './common/class.common.php';
 
 	<div class="panel-body">
 
-	<table class="table table-bordered">
+	<table class="table table-striped table-bordered">
 
 	<?php
 	
@@ -112,6 +113,8 @@ include_once './common/class.common.php';
 			<th>Questions</th>
 			<th>Category</th>
 			<th>Tags</th>
+            <th style="text-align: center"><img src="./resources/img/edit.ico" alt="Edit" style="height: 20px;width: 20px"></th>
+            <th style="text-align: center"><img src="./resources/img/delete.png" alt="Delete" style="height: 20px;width: 20px"></th>
 		</tr>
 		<?php
 		for($i = 0; $i < sizeof($DiscussionList); $i++) {
@@ -129,8 +132,8 @@ include_once './common/class.common.php';
 			    	}
 			    	//echo $_DiscussionBAO->getNameFromCatagoryID($id); ?></td>
 			    <td><?php echo $Discussion->getTag(); ?></td>
-			    <td><a href="?edit=<?php echo $Discussion->getID(); ?>" onclick="return confirm('sure to edit !'); " >edit</a></td>
-			    <td><a href="?del=<?php echo $Discussion->getID(); ?>" onclick="return confirm('sure to delete !'); " >delete</a></td>
+			    <td style="text-align: center"><a href="?edit=<?php echo $Discussion->getID(); ?>" onclick="return confirm('sure to edit !'); " >edit</a></td>
+			    <td style="text-align: center"><a href="?del=<?php echo $Discussion->getID(); ?>" style="color:darkred" onclick="return confirm('sure to delete !'); " >delete</a></td>
 		    </tr>
 	    <?php
 
@@ -149,13 +152,14 @@ include_once './common/class.common.php';
 </div>
 
 <div class="panel panel-default">
-    
-    <div class="panel-heading">Search Discussion</div>
+
+    <div class="panel-heading" style="text-align: center;margin-bottom: 25px;font-size: large">
+        <strong><img src="./resources/img/searchDiscussion.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Search Discussion</div>
 
 	<div class="panel-body">
 
 	
-		<table class="table table-bordered">
+		<table class="table table-striped table-bordered">
 			<tr>
 				<th>Category</th>
 			</tr>

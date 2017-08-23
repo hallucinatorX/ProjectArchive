@@ -6,12 +6,13 @@ include_once './common/class.common.php';
 ?>
 
 <div class="panel panel-default">
-    
-    <div class="panel-heading">All the Discussions</div>
+
+    <div class="panel-heading" style="text-align: center;margin-bottom: 25px;font-size: large">
+        <strong><img src="./resources/img/allDiscussion.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;All the Discussions</div>
     
     <div class="panel-body">
 
-	<table class="table table-bordered">
+	<table class="table table-striped table-bordered">
 
 	<?php
 	
@@ -62,12 +63,13 @@ include_once './common/class.common.php';
 </div>
 
 <div class="panel panel-default">
-    
-    <div class="panel-heading">Search Discussions</div>
+
+    <div class="panel-heading" style="text-align: center;margin-bottom: 25px;font-size: large">
+        <strong><img src="./resources/img/searchDiscussion.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Search Discussions</div>
     
     <div class="panel-body">
 	
-		<table class="table table-bordered">
+		<table class="table table-striped table-bordered">
 			<tr><th>Category</th></tr>
 			<tr><?php
 				$Result = $_DiscussionCategoryBAO->getAllDiscussionCategorys();

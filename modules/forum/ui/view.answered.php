@@ -6,12 +6,13 @@ include_once './common/class.common.forum.php';
 
 ?>
 <div class="panel panel-default">
-    
-    <div class="panel-heading">Only Answerred Discussions</div>
+
+    <div class="panel-heading" style="text-align: center;margin-bottom: 25px;font-size: large">
+        <strong><img src="./resources/img/answer.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Only Answerred Discussions</div>
     
     <div class="panel-body">
 
-	<table class="table table-bordered">
+	<table class="table table-striped table-bordered">
 
 	<?php
 	
@@ -61,13 +62,14 @@ include_once './common/class.common.forum.php';
 </div>
 
 <div class="panel panel-default">
-    
-    <div class="panel-heading">Search Discussions</div>
+
+    <div class="panel-heading" style="text-align: center;margin-bottom: 25px;font-size: large">
+        <strong><img src="./resources/img/searchDiscussion.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Search Discussions</div>
     
     <div class="panel-body">
 
 	
-		<table class="table table-bordered">
+		<table class="table table-striped table-bordered">
 	
 		<table width="100%" border="1" cellpadding="15" bgcolor=" #d9b3ff">
 			<tr><th>Category</th></tr>

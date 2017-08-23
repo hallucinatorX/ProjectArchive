@@ -1,0 +1,8 @@
+.navstyle{
+    background-color: #323232;
+    border-color: transparent;
+    box-shadow: 0 6px 6px rgba(0,0,0,0.15);
+    font-size: 16px;
+    height: 85px;
+    padding-top: 17px;
+}

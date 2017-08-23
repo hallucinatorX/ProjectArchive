@@ -191,7 +191,8 @@ class PageUtil{
 
 
     public static $ERROR='error.php';
-    public static $HOME='home.php'; 
+    public static $HOME='home.php';
+    public static $HOME_PAGE='home_page.php';
     public static $LOGIN='login.php';
 
     
@@ -213,6 +214,7 @@ class PageUtil{
     //Project Archive
     public static $PROJECT='project.php';
     public static $MEMBER='member.php';
+    public static $PROJECT_HOME='project_home.php';
    
 }
 
@@ -241,6 +243,7 @@ class RouteUtil{
 
 
          self::$s_Routes[PageUtil::$HOME]             =   "/modules/dashboard/ui/view.home.php";
+         self::$s_Routes[PageUtil::$HOME_PAGE]="/modules/dashboard/ui/view.homePage.php";
          self::$s_Routes[PageUtil::$LOGIN]            =   "/modules/dashboard/ui/view.login.php";
 
          self::$s_Routes[PageUtil::$ROLE]   =   "/modules/user/ui/view.role.php";
@@ -260,6 +263,7 @@ class RouteUtil{
          //Project Archive Routes
          self::$s_Routes[PageUtil::$PROJECT]="/modules/projectArchive/ui/view.project.php";
          self::$s_Routes[PageUtil::$MEMBER]="/modules/projectArchive/ui/view.member.php";
+         self::$s_Routes[PageUtil::$PROJECT_HOME]="/modules/projectArchive/ui/view.projectHome.php";
  
 
         //the page not found will redirect to error page
@@ -284,7 +288,6 @@ class RouteUtil{
             return self::$s_Routes[$Page];
         }
         else{
-        
             return self::$s_Routes[PageUtil::$ERROR]; 
         }
     }
@@ -310,14 +313,14 @@ class MiddlewareUtil{
          self::$s_Routes[PageUtil::$USER_DETAILS]   =  PageUtil::$LOGIN ;
 
          self::$s_Routes[PageUtil::$ROLE]   =  PageUtil::$LOGIN ;
+
          self::$s_Routes[PageUtil::$PERMISSION]   =  PageUtil::$LOGIN ;
-         
+
 
          self::$s_Routes[PageUtil::$DISCIPLINE]   =  PageUtil::$LOGIN ;
 
          //Project Archive Middleware
          self::$s_Routes[PageUtil::$PROJECT] = PageUtil::$LOGIN;
-         self::$s_Routes[PageUtil::$MEMBER]=PageUtil::$LOGIN;
 
     }
 
@@ -347,19 +350,57 @@ class MiddlewareUtil{
 
 
         //if page is referenced
-        if(self::isAvailable($Page)){
+        if(self::isAvailable($Page)) {
             //start session and check whether the middleware is successfully crossed
 
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();
             }
-
             // other send initial page: example if logged out then go to login.php page
-            return isset($_SESSION[self::$s_Routes[$Page]])? $Page: self::$s_Routes[$Page]; 
+            $ret = isset($_SESSION[self::$s_Routes[$Page]]) ? $Page : self::$s_Routes[$Page];
+            return $ret;
+        }
+        else{
+            //Permission for viewing page after login
+            if(isset($_SESSION['login.php'])){
+                if(!strcasecmp($Page,'index2.php')||empty($Page)){
+                    return PageUtil::$HOME;
+                }
+                elseif (!strcasecmp($Page,'user_new.php')){
+                    return PageUtil::$HOME;
+                }
+                elseif (!isset($_GET['logout'])&&!strcasecmp($Page,'login.php')){
+                    return PageUtil::$HOME;
+                }
+                elseif (!strcasecmp($Page,'home_page.php')){
+                    return PageUtil::$HOME;
+                }
+                else{
+                    return $Page;
+                }
+            }
+            else{
+                //Permission for viewing page without login
 
-        }else{
-            // if no middleware then just go on with the current request
-            return $Page;
+                if(!strcasecmp($Page,'user_new.php')){
+                    return PageUtil::$USER_NEW;
+                }
+                elseif (!strcasecmp($Page,'forgot_password.php')){
+                    return PageUtil::$USER_FORGOT_PASSWORD;
+                }
+                elseif (!strcasecmp($Page,'project_home.php')){
+                    return PageUtil::$PROJECT_HOME;
+                }
+                elseif (!strcasecmp($Page,'home_page.php')){
+                    return PageUtil::$HOME_PAGE;
+                }
+                elseif (!strcasecmp($Page,'member.php')){
+                    return PageUtil::$MEMBER;
+                }
+                else{
+                    return PageUtil::$LOGIN;
+                }
+            }
         }
     }
 
