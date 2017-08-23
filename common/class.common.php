@@ -397,6 +397,9 @@ class MiddlewareUtil{
                 elseif (!strcasecmp($Page,'member.php')){
                     return PageUtil::$MEMBER;
                 }
+                elseif (empty($Page)){
+                    return PageUtil::$HOME_PAGE;
+                }
                 else{
                     return PageUtil::$LOGIN;
                 }

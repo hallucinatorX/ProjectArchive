@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2017 at 10:41 AM
+-- Generation Time: Aug 23, 2017 at 02:42 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -75,10 +75,11 @@ CREATE TABLE `tbl_course` (
 
 INSERT INTO `tbl_course` (`ID`, `CourseNo`, `Title`, `Credit`, `CourseTypeID`, `DisciplineID`, `IsDeleted`) VALUES
 ('1', 'MATH 3218', 'Vector', 3, '1', '{0CF37516-06FE-41CD-93AD-D2D1652509D6}', 0),
-('2', 'CSE 2101', 'Data Structure', 3, '2', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0),
-('3', 'CSE 3101', 'Database', 1.5, '4', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0),
-('4', 'CSE 3212', 'Digital Image Processing', 3, '3', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0),
-('5', 'CSE 3200', 'Web Programming Laboratory', 1.5, '1', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0);
+('2', 'CSE 2101', 'Advanced Programming Laboratory', 1.5, '2', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0),
+('3', 'CSE 2201', 'Software Development Programming', 1.5, '4', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0),
+('4', 'CSE 3101', 'Database', 3, '3', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0),
+('5', 'CSE 3201', 'Web Programming Laboratory', 1.5, '1', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0),
+('6', 'CSE 3203', 'Software Engineering Laboratory', 1.5, '3', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 0);
 
 -- --------------------------------------------------------
 
@@ -343,7 +344,8 @@ INSERT INTO `tbl_role` (`ID`, `Name`) VALUES
 ('student', 'Student'),
 ('stuff', 'Stuff'),
 ('tabulator', 'Tabulator'),
-('teacher', 'Teacher');
+('teacher', 'Teacher'),
+('visitor', 'Visitor');
 
 -- --------------------------------------------------------
 
@@ -460,8 +462,7 @@ INSERT INTO `tbl_term` (`ID`, `Name`) VALUES
 ('{19B15CDF-264C-4924-8608-258673BCC448}', 'B.Sc 1st'),
 ('{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', 'B.Sc 2nd'),
 ('{298E9628-8DE2-4742-8F93-0491C01BB152}', 'M.Sc 1st'),
-('{9C84629E-11FA-4459-A593-C9AD9CF0D3F2}', 'B.Sc 3rd'),
-('{9D35C1A5-8091-47BE-AF7E-160C95789EC3}', 'B.Sc 4th');
+('{9C84629E-11FA-4459-A593-C9AD9CF0D3F2}', 'M.Sc 2nd');
 
 -- --------------------------------------------------------
 
@@ -487,9 +488,24 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`ID`, `UniversityID`, `Email`, `Password`, `FirstName`, `LastName`, `Status`, `IsLogged`, `IsArchived`, `IsDeleted`) VALUES
+('alamin@gmail.com', '150212', 'alamin@gmail.com', '123', 'Al', 'Amin', 'approved', NULL, NULL, NULL),
+('anik@gmail.com', '150231', 'anik@gmail.com', '123', 'Ashfiqur', 'Rahman', 'approved', NULL, NULL, NULL),
+('azoadahnaf@gmail.com', '150222', 'azoadahnaf@gmail.com', '123', 'Azoad', 'Ahnaf', 'approved', NULL, NULL, NULL),
 ('dean@gmail.com', '020202', 'dean@gmail.com', '123', 'I AM', 'DEAN ', 'approved', NULL, NULL, NULL),
+('durjoy@gmail.com', '150229', 'durjoy@gmail.com', '123', 'Durjoy', 'Bapery', 'approved', NULL, NULL, NULL),
+('imran@gmail.com', '150203', 'imran@gmail.com', '123', 'Imran', 'Hossain', 'approved', NULL, NULL, NULL),
 ('pranta.cse@gmail.com', '150215', 'pranta.cse@gmail.com', '123', 'Pranta', 'Protik', 'approved', NULL, NULL, NULL),
-('test@test.com', '020201', 'test@test.com', '123', 'I AM', 'ADMIN', 'approved', NULL, NULL, NULL);
+('ratul@gamil.com', '150226', 'ratul@gamil.com', '123', 'Siamul', 'Haque', 'approved', NULL, NULL, NULL),
+('sakeef@gmail.com', '150217', 'sakeef@gmail.com', '123', 'Nazmus', 'Sakeef', 'approved', NULL, NULL, NULL),
+('sayed@gmail.com', '150220', 'sayed@gmail.com', '123', 'Abu', 'Sayed', 'approved', NULL, NULL, NULL),
+('shahidul@gmail.com', '150206', 'shahidul@gmail.com', '123', 'Shahidul', 'Islam', 'approved', NULL, NULL, NULL),
+('shuvo@gmail.com', '150233', 'shuvo@gmail.com', '123', 'Wahid', 'Shuvo', 'approved', NULL, NULL, NULL),
+('sudipto@gmail.com', '150223', 'sudipto@gmail.com', '123', 'Sudipto', 'Das', 'approved', NULL, NULL, NULL),
+('swajon@gmail.com', '150214', 'swajon@gmail.com', '123', 'Swajon', 'Golder', 'approved', NULL, NULL, NULL),
+('tanmai@gmail.com', '150232', 'tanmai@gmail.com', '123', 'Tanmai', 'Ghosh', 'approved', NULL, NULL, NULL),
+('teacher@gmail.com', '020203', 'teacher@gmail.com', '123', 'I am', 'teacher', 'approved', NULL, NULL, NULL),
+('test@test.com', '020201', 'test@test.com', '123', 'I am', 'admin', 'approved', NULL, NULL, NULL),
+('zubayer@gmail.com', '150208', 'zubayer@gmail.com', '123', 'Zubayer', 'Rayhan', 'approved', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -512,9 +528,24 @@ CREATE TABLE `tbl_user_details` (
 --
 
 INSERT INTO `tbl_user_details` (`ID`, `FatherName`, `MotherName`, `PermanentAddress`, `HomePhone`, `CurrentAddress`, `MobilePhone`) VALUES
+('alamin@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('anik@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('azoadahnaf@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
 ('dean@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('durjoy@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('imran@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
 ('pranta.cse@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
-('test@test.com', 'My father', 'My mother', 'My address', '04100000', 'Same', '0171100000');
+('ratul@gamil.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('sakeef@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('sayed@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('shahidul@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('shuvo@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('sudipto@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('swajon@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('tanmai@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('teacher@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('test@test.com', 'My father', 'My mother', 'My address', '04100000', 'Same', '0171100000'),
+('zubayer@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -553,7 +584,8 @@ INSERT INTO `tbl_user_position` (`ID`, `UserID`, `PositionID`) VALUES
 (24, '{9E2E6363-A0FF-4C0F-B58F-D162725FB702}', '{C27B6BCF-FB83-4F3D-85CA-B7870D8B12D0}'),
 (30, 'mohidul@gmail.com', '{64D25DDA-16B6-47B8-BBFC-4E2AAF5680C7}'),
 (37, 'mkazi078@uottawa.ca', '{64D25DDA-16B6-47B8-BBFC-4E2AAF5680C7}'),
-(38, 'dean@gmail.com', '{818DE12F-60CC-42E4-BAEC-48EAAED65179}');
+(38, 'dean@gmail.com', '{818DE12F-60CC-42E4-BAEC-48EAAED65179}'),
+(39, 'teacher@gmail.com', '{EB4880E2-01B3-4C6E-A2C9-89B6E5427C0A}');
 
 -- --------------------------------------------------------
 
@@ -574,8 +606,23 @@ CREATE TABLE `tbl_user_role` (
 INSERT INTO `tbl_user_role` (`ID`, `UserID`, `RoleID`) VALUES
 (98, 'test@test.com', 'administrator'),
 (99, 'test@test.com', 'teacher'),
-(102, 'pranta.cse@gmail.com', 'student'),
-(104, 'dean@gmail.com', 'teacher');
+(104, 'dean@gmail.com', 'teacher'),
+(106, 'teacher@gmail.com', 'teacher'),
+(116, 'imran@gmail.com', 'student'),
+(117, 'shahidul@gmail.com', 'student'),
+(118, 'zubayer@gmail.com', 'student'),
+(119, 'alamin@gmail.com', 'student'),
+(120, 'swajon@gmail.com', 'student'),
+(121, 'pranta.cse@gmail.com', 'student'),
+(122, 'sakeef@gmail.com', 'student'),
+(123, 'sayed@gmail.com', 'student'),
+(124, 'azoadahnaf@gmail.com', 'student'),
+(125, 'sudipto@gmail.com', 'student'),
+(126, 'ratul@gamil.com', 'student'),
+(127, 'durjoy@gmail.com', 'student'),
+(128, 'anik@gmail.com', 'student'),
+(129, 'tanmai@gmail.com', 'student'),
+(130, 'shuvo@gmail.com', 'student');
 
 -- --------------------------------------------------------
 
@@ -749,12 +796,12 @@ ALTER TABLE `tbl_role_permission`
 -- AUTO_INCREMENT for table `tbl_user_position`
 --
 ALTER TABLE `tbl_user_position`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `tbl_user_role`
 --
 ALTER TABLE `tbl_user_role`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
 --
 -- Constraints for dumped tables
 --
