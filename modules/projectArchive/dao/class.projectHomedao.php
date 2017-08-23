@@ -16,7 +16,7 @@ class ProjectHomeDao{
 
     public function getLimitProject($page,$limit){
         $ProjectList=array();
-        $SQL="SELECT * FROM pms_project LIMIT $page,$limit";
+        $SQL="SELECT * FROM pms_project ORDER BY pms_project.created_at LIMIT $page,$limit";
         $this->_DB->doQuery($SQL);
 
         $rows=$this->_DB->getAllRows();

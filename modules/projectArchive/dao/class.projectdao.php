@@ -53,7 +53,7 @@ Class ProjectDao
     public function getAllProjects(){
         $ProjectList=array();
 
-        $SQL="SELECT * FROM pms_project";
+        $SQL="SELECT * FROM pms_project ORDER BY pms_project.created_at";
         $this->_DB->doQuery($SQL);
 
         $rows=$this->_DB->getAllRows();

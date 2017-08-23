@@ -60,6 +60,7 @@ else{
         <link rel="stylesheet" href="resources/css/navbarStyle.css">
         <link rel="stylesheet" href="resources/css/dropdownStyle.css">
         <link rel="stylesheet" href="resources/css/3-col-portfolio.css">
+        <link rel="stylesheet" href="resources/css/slideshowStyle.css">
         <script src="resources/js/jquery.min.js"></script>
         <script src="resources/js/bootstrap.min.js"></script>
         <script src="resources/js/myscript.js"></script>

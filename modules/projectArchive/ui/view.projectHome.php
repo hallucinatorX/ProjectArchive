@@ -103,13 +103,18 @@ include_once './common/class.common.php';
         <li class="page-item">
             <a class="page-link" href="<?php if(isset($_GET['page'])&&isset($_GET['limit'])){
                 $result=$_GET['page']+$results_per_page;
-                if ($_GET['page']==$ProjectNum-$results_per_page){
+                if ($_GET['page']>=$ProjectNum-$results_per_page){
                     $result=$_GET['page'];
                 }
                 echo PageUtil::$PROJECT_HOME.'?page='.
                     $result.'&limit='.$_GET['limit'];
             }else{
-                echo PageUtil::$PROJECT_HOME.'?page='.$results_per_page.'&limit='.$results_per_page;
+                if($ProjectNum>$results_per_page){
+                    echo PageUtil::$PROJECT_HOME.'?page='.$results_per_page.'&limit='.$results_per_page;
+                }else{
+                    echo PageUtil::$PROJECT_HOME;
+                }
+
             }?>" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 <span class="sr-only">Next</span>
