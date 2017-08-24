@@ -30,7 +30,14 @@ include_once './common/class.common.php';
                         <h4 style="font-size:21px" class="card-title">
                             <a href="<?php echo PageUtil::$MEMBER.'?id='.$project->getProjectId();?>"><?php echo $project->getProjectTitle();?></a>
                         </h4>
-                        <p class="card-text" style="padding-top: 5px"><?php echo substr($project->getProjectDescription(),0,100).'...'; ?></p>
+                        <p class="card-text" style="padding-top: 5px;text-align: justify"><?php
+                            if(strlen($project->getProjectDescription())>100){
+                                echo substr($project->getProjectDescription(),0,100).'...';
+                            }
+                            else{
+                                echo $project->getProjectDescription();
+                            }
+                            ?></p>
                     </div>
                 </div>
             </div>
