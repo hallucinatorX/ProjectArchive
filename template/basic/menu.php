@@ -57,7 +57,7 @@ if(isset($_SESSION['login.php'])) {
                         // if the first layer is visible then go inside -- build table row by row for the category
                         if ($globalMenu[$i]->isVisible()) {
                             ?>
-                            <li class="dropdown"><a href="#" title="Stakeholder Mapping in 4 steps" class="dropdown-toggle disabled" data-toggle="dropdown">
+                            <li class="dropdown"><a href="#" title="<?php echo $globalMenu[$i]->getTitle();?>" class="dropdown-toggle disabled" data-toggle="dropdown">
                                     <?php echo $globalMenu[$i]->getTitle();?><span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <?php

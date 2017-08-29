@@ -72,7 +72,7 @@
             </div>
             <!-- Menu -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="<?php echo PageUtil::$ABOUT;?>"><span>About</span></a></li>
+                <li><a title="About Us" href="<?php echo PageUtil::$ABOUT;?>"><span>About</span></a></li>
                 <?php
                                 if (!isset($_SESSION['login.php'])){
                                     ?>
