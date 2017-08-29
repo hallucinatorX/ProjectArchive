@@ -4,11 +4,11 @@ include_once 'blade/view.projectHome.blade.php';
 include_once './common/class.common.php';
 ?>
 
+<hr>
+
 <div class="container">
 
-    <div class="page-header">
-        <h1><img src="./resources/img/list.png" alt="Icon" style="height: 45px;width: 45px;">&nbsp;Projects List</h1>
-    </div>
+    <!--Projects List-->
     <div class="row">
         <?php
         $results_per_page=8;
@@ -25,7 +25,7 @@ include_once './common/class.common.php';
             <div class="col-lg-3 portfolio-item">
                 <div class="card h-37" style="padding-top: 15px">
                     <a href="<?php echo PageUtil::$MEMBER.'?id='.$project->getProjectId();?>" style="text-align: center">
-                        <img class="card-img-top" src="resources/img/projectIcon.png" alt="Project" style="height: 100px;width: 100px"></a>
+                        <img class="card-img-top" src="<?php echo $project->getProjectThumbnail();?>" alt="Project" style="height: 80px;width: 80px"></a>
                     <div class="card-body">
                         <h4 style="font-size:21px" class="card-title">
                             <a href="<?php echo PageUtil::$MEMBER.'?id='.$project->getProjectId();?>"><?php echo $project->getProjectTitle();?></a>
@@ -46,6 +46,7 @@ include_once './common/class.common.php';
         ?>
     </div>
 
+    <!--Pagination-->
     <div class="col-md-12">
         <ul class="pagination justify-content-center">
     <!--        Previous Button-->
@@ -130,5 +131,3 @@ include_once './common/class.common.php';
     </div>
 
 </div>
-
-

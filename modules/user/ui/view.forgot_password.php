@@ -5,7 +5,7 @@ include_once './common/class.common.php';
 
 ?>
 
-<div id="form" style="padding-bottom: 190px">
+<div id="form" style="padding-bottom: 210px">
   
   <div class="panel panel-default">
 

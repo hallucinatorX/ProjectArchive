@@ -1,6 +1,6 @@
 <?php
 
-include_once './common/class.common.php'; 
+include_once './common/class.common.php';
 //very important include in every new page before using session globaluser
 
 
@@ -99,7 +99,6 @@ function print_dashboard_vertical($globalMenu){
 
 // build dashboard body as a tab
 function print_dashboard_body_tab($globalMenu){
-
 
 	$superLayer = '<ul class="nav nav-tabs">';
 

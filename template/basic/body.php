@@ -1,4 +1,4 @@
-<div class="row" style="padding-top: 35px">
+<div class="row">
 	<div class="col-sm-12">
 		<?php
 			//TODO: check whether routing is active

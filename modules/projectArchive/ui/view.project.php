@@ -2,6 +2,8 @@
 include_once 'blade/view.project.blade.php';
 include_once './common/class.common.php';
 ?>
+
+<!--Script for loading course title-->
 <script>
     function jsFunction(course) {
         var xhttp;
@@ -20,19 +22,28 @@ include_once './common/class.common.php';
 </script>
 
 <hr>
+
 <div class="panel col-md-12">
+
+    <!--Heading-->
     <div class="panel panel-default col-md-6 col-md-offset-3">
         <div class="panel-heading" style=" text-align: center">
             <strong style="font-size: large"><img src="./resources/img/createproject.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Create Project</strong>
         </div>
         <div class="panel-body">
-            <form method="post" class="form-horizontal">
+
+            <!--Project Creation Form-->
+            <form method="post" class="form-horizontal" enctype="multipart/form-data">
+
                 <!--            Title-->
                 <div class="form-group">
                     <label for="title" class="control-label col-md-3">Title :</label>
                     <div class=" col-md-7">
                         <input type="text" name="title" id="title" class="form-control" placeholder="Project Title" value="<?php
-                        if (isset($_GET['edit'])) echo $getRow->getProjectTitle();?>" required>
+                        if (isset($_GET['edit'])) echo $getRow->getProjectTitle();
+                        elseif (isset($_POST['create'])) echo $_POST['title'];
+                        ?>" required>
+                        <span style="color: darkred"><?php if (isset($_POST['create'])&&empty($_POST['title'])) echo '*Title is required';?></span>
                     </div>
                 </div>
 
@@ -41,15 +52,22 @@ include_once './common/class.common.php';
                     <label for="link" class="control-label col-md-3">Link :</label>
                     <div class="col-md-7">
                         <input type="url" name="link" id="link" class="form-control" placeholder="Project Link" value="<?php
-                        if (isset($_GET['edit'])) echo $getRow->getProjectLink();?>" required>
+                        if (isset($_GET['edit'])) echo $getRow->getProjectLink();
+                        elseif (isset($_POST['create'])) echo $_POST['link'];
+                        ?>" required>
+                        <span style="color: darkred"><?php if (isset($_POST['create'])&&empty($_POST['link'])) echo '*Link is required';?></span>
                     </div>
                 </div>
+
                 <!--            Language-->
                 <div class="form-group">
                     <label for="language" class="control-label col-md-3">Language :</label>
                     <div class="col-md-7">
                         <input type="text" name="language" id="language" class="form-control" placeholder="Project Language" value="<?php
-                        if (isset($_GET['edit'])) echo $getRow->getProjectLanguage();?>" required>
+                        if (isset($_GET['edit'])) echo $getRow->getProjectLanguage();
+                        if (isset($_POST['create'])) echo $_POST['language'];
+                        ?>" required>
+                        <span style="color: darkred"><?php if (isset($_POST['create'])&&empty($_POST['language'])) echo '*Language is required';?></span>
                     </div>
                 </div>
 
@@ -66,8 +84,9 @@ include_once './common/class.common.php';
                                 foreach ($YearList as $year){
                                     ?>
                                     <option value="<?php echo $year->getYearId()?>" <?php
-                                    if (isset($_GET['edit'])&& $year->getYearId()==$getRow->getProjectYearId()) echo 'selected="selected"'
-                                    ?>"><?php echo $year->getYearName();?></option>
+                                    if (isset($_GET['edit'])&& $year->getYearId()==$getRow->getProjectYearId()) echo 'selected="selected"';
+                                    elseif (isset($_POST['create'])&&!empty($_POST['year_id'])&&$year->getYearId()==$_POST['year_id']) echo 'selected="selected"'
+                                    ?>><?php echo $year->getYearName();?></option>
                                     <?php
                                 }
                             }else{
@@ -75,6 +94,7 @@ include_once './common/class.common.php';
                             }
                             ?>
                         </select>
+                        <span style="color: darkred"><?php if (isset($_POST['create'])&&empty($_POST['year_id'])) echo '*Year is required';?></span>
                     </div>
                 </div>
 
@@ -91,7 +111,8 @@ include_once './common/class.common.php';
                                 foreach ($TermList as $term){
                                     ?>
                                     <option value="<?php echo $term->getTermId();?>" <?php
-                                    if (isset($_GET['edit'])&&$term->getTermId()==$getRow->getProjectTermId()) echo 'selected="selected"'
+                                    if (isset($_GET['edit'])&&$term->getTermId()==$getRow->getProjectTermId()) echo 'selected="selected"';
+                                    elseif (isset($_POST['create'])&&!empty($_POST['term_id'])&&$term->getTermId()==$_POST['term_id'])echo 'selected="selected"';
                                     ?>><?php echo $term->getTermName();?></option>
                                     <?php
                                 }
@@ -100,6 +121,7 @@ include_once './common/class.common.php';
                             }
                             ?>
                         </select>
+                        <span style="color: darkred"><?php if (isset($_POST['create'])&&empty($_POST['term_id'])) echo '*Term is required';?></span>
                     </div>
                 </div>
 
@@ -116,7 +138,8 @@ include_once './common/class.common.php';
                                 foreach ($CourseList as $course){
                                     ?>
                                     <option value="<?php echo $course->getCourseId();?>" <?php
-                                    if (isset($_GET['edit'])&&$course->getCourseId()==$getRow->getProjectCourseId()) echo 'selected="selected"'
+                                    if (isset($_GET['edit'])&&$course->getCourseId()==$getRow->getProjectCourseId()) echo 'selected="selected"';
+                                    elseif (isset($_POST['create'])&&!empty($_POST['course_id'])&&$course->getCourseId()==$_POST['course_id']) echo 'selected="selected"';
                                     ?>><?php echo $course->getCourseNo();?></option>
                                     <?php
                                 }
@@ -125,14 +148,17 @@ include_once './common/class.common.php';
                             }
                             ?>
                         </select>
+                        <span style="color: darkred"><?php if (isset($_POST['create'])&&empty($_POST['course_id'])) echo '*Course is required';?></span>
                     </div>
                 </div>
+
                 <!--            Course Title-->
                 <div class="form-group">
                     <label for="courseTitle" class="control-label col-md-3">Course Title:</label>
                     <div class="col-md-7">
                         <input type="text" name="courseTitle" id="courseTitle" class="form-control" value="<?php
                         if(isset($_GET['edit'])) echo $Result=$_ProjectBao->getCourse($getRow->getProjectCourseId())->getResultObject()->getCourseTitle();
+                        elseif (isset($_POST['create'])&&!empty($_POST['course_id'])) echo $Result=$_ProjectBao->getCourse($_POST['course_id'])->getResultObject()->getCourseTitle();
                         ?>" disabled >
                     </div>
                 </div>
@@ -150,7 +176,8 @@ include_once './common/class.common.php';
                                 foreach ($DisciplineList as $discipline){
                                     ?>
                                     <option value="<?php echo $discipline->getDisciplineId();?>"<?php
-                                    if (isset($_GET['edit'])&&$discipline->getDisciplineId()==$getRow->getProjectDisciplineId()) echo 'selected="selected"'
+                                    if (isset($_GET['edit'])&&$discipline->getDisciplineId()==$getRow->getProjectDisciplineId()) echo 'selected="selected"';
+                                    elseif (isset($_POST['create'])&&!empty($_POST['discipline_id'])&&$discipline->getDisciplineId()==$_POST['discipline_id']) echo 'selected="selected"';
                                     ?>><?php echo $discipline->getDisciplineName();?></option>
                                     <?php
                                 }
@@ -160,9 +187,11 @@ include_once './common/class.common.php';
                             }
                             ?>
                         </select>
+                        <span style="color: darkred"><?php if (isset($_POST['create'])&&empty($_POST['discipline_id'])) echo '*Discipline is required';?></span>
                     </div>
                 </div>
 
+                <!--TeacherDDL-->
                 <div class="form-group">
                     <label for="teacher_id" class="control-label col-md-3">Teacher :</label>
                     <div class="col-md-7">
@@ -175,7 +204,8 @@ include_once './common/class.common.php';
                                 foreach ($TeacherList as $teacher) {
                                     ?>
                                     <option value="<?php echo $teacher->getID();?>"<?php
-                                    if (isset($_GET['edit'])&&$teacher->getId()==$getRow->getProjectTeacherId()) echo 'selected="selected"'
+                                    if (isset($_GET['edit'])&&$teacher->getId()==$getRow->getProjectTeacherId()) echo 'selected="selected"';
+                                    elseif (isset($_POST['create'])&&!empty($_POST['teacher_id'])&&$teacher->getId()==$_POST['teacher_id']) echo 'selected="selected"';
                                     ?>><?php echo $teacher->getFirstName().' '.$teacher->getLastName();?></option>
                                     <?php
                                 }
@@ -185,6 +215,7 @@ include_once './common/class.common.php';
                             }
                             ?>
                         </select>
+                        <span style="color: darkred"><?php if (isset($_POST['create'])&&empty($_POST['teacher_id'])) echo '*Teacher is required';?></span>
                     </div>
                 </div>
 
@@ -193,11 +224,33 @@ include_once './common/class.common.php';
                     <label for="description" class="control-label col-md-3">Description :</label>
                     <div class=" col-md-7">
                         <textarea name="description" id="description" rows="7" class="form-control" required><?php
-                            if (isset($_GET['edit'])) echo $getRow->getProjectDescription();?></textarea>
+                            if (isset($_GET['edit'])) echo $getRow->getProjectDescription();
+                            elseif (isset($_POST['create'])&&!empty($_POST['description'])) echo $_POST['description'];
+                            ?></textarea>
+                        <span style="color: darkred"><?php if (isset($_POST['create'])&&empty($_POST['description'])) echo '*Description is required';?></span>
                     </div>
                 </div>
 
+                <!--Thumbnail Src-->
+                <div class="form-group">
+                    <div class="col-md-7">
+                        <input type="hidden" name="thumbnailsrc" id="thumbnailsrc" class="form-control" value="<?php
+                        if(isset($_GET['edit'])) echo $getRow->getProjectThumbnail();
+                        ?>">
+                    </div>
+                </div>
 
+                <!--Thumbnail-->
+                <div class="form-group">
+                    <label for="thumbnail" class="control-label col-md-3">Thumbnail :</label>
+                    <div class="col-md-7">
+                        <input type="file" name="thumbnail" id="thumbnail"<?php if (!isset($_GET['edit'])) echo 'required';?>>
+                    </div>
+                </div>
+
+                <br>
+
+                <!--Button-->
                 <div class="form-group">
                     <?php
                     if (!isset($_GET['edit'])){
@@ -210,17 +263,19 @@ include_once './common/class.common.php';
                     <?php
                     }
                     ?>
-
                 </div>
+
             </form>
         </div>
     </div>
+
     <!--Display all projects-->
     <div class="col-md-12">
         <hr>
     </div>
     <div class="col-md-12" style="max-height: 730px;overflow:auto">
         <table class="table table-striped table-bordered table-responsive">
+            <!--Header Row-->
             <tr>
                 <th>Title</th>
                 <th>Description</th>
@@ -236,6 +291,8 @@ include_once './common/class.common.php';
                 <th style="text-align: center"><img src="./resources/img/edit.ico" alt="Edit" style="height: 20px;width: 20px"></th>
                 <th style="text-align: center"><img src="./resources/img/delete.png" alt="Delete" style="height: 20px;width: 20px"></th>
             </tr>
+
+            <!--Table Cells-->
             <?php
             $Result=$_ProjectBao->getAllProjects();
             if($Result->getIsSuccess()){
@@ -244,7 +301,7 @@ include_once './common/class.common.php';
                 foreach ($ProjectList as $project) {
                     ?>
                     <tr>
-                        <td><a href="member.php?id=<?php echo $project->getProjectId();?>"><img src="./resources/img/projectIcon.png" alt="Icon" style="height: 20px;width: 20px;"><?php
+                        <td><a href="member.php?id=<?php echo $project->getProjectId();?>"><img src="<?php echo $project->getProjectThumbnail();?>" alt="Icon" style="height: 20px;width: 20px;"><?php
                                 echo ' '.$project->getProjectTitle(); ?></a></td>
 
                         <td><?php if(strlen($project->getProjectDescription())>50){
@@ -287,4 +344,5 @@ include_once './common/class.common.php';
             ?>
         </table>
     </div>
+
 </div>

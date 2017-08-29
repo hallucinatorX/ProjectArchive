@@ -1,3 +1,4 @@
+<!--Search and add members-->
 <?php
 $Key=$_GET['key'];
 $PId=$_GET['pid'];
@@ -42,4 +43,3 @@ if (strlen($Key)>0) {
     $conn->close();
 }
 ?>
-

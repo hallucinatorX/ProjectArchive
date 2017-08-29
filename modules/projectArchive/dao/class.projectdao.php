@@ -1,3 +1,4 @@
+<!--Project CRUD-->
 <?php
 // write dao object for each class
 include_once './common/class.common.project.php';
@@ -25,9 +26,11 @@ Class ProjectDao
         $this->_Teacher=new User();
     }
 
+    //create new project
     public function createProject($Project){
 
         $ID=$Project->getProjectId();
+        $Thumbnail=$Project->getProjectThumbnail();
         $Title=$Project->getProjectTitle();
         $Description=$Project->getProjectDescription();
         $Link=$Project->getProjectLink();
@@ -38,7 +41,7 @@ Class ProjectDao
         $DisciplineId=$Project->getProjectDisciplineId();
         $TeacherId=$Project->getProjectTeacherId();
 
-        $SQL = "INSERT INTO pms_project VALUES('$ID' ,'$Title','$Description','$Link','$Language','$YearId','$TermId','$CourseId','$DisciplineId',
+        $SQL = "INSERT INTO pms_project VALUES('$ID','$Thumbnail','$Title','$Description','$Link','$Language','$YearId','$TermId','$CourseId','$DisciplineId',
         '$TeacherId',CURRENT_TIMESTAMP ,CURRENT_TIMESTAMP )";
 
         $SQL = $this->_DB->doQuery($SQL);
@@ -50,6 +53,78 @@ Class ProjectDao
         return $Result;
     }
 
+    //upload project thumbnails
+    public function uploadThumbnail($Project)
+    {
+        $target_dir = './resources/img/thumbnails/';
+        $target_file = $target_dir . basename($_FILES['thumbnail']['name']);
+        $fileType = pathinfo($target_file, PATHINFO_EXTENSION);
+        if (!empty($_FILES['thumbnail']['tmp_name'])) {
+            $size = getimagesize($_FILES['thumbnail']['tmp_name']);
+            $uploaded = 1;
+
+            if ($size !== false) {
+                //echo 'File is an image - '.$size['mime'].'.';
+                $uploaded = 1;
+            } else {
+                echo '<br>File is not an image';
+                $uploaded = 0;
+            }
+
+            if (file_exists($target_file)) {
+                echo '<br>Sorry, file already exists';
+                $uploaded = 0;
+            }
+
+            if ($_FILES['thumbnail']['size'] > 500000) {
+                echo '<br>Sorry, your file is too large';
+                $uploaded = 0;
+            }
+
+            if ($fileType != 'jpg' && $fileType != 'png' && $fileType != 'jpeg' && $fileType != 'ico') {
+                echo '<br>Sorry, only jpg, jpeg, png & ico files are allowed';
+                $uploaded = 0;
+            }
+            // Check if $uploadOk is set to 0 by an error
+            if ($uploaded == 0) {
+                echo "<br>Sorry, your file was not uploaded.";
+                // if everything is ok, try to upload file
+            } else {
+                if(isset($_POST['update'])){
+                    $del_dir=$_POST['thumbnailsrc'];
+                    unlink($del_dir);
+                }
+                if (move_uploaded_file($_FILES["thumbnail"]["tmp_name"], $target_dir.$Project->getProjectTitle().'.'.$fileType)) {
+                    $Upload = array();
+                    //returns a boolean value
+                    $Upload['uploaded'] = $uploaded;
+                    //returns the directory of the uploaded file
+                    $Upload['target_file'] = $target_dir.$Project->getProjectTitle().'.'.$fileType;
+                    return $Upload;
+                } else {
+                    echo "<br>Sorry, there was an error uploading your file.";
+                }
+            }
+        } else {
+            if (!isset($_POST['update'])){
+                echo "<br>Cannot upload the image.<br>Check image size.";
+            }else{
+                $Upload['uploaded']=1;
+                $Upload['target_file']=$_POST['thumbnailsrc'];
+                return $Upload;
+            }
+        }
+    }
+
+    //delete project thumbnail
+    public function deleteThumbnail($Project){
+        $del_dir=$Project->getProjectThumbnail();
+        unlink($del_dir);
+
+        return true;
+    }
+
+    //get All projects
     public function getAllProjects(){
         $ProjectList=array();
 
@@ -61,6 +136,7 @@ Class ProjectDao
         foreach ($rows as $row) {
             $this->_Project=new Project();
             $this->_Project->setProjectId($row['id']);
+            $this->_Project->setProjectThumbnail($row['thumbnail']);
             $this->_Project->setProjectTitle($row['title']);
             $this->_Project->setProjectDescription($row['description']);
             $this->_Project->setProjectLink($row['link']);
@@ -318,6 +394,7 @@ Class ProjectDao
         $row=$this->_DB->getTopRow();
         $this->_Project=new Project();
         $this->_Project->setProjectId($row['id']);
+        $this->_Project->setProjectThumbnail($row['thumbnail']);
         $this->_Project->setProjectTitle($row['title']);
         $this->_Project->setProjectDescription($row['description']);
         $this->_Project->setProjectLink($row['link']);
@@ -339,7 +416,7 @@ Class ProjectDao
     
     //update previous project
     public function updateProject($Project){
-        $SQL="UPDATE pms_project SET pms_project.title='".$Project->getProjectTitle()."',pms_project.description='".$Project->getProjectDescription()."',
+        $SQL="UPDATE pms_project SET pms_project.thumbnail='".$Project->getProjectThumbnail()."', pms_project.title='".$Project->getProjectTitle()."',pms_project.description='".$Project->getProjectDescription()."',
         pms_project.link='".$Project->getProjectLink()."',pms_project.language='".$Project->getProjectLanguage()."',pms_project.year_id='".$Project->getProjectYearId()."',
         pms_project.term_id='".$Project->getProjectTermId()."',pms_project.course_id='".$Project->getProjectCourseId()."',
         pms_project.discipline_id='".$Project->getProjectDisciplineId()."',pms_project.teacher_id='".$Project->getProjectTeacherId()."',
@@ -367,5 +444,4 @@ Class ProjectDao
     }
     
 }
-
 ?>

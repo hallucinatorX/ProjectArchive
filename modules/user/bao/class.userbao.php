@@ -153,8 +153,6 @@ Class UserBAO{
 		return $Result;
 	}
 
-
-
 	//update an user object based on its current information
 	public function updateUser($User){
 

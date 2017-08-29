@@ -34,9 +34,10 @@ if(isset($_SESSION['globalPage'])&&strcasecmp($_SESSION['globalPage'],$page)){
 
 // adding menu code here
 include_once $template_link.'navbar.php';
+
 if (isset($_SESSION['login.php'])){
     ?>
-<div id="menu" style="padding-top: 70px">
+<div id="menu">
 <?php
 }
 else{
@@ -54,7 +55,7 @@ else{
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home Page</title>
+        <title>University Automation</title>
         <link rel="stylesheet" href="resources/css/bootstrap.min.css">
         <link rel="stylesheet" href="resources/css/style.css" type="text/css" />
         <link rel="stylesheet" href="resources/css/navbarStyle.css">
@@ -77,7 +78,7 @@ else{
 //                if(strcasecmp($page,PageUtil::$LOGIN)){
 //
 //                }
-                echo print_top_menu($globalMenu, $logoutMenu);
+                //echo print_top_menu($globalMenu, $logoutMenu);
             }
             ?>
         </div>

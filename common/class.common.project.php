@@ -2,6 +2,7 @@
 
 class Project{
     private $_projectId;
+    private $_projectThumbnail;
     private $_projectTitle;
     private $_projectDescription;
     private $_projectLink;
@@ -22,6 +23,16 @@ class Project{
         $this->_projectId=$projectId;
     }
 
+    //Thumbnail
+    public function getProjectThumbnail(){
+        return $this->_projectThumbnail;
+    }
+    
+    public function setProjectThumbnail($projectThumbnail){
+        $this->_projectThumbnail=$projectThumbnail;
+    } 
+    
+    
     //Title
     public function getProjectTitle(){
         return $this->_projectTitle;

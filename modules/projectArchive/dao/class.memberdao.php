@@ -1,3 +1,4 @@
+<!--Assign or remove members to a project-->
 <?php
 // write dao object for each class
 include_once './common/class.common.project.php';
@@ -83,5 +84,4 @@ class MemberDao{
     }
 
 }
-
 ?>

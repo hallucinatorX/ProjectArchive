@@ -1,5 +1,5 @@
+<!--Assign or remove members form a project-->
 <?php
-
 include_once './util/class.util.php';
 include_once '/../dao/class.memberdao.php';
 
@@ -21,6 +21,7 @@ class MemberBao{
         return $Result;
     }
 
+    //get members of the project
     public function getMember($Project){
         $Result=$this->_MemberDao->getMember($Project);
 
@@ -30,6 +31,7 @@ class MemberBao{
         return $Result;
     }
 
+    //get all students
     public function getStudent($Student){
         $Result=$this->_MemberDao->getStudent($Student);
 
@@ -39,6 +41,7 @@ class MemberBao{
         return $Result;
     }
 
+    //remove members from a project
     public function removeMember($Student){
         $Result=$this->_MemberDao->removeMember($Student);
 
@@ -47,8 +50,5 @@ class MemberBao{
         }
         return $Result;
     }
-
-
 }
-
 ?>

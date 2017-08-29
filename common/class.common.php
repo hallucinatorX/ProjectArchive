@@ -215,7 +215,7 @@ class PageUtil{
     public static $PROJECT='project.php';
     public static $MEMBER='member.php';
     public static $PROJECT_HOME='project_home.php';
-   
+    public static $PROJECT_SEARCH='search_project.php';
 }
 
 class RouteUtil{
@@ -264,6 +264,7 @@ class RouteUtil{
          self::$s_Routes[PageUtil::$PROJECT]="/modules/projectArchive/ui/view.project.php";
          self::$s_Routes[PageUtil::$MEMBER]="/modules/projectArchive/ui/view.member.php";
          self::$s_Routes[PageUtil::$PROJECT_HOME]="/modules/projectArchive/ui/view.projectHome.php";
+         self::$s_Routes[PageUtil::$PROJECT_SEARCH]="/modules/projectArchive/ui/view.searchProject.php";
  
 
         //the page not found will redirect to error page
@@ -396,6 +397,9 @@ class MiddlewareUtil{
                 }
                 elseif (!strcasecmp($Page,'member.php')){
                     return PageUtil::$MEMBER;
+                }
+                elseif (!strcasecmp($Page,'search_project.php')){
+                    return PageUtil::$PROJECT_SEARCH;
                 }
                 elseif (empty($Page)){
                     return PageUtil::$HOME_PAGE;

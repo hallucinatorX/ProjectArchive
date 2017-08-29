@@ -1,3 +1,4 @@
+<!--Projects Homepage-->
 <?php
 // write dao object for each class
 include_once './common/class.common.project.php';
@@ -14,6 +15,7 @@ class ProjectHomeDao{
         $this->_Project=new Project();
     }
 
+    //get paginated projects
     public function getLimitProject($page,$limit){
         $ProjectList=array();
         $SQL="SELECT * FROM pms_project ORDER BY pms_project.created_at LIMIT $page,$limit";
@@ -23,6 +25,7 @@ class ProjectHomeDao{
         foreach ($rows as $row){
             $this->_Project=new Project();
             $this->_Project->setProjectId($row['id']);
+            $this->_Project->setProjectThumbnail($row['thumbnail']);
             $this->_Project->setProjectTitle($row['title']);
             $this->_Project->setProjectDescription($row['description']);
             $this->_Project->setProjectLink($row['link']);

@@ -38,8 +38,8 @@ include_once '/template/basic/navbar.php';
         </a>
     </div>
     <div class="col-md-12" style="text-align: center">
-        <h1 style="padding-top: 40px;padding-bottom: 15px;color: darkslateblue"><strong>Welcome to SimTier v0.2 (beta) !!!</strong></h1>
-        <h4 style="color: darkslateblue;padding-bottom: 70px">SimTier is the PHP framework for developing web sites. It is in beta version now.
+        <h1 style="padding-top: 50px;padding-bottom: 15px;color: darkslateblue"><strong>Welcome to SimTier v0.2 (beta) !!!</strong></h1>
+        <h4 style="color: darkslateblue;padding-bottom: 80px">SimTier is the PHP framework for developing web sites. It is in beta version now.
             <br>
             <br>
             SimTier is completely free to download and use!

@@ -1,3 +1,4 @@
+{{--Add or remove members--}}
 <?php
 include_once './util/class.util.php';
 include_once '/../../bao/class.memberbao.php';
@@ -8,6 +9,7 @@ $Project=new Project();
 $_MemberBao=new MemberBao();
 $_DB=DBUtil::getInstance();
 
+/*Add Members*/
 if(isset($_GET['auid'])&&isset($_GET['id'])){
     $StudentProject=new StudentProject();
     $StudentProject->setStudentProjectId(Util::getGUID());
@@ -21,6 +23,8 @@ if(isset($_GET['auid'])&&isset($_GET['id'])){
         header("Location:".PageUtil::$MEMBER."?id=".$_GET['id']);
     }
 }
+
+/*Remove Members*/
 if(isset($_GET['ruid'])&&isset($_GET['id'])){
     $StudentProject=new StudentProject();
     $StudentProject->setProjectId($_GET['id']);
@@ -33,4 +37,5 @@ if(isset($_GET['ruid'])&&isset($_GET['id'])){
         header("Location:".PageUtil::$MEMBER."?id=".$_GET['id']);
     }
 }
+
 ?>

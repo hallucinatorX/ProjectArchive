@@ -42,110 +42,72 @@ if (isset($_SESSION["globalPage"])){
   	
 }
 
-
 //print the top menu
-function print_top_menu($globalMenu,$logoutMenu)
-{
-	$menu_content='';
+if(isset($_SESSION['login.php'])) {
+    if(isset($globalMenu)) {
+        ?>
+        <div class="navbar navbar-default" role="navigation"
+             style="background-color: whitesmoke; border-color: transparent;padding-top: 27px;height: 90px;font-size:15px">
+            <div class="container">
+                <!-- Menu -->
+                <ul class="nav navbar-nav">
+                    <?php
+                    for ($i = 0; $i < sizeof($globalMenu); $i++) {
 
-	
-	if(isset($globalMenu)){
-		
-		//buiding full menu layout, first part menu, next part user logout menu
-		$menu_content = 	'<div class="dropdown"><div class="row">';
-		$menu_content = 	$menu_content.'<div class="col-sm-11">';
-		$menu_content = 	$menu_content.build_top_nav_menu($globalMenu);
-		$menu_content = 	$menu_content.'</div>';
-		$menu_content = 	$menu_content.'<div class="col-sm-1">'.$logoutMenu;
-		$menu_content = 	$menu_content.'</div>';
-		$menu_content = 	$menu_content.'</div></div>';
-	}
+                        // if the first layer is visible then go inside -- build table row by row for the category
+                        if ($globalMenu[$i]->isVisible()) {
+                            ?>
+                            <li class="dropdown"><a href="#" title="Stakeholder Mapping in 4 steps" class="dropdown-toggle disabled" data-toggle="dropdown">
+                                    <?php echo $globalMenu[$i]->getTitle();?><span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <?php
+                                    for ($j = 0; $j < sizeof($globalMenu[$i]->_Child); $j++) {
 
-	return $menu_content;
-}
+                                        //if the second layer is visible go inside -- build table row by row
+                                        if ($globalMenu[$i]->_Child[$j]->isVisible()) {
 
-//logout menu part
-//function build_top_logout_menu($CurrentUser){
-//
-//   $logout_content = '<button class="btn btn-default  dropdown-toggle" type="button" data-toggle="dropdown">'.
-//   					 $CurrentUser->getFirstName().' '.$CurrentUser->getLastName().'<span class="caret"></span></button>';
-//   $logout_content = $logout_content.'<ul class="dropdown-menu">';
-//   $logout_content = $logout_content.'<li><a tabindex="-1" href="home.php">Home</a></li>';
-//   $logout_content = $logout_content.'<li><a tabindex="-1" href="user_details.php">User Details</a></li>';
-//   $logout_content = $logout_content.'<li><a tabindex="-1" href="forgot_password.php">Forgot Password</a></li>';
-//   $logout_content = $logout_content.'<li><a tabindex="-1" href="login.php?logout=true">Log Out</a></li>';
-//
-//   $logout_content = $logout_content.'</ul>';
-//
-//   return $logout_content;
-//}
+                                            if (sizeof($globalMenu[$i]->_Child[$j]->_Child) > 0) {
+                                                ?>
+                                                <li class="dropdown-submenu">
+                                                    <a href="#" tabindex="-1" class="dropdown-toggle"
+                                                       data-toggle="dropdown"><?php echo $globalMenu[$i]->_Child[$j]->getTitle();?></a>
+                                                    <ul class="dropdown-menu">
+                                                        <?php
+                                                        for ($k = 0; $k < sizeof($globalMenu[$i]->_Child[$j]->_Child); $k++) {
 
-
-//build the the top menu using bootstrap css based on permission and menu visibility
-function build_top_nav_menu($globalMenu){
-
-    $superLayer = '<div class="row">';
-
-    for ($i=0; $i < sizeof($globalMenu) ; $i++) {
-
-        // if the first layer is visible then go inside -- build table row by row for the category
-        if($globalMenu[$i]->isVisible()){
-
-            //$firstLayer  = '<div class="col-sm-'.(12/sizeof($globalMenu)).'">';
-            $firstLayer  = '<div class="col-sm-2">';
-            $firstLayer  =  $firstLayer.'<button class="dropdown-toggle btn btn-primary btn-block" type="button" data-toggle="dropdown">'.$globalMenu[$i]->getTitle().'<span class="caret"></span></button>';
-            $firstLayer  =  $firstLayer.'<ul class="dropdown-menu">';
-
-            for ($j=0; $j <sizeof($globalMenu[$i]->_Child) ; $j++) {
-
-                //if the second layer is visible go inside -- build table row by row
-                if($globalMenu[$i]->_Child[$j]->isVisible()){
-
-                    if(sizeof($globalMenu[$i]->_Child[$j]->_Child)>0){
-
-                        $secondLayer  =  '<li class="dropdown-submenu">
-					        <a class="test" tabindex="-1" href="#">'.$globalMenu[$i]->_Child[$j]->getTitle().
-                            '<span class="caret"></span></a>';
-                        $secondLayer = $secondLayer.'<ul class="dropdown-menu">';
-
-                        for ($k=0; $k <sizeof($globalMenu[$i]->_Child[$j]->_Child) ; $k++) {
-
-                            //if the third layer is visible -- build table column by column
-                            if($globalMenu[$i]->_Child[$j]->_Child[$k]->isVisible()){
-
-                                $thirdLayer  = '<li><a tabindex="-1" href="'.
-                                    $globalMenu[$i]->_Child[$j]->_Child[$k]->getLink().'">'.
-                                    $globalMenu[$i]->_Child[$j]->_Child[$k]->getTitle().
-                                    '</a></li>' ;
-
-                                $secondLayer  = $secondLayer  . $thirdLayer;
-
-                            }
+                                                            //if the third layer is visible -- build table column by column
+                                                            if ($globalMenu[$i]->_Child[$j]->_Child[$k]->isVisible()) {
+                                                                ?>
+                                                                <li>
+                                                                    <a href="<?php echo $globalMenu[$i]->_Child[$j]->_Child[$k]->getLink(); ?>"><?php echo $globalMenu[$i]->_Child[$j]->_Child[$k]->getTitle(); ?></a>
+                                                                </li>
+                                                                <?php
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </ul>
+                                                </li><!--end submenu-->
+                                                <?php
+                                            } else {
+                                                ?>
+                                                <li>
+                                                    <a href="#"><?php echo $globalMenu[$i]->_Child[$j]->getTitle() ?></a>
+                                                </li>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </li>
+                            <?php
                         }
-
-                        $secondLayer = $secondLayer.'</ul></li>';
                     }
-                    else{
-                        $secondLayer  = '<li><a tabindex="-1" href="#">'.$globalMenu[$i]->_Child[$j]->getTitle().
-                            '</a></li>';
-                    }
-
-                    $firstLayer  = $firstLayer  . $secondLayer;
-                }
-            }
-
-
-            $firstLayer = $firstLayer . '<ul></div>';
-            $superLayer = $superLayer . $firstLayer;
-        }
+                    ?>
+                </ul>
+            </div>
+        </div>
+        <?php
     }
-
-    $superLayer = $superLayer . '</div>';
-
-    return $superLayer;
-
-
 }
-
-				
 ?>

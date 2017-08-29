@@ -1,5 +1,5 @@
+<!--Projects Homepage-->
 <?php
-
 include_once './util/class.util.php';
 include_once '/../dao/class.projectdao.php';
 include_once '/../dao/class.projectHomedao.php';
@@ -13,6 +13,7 @@ class ProjectHomeBao{
         $this->_ProjectHomeDao=new ProjectHomeDao();
     }
 
+    //get paginated projects
     public function getLimitProject($page,$limit){
         $Result=$this->_ProjectHomeDao->getLimitProject($page,$limit);
 
@@ -23,5 +24,4 @@ class ProjectHomeBao{
         return $Result;
     }
 }
-
 ?>

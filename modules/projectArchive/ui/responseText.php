@@ -1,3 +1,4 @@
+<!--Load Course Title by CourseNo-->
 <?php
 $ID = $_GET["ID"];
 
@@ -24,4 +25,3 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
-

@@ -1,8 +1,7 @@
+<!--Project CRUD-->
 <?php
-
 include_once './util/class.util.php';
 include_once '/../dao/class.projectdao.php';
-
 
 /*
 	User Business Object
@@ -28,6 +27,20 @@ Class ProjectBao
             $Result->setResultObject("Database failure in ProjectDao.newProject()");
 
         return $Result;
+    }
+
+    //upload project thumbnails
+    public function uploadThumbnail($Project){
+        $Upload=$this->_ProjectDao->uploadThumbnail($Project);
+
+        return $Upload;
+    }
+
+    //delete project thumbnail
+    public function deleteThumbnail($Project){
+        $Delete=$this->_ProjectDao->deleteThumbnail($Project);
+
+        return $Delete;
     }
 
     //get All Projects
@@ -115,6 +128,7 @@ Class ProjectBao
         }
         return $Result;
     }
+
     //get specific course
     public function getCourse($Course){
         $Result=$this->_ProjectDao->getCourse($Course);
@@ -176,5 +190,4 @@ Class ProjectBao
     }
 
 }
-
 ?>
