@@ -8,11 +8,13 @@ Class SearchProjectDao
 {
     private $_DB;
     private $_Project;
+    private $_Student;
 
     public function __construct()
     {
         $this->_DB=DBUtil::getInstance();
         $this->_Project=new Project();
+        $this->_Student=new User();
     }
 
     //Get All Languages
@@ -39,7 +41,7 @@ Class SearchProjectDao
 
     //Get Searched Project
     public function getSearchedProject(){
-        $Title=$Language=$YearId=$TermId=$CourseId=$DisciplineId=$TeacherId=$CreatedAt="";
+        $Title=$Language=$YearId=$TermId=$CourseId=$DisciplineId=$TeacherId=$MemberId=$CreatedAt="";
 
         if (isset($_POST['title'])){
             $Title=$_POST['title'];
@@ -62,15 +64,21 @@ Class SearchProjectDao
         if (isset($_POST['teacher_id'])) {
             $TeacherId = $_POST['teacher_id'];
         }
+        if (isset($_POST['member_id'])){
+            $MemberId=$_POST['member_id'];
+        }
         if (isset($_POST['created_at'])){
             $CreatedAt=$_POST['created_at'];
         }
 
         $ProjectList=array();
 
-        $SQL="SELECT * FROM pms_project WHERE pms_project.title LIKE '%$Title%' AND pms_project.language LIKE '%$Language%'
+        $SQL="SELECT DISTINCT pms_project.id,pms_project.thumbnail,pms_project.title,pms_project.description,pms_project.link,
+        pms_project.language,pms_project.year_id,pms_project.term_id,pms_project.course_id,pms_project.discipline_id,
+        pms_project.teacher_id,pms_project.created_at,pms_project.updated_at 
+        FROM pms_project INNER JOIN pms_student_project ON pms_project.id=pms_student_project.project_id WHERE pms_project.title LIKE '%$Title%' AND pms_project.language LIKE '%$Language%'
         AND pms_project.year_id LIKE '%$YearId%' AND pms_project.term_id LIKE '%$TermId%' AND pms_project.course_id LIKE '%$CourseId%'
-        AND pms_project.discipline_id LIKE '%$DisciplineId%' AND pms_project.teacher_id LIKE '%$TeacherId%'
+        AND pms_project.discipline_id LIKE '%$DisciplineId%' AND pms_project.teacher_id LIKE '%$TeacherId%' AND pms_student_project.student_id LIKE '%$MemberId%'
         AND pms_project.created_at LIKE '%$CreatedAt%'";
 
         $this->_DB->doQuery($SQL);
@@ -101,6 +109,32 @@ Class SearchProjectDao
         $Result->setResultObject($ProjectList);
         return $Result;
     }
+    
+    public function getAllStudents(){
+        $StudentList=array();
+        $SQL="SELECT tbl_user.ID,tbl_user.Email,tbl_user.FirstName,tbl_user.LastName FROM tbl_user INNER JOIN tbl_user_role ON tbl_user.ID=tbl_user_role.UserID
+              INNER JOIN tbl_role ON tbl_user_role.RoleID=tbl_role.ID WHERE tbl_role.Name='Student'";
+
+        $this->_DB->doQuery($SQL);
+        $rows=$this->_DB->getAllRows();
+
+        foreach ($rows as $row) {
+            $this->_Student=new User();
+            $this->_Student->setID($row['ID']);
+            $this->_Student->setEmail($row['Email']);
+            $this->_Student->setFirstName($row['FirstName']);
+            $this->_Student->setLastName($row['LastName']);
+
+            $StudentList[]=$this->_Student;
+        }
+
+        $Result=new Result();
+        $Result->setIsSuccess(1);
+        $Result->setResultObject($StudentList);
+        
+        return $Result;
+    }
+    
 
 }
 ?>

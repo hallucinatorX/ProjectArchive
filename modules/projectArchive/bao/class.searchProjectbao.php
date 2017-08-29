@@ -35,6 +35,16 @@ Class SearchProjectBao
         }
         return $Result;
     }
-
+    
+    //get all students
+    public function getAllStudents(){
+        $Result=$this->_SearchProjectDao->getAllStudents();
+        
+        if(!$Result->getIsSuccess()){
+            $Result->setResultObject("Database failure in SearchProjectDao.getAllStudents()");
+        }
+        return $Result;
+    }   
+    
 }
 ?>

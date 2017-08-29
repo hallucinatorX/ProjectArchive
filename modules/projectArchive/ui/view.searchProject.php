@@ -84,6 +84,16 @@ include_once './common/class.common.php';
             $('#teacher_id').val(null);
         }
 
+        //Member CB
+        if($('#cbmember').prop('checked')){
+            $('#divmember').show();
+            $('#member_id').prop('required',true);
+        }else{
+            $('#divmember').hide();
+            $('#member_id').prop('required',false);
+            $('#member_id').val(null);
+        }
+
         //Date CB
         if($('#cbdate').prop('checked')){
             $('#divcreated_at').show();
@@ -174,6 +184,15 @@ include_once './common/class.common.php';
                     <!--Teacher-->
                     <li style="padding: 12px" >Teacher<span class="pull-right"><input type="checkbox" name="cbteacher" id="cbteacher"<?php
                             if (isset($_POST['search'])&&isset($_POST['teacher_id'])&&!empty($_POST['teacher_id'])){
+                                ?>
+                                checked="checked"
+                                <?php
+                            }
+                            ?> onchange="cbFunction();"></span></li>
+
+                    <!--Member-->
+                    <li style="padding: 12px" >Member<span class="pull-right"><input type="checkbox" name="cbmember" id="cbmember"<?php
+                            if (isset($_POST['search'])&&isset($_POST['member_id'])&&!empty($_POST['member_id'])){
                                 ?>
                                 checked="checked"
                                 <?php
@@ -368,6 +387,31 @@ include_once './common/class.common.php';
                         </div>
                     </div>
 
+                    <!--Member-->
+                    <div id="divmember" class="form-group" hidden>
+                        <label for="member_id" class="control-label col-md-3">Member :</label>
+                        <div class="col-md-7">
+                            <select name="member_id" id="member_id" class="form-control" required>
+                                <option value="" selected="selected" disabled>Select Member</option>
+                                <?php
+                                $Result=$_SearchProjectBao->getAllStudents();
+                                if ($Result->getIsSuccess()){
+                                    $StudentList=$Result->getResultObject();
+                                    foreach ($StudentList as $student) {
+                                        ?>
+                                        <option value="<?php echo $student->getID();?>"<?php
+                                        if (isset($_POST['search'])&&!empty($_POST['member_id'])&&$student->getID()==$_POST['member_id']) echo 'selected="selected"';
+                                        ?>><?php echo $student->getFirstName().' '.$student->getLastName();?></option>
+                                        <?php
+                                    }
+                                }else{
+                                    echo $Result->getResultObject();
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+
                     <!--CreatedAt-->
                     <div id="divcreated_at" class="form-group" hidden>
                         <label for="created_at" class="control-label col-md-3">Date :</label>
@@ -382,7 +426,7 @@ include_once './common/class.common.php';
 
                     <!--Search Button-->
                     <div class="form-group">
-                        <input type="submit" name="search" id="search" class="btn btn-primary col-md-3 col-md-offset-5" value="Search">
+                        <input type="submit" name="search" id="search" class="btn btn-primary col-md-2 col-md-offset-5" value="Search">
                     </div>
                 </form>
 
@@ -394,7 +438,7 @@ include_once './common/class.common.php';
 <!--Display Search Results-->
 <?php
 if (isset($_POST['search'])&&(!empty($_POST['title'])||!empty($_POST['language'])||!empty($_POST['year_id'])||!empty($_POST['term_id'])
-    ||!empty($_POST['course_id'])||!empty($_POST['discipline_id'])||!empty($_POST['teacher_id'])||!empty($_POST['created_at']))){
+    ||!empty($_POST['course_id'])||!empty($_POST['discipline_id'])||!empty($_POST['teacher_id'])||!empty($_POST['member_id'])||!empty($_POST['created_at']))){
     ?>
     <div class="col-md-12">
         <hr>

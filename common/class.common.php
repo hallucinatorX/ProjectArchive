@@ -193,6 +193,7 @@ class PageUtil{
     public static $ERROR='error.php';
     public static $HOME='home.php';
     public static $HOME_PAGE='home_page.php';
+    public static $ABOUT='about.php';
     public static $LOGIN='login.php';
 
     
@@ -244,6 +245,7 @@ class RouteUtil{
 
          self::$s_Routes[PageUtil::$HOME]             =   "/modules/dashboard/ui/view.home.php";
          self::$s_Routes[PageUtil::$HOME_PAGE]="/modules/dashboard/ui/view.homePage.php";
+         self::$s_Routes[PageUtil::$ABOUT]="/modules/dashboard/ui/view.about.php";
          self::$s_Routes[PageUtil::$LOGIN]            =   "/modules/dashboard/ui/view.login.php";
 
          self::$s_Routes[PageUtil::$ROLE]   =   "/modules/user/ui/view.role.php";
@@ -394,6 +396,9 @@ class MiddlewareUtil{
                 }
                 elseif (!strcasecmp($Page,'home_page.php')){
                     return PageUtil::$HOME_PAGE;
+                }
+                elseif (!strcasecmp($Page,'about.php')){
+                    return PageUtil::$ABOUT;
                 }
                 elseif (!strcasecmp($Page,'member.php')){
                     return PageUtil::$MEMBER;

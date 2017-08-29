@@ -308,6 +308,17 @@
 	</Menu>
 	<Menu>
 		<ParentMenu>Projects</ParentMenu>
+		<Title>Browse Projects</Title>
+		<Link>project_home.php</Link>
+		<Permissions>
+			<Permission>PROJECT_C</Permission>
+			<Permission>PROJECT_R</Permission>
+			<Permission>PROJECT_U</Permission>
+			<Permission>PROJECT_D</Permission>
+		</Permissions>
+	</Menu>
+	<Menu>
+		<ParentMenu>Projects</ParentMenu>
 		<Title>Search Projects</Title>
 		<Link>search_project.php</Link>
 		<Permissions>

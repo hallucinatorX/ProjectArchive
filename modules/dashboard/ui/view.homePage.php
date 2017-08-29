@@ -1,6 +1,3 @@
-<?php
-include_once '/template/basic/navbar.php';
-//?>
 <div class="main-wrapper">
 
     <div class="carousel slide"  data-ride="carousel" id="main-carousel">
