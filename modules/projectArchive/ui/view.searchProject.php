@@ -393,7 +393,8 @@ include_once './common/class.common.php';
 
 <!--Display Search Results-->
 <?php
-if (isset($_POST['search'])){
+if (isset($_POST['search'])&&(!empty($_POST['title'])||!empty($_POST['language'])||!empty($_POST['year_id'])||!empty($_POST['term_id'])
+    ||!empty($_POST['course_id'])||!empty($_POST['discipline_id'])||!empty($_POST['teacher_id'])||!empty($_POST['created_at']))){
     ?>
     <div class="col-md-12">
         <hr>
