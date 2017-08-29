@@ -2325,3 +2325,12 @@
 - [Tue, 29 Aug 17 12:14:57 +0000]	debug:	exit blade.user_search.php	@file:"C:\wamp64\www\projectarchive\util\class.util.php", object:"LogUtil", line:374
 - [Tue, 29 Aug 17 12:14:59 +0000]	debug:	exit blade.user_details.php	@file:"C:\wamp64\www\projectarchive\util\class.util.php", object:"LogUtil", line:374
 - [Tue, 29 Aug 17 12:15:03 +0000]	debug:	exit blade.user_search.php	@file:"C:\wamp64\www\projectarchive\util\class.util.php", object:"LogUtil", line:374
+- [Tue, 29 Aug 17 13:23:19 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\projectarchive\util\class.util.php", object:"LogUtil", line:374
+- [Tue, 29 Aug 17 13:23:38 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\projectarchive\util\class.util.php", object:"LogUtil", line:374
+- [Tue, 29 Aug 17 13:23:53 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\projectarchive\util\class.util.php", object:"LogUtil", line:374
+- [Tue, 29 Aug 17 13:24:01 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\projectarchive\util\class.util.php", object:"LogUtil", line:374
+- [Tue, 29 Aug 17 13:26:25 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\projectarchive\util\class.util.php", object:"LogUtil", line:374
+- [Tue, 29 Aug 17 13:26:25 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\projectarchive\util\class.util.php", object:"LogUtil", line:374
+- [Tue, 29 Aug 17 13:26:30 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\projectarchive\util\class.util.php", object:"LogUtil", line:374
+- [Tue, 29 Aug 17 13:26:36 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\projectarchive\util\class.util.php", object:"LogUtil", line:374
+- [Tue, 29 Aug 17 13:26:43 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\projectarchive\util\class.util.php", object:"LogUtil", line:374
