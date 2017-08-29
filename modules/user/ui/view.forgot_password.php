@@ -7,7 +7,7 @@ include_once './common/class.common.php';
 
 <div id="form" style="padding-bottom: 210px">
   
-  <div class="panel panel-default">
+  <div class="panel panel-default" style="box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
 
       <div class="panel-heading " style="text-align: center;margin-bottom: 25px">
           <strong style="font-size: large"><img src="./resources/img/forgot-pw.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Forgot Password</strong></div>

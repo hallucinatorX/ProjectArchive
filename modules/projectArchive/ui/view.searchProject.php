@@ -114,7 +114,7 @@ include_once './common/class.common.php';
     <div class="col-md-3">
       <nav class="navbar navbar-default sidebar" role="navigation">
         <div class="container-fluid">
-            <div class="navbar-header" style="padding: 10px">
+            <div class="navbar-header" style="padding: 10px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);">
                 <span><strong style="font-size: large"><img src="./resources/img/filter.png" alt="Icon" style="height: 30px;width: 30px;">Filter</strong></span>
                 <!--Responsive-->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
@@ -128,7 +128,7 @@ include_once './common/class.common.php';
 
                 <!--Title-->
                 <ul class="nav navbar-nav">
-                    <li style="padding: 12px" >Title<span class="pull-right"><input type="checkbox" name="cbtitle" id="cbtitle"<?php
+                    <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Title<span class="pull-right"><input type="checkbox" name="cbtitle" id="cbtitle"<?php
                             if (isset($_POST['search'])&&isset($_POST['title'])&&!empty($_POST['title'])){
                                 ?>
                                 checked="checked"
@@ -137,7 +137,7 @@ include_once './common/class.common.php';
                             ?> onchange="cbFunction();"></span></li>
 
                     <!--Language-->
-                    <li style="padding: 12px" >Language<span class="pull-right"><input type="checkbox" name="cblanguage" id="cblanguage"<?php
+                    <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Language<span class="pull-right"><input type="checkbox" name="cblanguage" id="cblanguage"<?php
                             if (isset($_POST['search'])&&isset($_POST['language'])&&!empty($_POST['language'])){
                                 ?>
                                 checked="checked"
@@ -146,7 +146,7 @@ include_once './common/class.common.php';
                             ?> onchange="cbFunction();"></span></li>
 
                     <!--Year-->
-                    <li style="padding: 12px" >Year<span class="pull-right"><input type="checkbox" name="cbyear" id="cbyear"<?php
+                    <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Year<span class="pull-right"><input type="checkbox" name="cbyear" id="cbyear"<?php
                             if (isset($_POST['search'])&&isset($_POST['year_id'])&&!empty($_POST['year_id'])){
                                 ?>
                                 checked="checked"
@@ -155,7 +155,7 @@ include_once './common/class.common.php';
                             ?> onchange="cbFunction();"></span></li>
 
                     <!--Term-->
-                    <li style="padding: 12px" >Term<span class="pull-right"><input type="checkbox" name="cbterm" id="cbterm"<?php
+                    <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Term<span class="pull-right"><input type="checkbox" name="cbterm" id="cbterm"<?php
                             if (isset($_POST['search'])&&isset($_POST['term_id'])&&!empty($_POST['term_id'])){
                                 ?>
                                 checked="checked"
@@ -164,7 +164,7 @@ include_once './common/class.common.php';
                             ?> onchange="cbFunction();"></span></li>
 
                     <!--Course-->
-                    <li style="padding: 12px" >Course<span class="pull-right"><input type="checkbox" name="cbcourse" id="cbcourse"<?php
+                    <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Course<span class="pull-right"><input type="checkbox" name="cbcourse" id="cbcourse"<?php
                             if (isset($_POST['search'])&&isset($_POST['course_id'])&&!empty($_POST['course_id'])){
                                 ?>
                                 checked="checked"
@@ -173,7 +173,7 @@ include_once './common/class.common.php';
                             ?> onchange="cbFunction();"></span></li>
 
                     <!--Discipline-->
-                    <li style="padding: 12px" >Discipline<span class="pull-right"><input type="checkbox" name="cbdiscipline" id="cbdiscipline"<?php
+                    <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Discipline<span class="pull-right"><input type="checkbox" name="cbdiscipline" id="cbdiscipline"<?php
                             if (isset($_POST['search'])&&isset($_POST['discipline_id'])&&!empty($_POST['discipline_id'])){
                                 ?>
                                 checked="checked"
@@ -182,7 +182,7 @@ include_once './common/class.common.php';
                             ?> onchange="cbFunction();"></span></li>
 
                     <!--Teacher-->
-                    <li style="padding: 12px" >Teacher<span class="pull-right"><input type="checkbox" name="cbteacher" id="cbteacher"<?php
+                    <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Teacher<span class="pull-right"><input type="checkbox" name="cbteacher" id="cbteacher"<?php
                             if (isset($_POST['search'])&&isset($_POST['teacher_id'])&&!empty($_POST['teacher_id'])){
                                 ?>
                                 checked="checked"
@@ -191,7 +191,7 @@ include_once './common/class.common.php';
                             ?> onchange="cbFunction();"></span></li>
 
                     <!--Member-->
-                    <li style="padding: 12px" >Member<span class="pull-right"><input type="checkbox" name="cbmember" id="cbmember"<?php
+                    <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Member<span class="pull-right"><input type="checkbox" name="cbmember" id="cbmember"<?php
                             if (isset($_POST['search'])&&isset($_POST['member_id'])&&!empty($_POST['member_id'])){
                                 ?>
                                 checked="checked"
@@ -200,7 +200,7 @@ include_once './common/class.common.php';
                             ?> onchange="cbFunction();"></span></li>
 
                     <!--CreatedAt-->
-                    <li style="padding: 12px" >Date<span class="pull-right"><input type="checkbox" name="cbdate" id="cbdate"<?php
+                    <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Date<span class="pull-right"><input type="checkbox" name="cbdate" id="cbdate"<?php
                             if (isset($_POST['search'])&&isset($_POST['created_at'])&&!empty($_POST['created_at'])){
                                 ?>
                                 checked="checked"
@@ -215,7 +215,7 @@ include_once './common/class.common.php';
 
     <!--Search Div-->
     <div class="col-md-9">
-        <div class="panel panel-default">
+        <div class="panel panel-default" style="box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
 
             <div class="panel-heading" style=" text-align: center">
                 <strong style="font-size: large"><img src="./resources/img/searchProject.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Search Project</strong>

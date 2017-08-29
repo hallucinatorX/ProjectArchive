@@ -152,7 +152,7 @@ function print_dashboard_body_tab($globalMenu){
 
 				$secondLayer  = '<div class="col-sm-3"><h4>'.$globalMenu[$i]->_Child[$j]->getTitle().'</h4>';
 
-				$secondLayer = $secondLayer . '<div class="panel panel-default">';
+				$secondLayer = $secondLayer . '<div class="panel panel-default" style="box-shadow: 0 3px 8px rgba(0,0,0,0.15);">';
 
 				$secondLayer = $secondLayer . '<div class="panel-body">';				
 				

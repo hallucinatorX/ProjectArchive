@@ -26,7 +26,7 @@ include_once './common/class.common.php';
 <div class="panel col-md-12">
 
     <!--Heading-->
-    <div class="panel panel-default col-md-6 col-md-offset-3">
+    <div class="panel panel-default col-md-6 col-md-offset-3" style="box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
         <div class="panel-heading" style=" text-align: center">
             <strong style="font-size: large"><img src="./resources/img/createproject.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Create Project</strong>
         </div>
