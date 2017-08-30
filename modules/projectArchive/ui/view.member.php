@@ -31,7 +31,7 @@ include_once './common/class.common.php';
 
 <hr>
 
-<div class="panel col-md-12">
+<div class="col-md-12">
     <div class="panel panel-default col-md-6 col-md-offset-3" style="box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
         <div class="panel-heading" style=" text-align: center">
             <strong style="font-size: large"><img src="<?php

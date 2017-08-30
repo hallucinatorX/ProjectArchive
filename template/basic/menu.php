@@ -47,8 +47,15 @@ if(isset($_SESSION['login.php'])) {
     if(isset($globalMenu)) {
         ?>
         <div class="navbar navbar-default" role="navigation"
-             style="background-color: whitesmoke; border-color: transparent;padding-top: 27px;height: 90px;font-size:15px">
+             style="background-color: whitesmoke; border-color: transparent;padding-top: 5px;height: 80px;font-size:15px">
             <div class="container">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" style="overflow-y: inherit;float: left" id="bs-example-navbar-collapse-2">
                 <!-- Menu -->
                 <ul class="nav navbar-nav">
                     <?php
@@ -71,7 +78,7 @@ if(isset($_SESSION['login.php'])) {
                                                 <li class="dropdown-submenu">
                                                     <a href="#" tabindex="-1" class="dropdown-toggle"
                                                        data-toggle="dropdown"><?php echo $globalMenu[$i]->_Child[$j]->getTitle();?></a>
-                                                    <ul class="dropdown-menu">
+                                                    <ul class="dropdown-menu" role="menu">
                                                         <?php
                                                         for ($k = 0; $k < sizeof($globalMenu[$i]->_Child[$j]->_Child); $k++) {
 
@@ -105,6 +112,7 @@ if(isset($_SESSION['login.php'])) {
                     }
                     ?>
                 </ul>
+                </div>
             </div>
         </div>
         <?php

@@ -73,13 +73,22 @@ Class SearchProjectDao
 
         $ProjectList=array();
 
-        $SQL="SELECT DISTINCT pms_project.id,pms_project.thumbnail,pms_project.title,pms_project.description,pms_project.link,
-        pms_project.language,pms_project.year_id,pms_project.term_id,pms_project.course_id,pms_project.discipline_id,
-        pms_project.teacher_id,pms_project.created_at,pms_project.updated_at 
-        FROM pms_project INNER JOIN pms_student_project ON pms_project.id=pms_student_project.project_id WHERE pms_project.title LIKE '%$Title%' AND pms_project.language LIKE '%$Language%'
-        AND pms_project.year_id LIKE '%$YearId%' AND pms_project.term_id LIKE '%$TermId%' AND pms_project.course_id LIKE '%$CourseId%'
-        AND pms_project.discipline_id LIKE '%$DisciplineId%' AND pms_project.teacher_id LIKE '%$TeacherId%' AND pms_student_project.student_id LIKE '%$MemberId%'
-        AND pms_project.created_at LIKE '%$CreatedAt%'";
+        if (isset($_POST['member_id'])&&!empty($_POST['member_id'])){
+            $SQL="SELECT DISTINCT pms_project.id,pms_project.thumbnail,pms_project.title,pms_project.description,pms_project.link,
+                  pms_project.language,pms_project.year_id,pms_project.term_id,pms_project.course_id,pms_project.discipline_id,
+                  pms_project.teacher_id,pms_project.created_at,pms_project.updated_at 
+                  FROM pms_project INNER JOIN pms_student_project ON pms_project.id=pms_student_project.project_id WHERE pms_project.title LIKE '%$Title%' AND pms_project.language LIKE '%$Language%'
+                  AND pms_project.year_id LIKE '%$YearId%' AND pms_project.term_id LIKE '%$TermId%' AND pms_project.course_id LIKE '%$CourseId%'
+                  AND pms_project.discipline_id LIKE '%$DisciplineId%' AND pms_project.teacher_id LIKE '%$TeacherId%' AND pms_student_project.student_id LIKE '%$MemberId%'
+                  AND pms_project.created_at LIKE '%$CreatedAt%'";
+        }else{
+            $SQL="SELECT DISTINCT pms_project.id,pms_project.thumbnail,pms_project.title,pms_project.description,pms_project.link,
+                  pms_project.language,pms_project.year_id,pms_project.term_id,pms_project.course_id,pms_project.discipline_id,
+                  pms_project.teacher_id,pms_project.created_at,pms_project.updated_at 
+                  FROM pms_project WHERE pms_project.title LIKE '%$Title%' AND pms_project.language LIKE '%$Language%'
+                  AND pms_project.year_id LIKE '%$YearId%' AND pms_project.term_id LIKE '%$TermId%' AND pms_project.course_id LIKE '%$CourseId%'
+                  AND pms_project.discipline_id LIKE '%$DisciplineId%' AND pms_project.teacher_id LIKE '%$TeacherId%' AND pms_project.created_at LIKE '%$CreatedAt%'";
+        }
 
         $this->_DB->doQuery($SQL);
 

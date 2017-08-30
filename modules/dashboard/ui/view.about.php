@@ -1,4 +1,4 @@
-<div class="container" style="padding-top:10px;padding-bottom:18px;color: darkslateblue">
+<div class="container" style="padding-top:10px;padding-bottom:35px;color: darkslateblue">
     <div style="box-shadow: 0 4px 8px rgba(0,0,0,0.15); ">
         <div style="padding: 20px">
             <h3>SimTier v0.2</h3>

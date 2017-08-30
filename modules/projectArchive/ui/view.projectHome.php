@@ -22,7 +22,7 @@ include_once './common/class.common.php';
 
         foreach ($ProjectList as $project){
             ?>
-            <div class="col-lg-3 portfolio-item">
+            <div class="col-lg-3 portfolio-item" style="box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
                 <div class="card h-37" style="padding-top: 15px">
                     <a href="<?php echo PageUtil::$MEMBER.'?id='.$project->getProjectId();?>" style="text-align: center">
                         <img class="card-img-top" src="<?php echo $project->getProjectThumbnail();?>" alt="Project" style="height: 80px;width: 80px"></a>

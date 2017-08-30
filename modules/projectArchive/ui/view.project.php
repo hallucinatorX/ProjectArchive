@@ -23,7 +23,7 @@ include_once './common/class.common.php';
 
 <hr>
 
-<div class="panel col-md-12">
+<div class="col-md-12">
 
     <!--Heading-->
     <div class="panel panel-default col-md-6 col-md-offset-3" style="box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
@@ -273,7 +273,7 @@ include_once './common/class.common.php';
     <div class="col-md-12">
         <hr>
     </div>
-    <div class="col-md-12" style="max-height: 730px;overflow:auto">
+    <div class="panel col-md-12" style="max-height: 730px;overflow:auto">
         <table class="table table-striped table-bordered table-responsive">
             <!--Header Row-->
             <tr>

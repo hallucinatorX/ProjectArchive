@@ -1,4 +1,4 @@
-<div class="main-wrapper">
+<div class="main-wrapper" style="padding-top: 10px">
 
     <div class="carousel slide"  data-ride="carousel" id="main-carousel">
         <!-- Indicators -->
@@ -27,16 +27,12 @@
         </div>
 
         <!-- Controls -->
-        <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
-            <span class="fa fa-arrow-left"></span>
-        </a>
-        <a class="right carousel-control"  href="#main-carousel" role="button" data-slide="next">
-            <span class="fa fa-arrow-right"></span>
-        </a>
+        <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev"></a>
+        <a class="right carousel-control"  href="#main-carousel" role="button" data-slide="next"></a>
     </div>
     <div class="col-md-12" style="text-align: center">
         <h1 style="padding-top: 50px;padding-bottom: 15px;color: darkslateblue"><strong>Welcome to SimTier v0.2 (beta) !!!</strong></h1>
-        <h4 style="color: darkslateblue;padding-bottom: 80px">SimTier is the PHP framework for developing web sites. It is in beta version now.
+        <h4 style="color: darkslateblue;padding-bottom: 70px">SimTier is the PHP framework for developing web sites. It is in beta version now.
             <br>
             <br>
             SimTier is completely free to download and use!
