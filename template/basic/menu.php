@@ -47,7 +47,7 @@ if(isset($_SESSION['login.php'])) {
     if(isset($globalMenu)) {
         ?>
         <div class="navbar navbar-default" role="navigation"
-             style="background-color: whitesmoke; border-color: transparent;padding-top: 5px;height: 80px;font-size:15px">
+             style="background-color: whitesmoke; border-color: transparent;padding-top: 5px;height: 70px;font-size:15px">
             <div class="container">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
                     <span class="sr-only">Toggle navigation</span>

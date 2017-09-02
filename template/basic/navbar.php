@@ -1,4 +1,4 @@
-<div style="padding-bottom: 70px">
+<div style="padding-bottom: 60px">
 <nav class="navbar navbar-inverse navstyle navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo PageUtil::$HOME_PAGE;?>" style="font-size: 30px"><strong>Khulna University Automation</strong></a>
+            <a class="navbar-brand" href="<?php echo PageUtil::$HOME_PAGE;?>" style="font-size: 30px;color: white"><strong>Khulna University Automation</strong></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

@@ -1,9 +1,9 @@
 .navstyle {
-    background-color: #323232;
+    background-color: #00666a;
     border-color: transparent;
     box-shadow: 0 6px 6px rgba(0,0,0,0.15);
     font-size: 16px;
 }
 .container{
-    padding: 16px;
+    padding: 10px;
 }

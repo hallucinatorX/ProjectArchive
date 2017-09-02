@@ -6,7 +6,7 @@ include_once 'blade/view.home.blade.php';
 
 
 
-<div class="col-sm-12" style="padding-bottom: 260px">
+<div class="col-sm-12" style="padding-bottom: 345px">
 
 <?php
     if(isset($globalMenu)){

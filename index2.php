@@ -89,13 +89,19 @@ else{
             ?>
         </div>
 
-        <div id="footer" class="panel-footer" style="color: black;height: 80px;padding-top: 30px">
+<!--        <div id="footer" class="panel-footer" style="color:white;height: 50px;padding-top: 15px;background-color: #445760">-->
+<!---->
+<!--        	--><?php
+//        		include $template_link.'footer.php';
+//
+//        	?>
+<!--        </div>-->
+    <div id="footer">
+        <?php
+        include $template_link.'footer.php';
+        ?>
+    </div>
 
-        	<?php
-        		include $template_link.'footer.php';
-
-        	?>
-        </div>
 </div>
 </body>
 </html>
