@@ -1,4 +1,4 @@
-<div class="main-wrapper" style="padding-top: 10px">
+<div class="main-wrapper" style="padding-top: 15px">
 
     <div class="carousel slide"  data-ride="carousel" id="main-carousel">
         <!-- Indicators -->
@@ -39,6 +39,3 @@
         </h4>
     </div>
 </div>
-<!--<div class="col-md-12">-->
-<!--    <h1 class="col-md-12" style="text-align: center;padding-top: 245px;padding-bottom: 245px">Welcome to SimTier v0.2 (beta)!!!</h1>-->
-<!--</div>-->

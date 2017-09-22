@@ -83,7 +83,7 @@ include_once './common/class.common.php';
                                 $YearList=$Result->getResultObject();
                                 foreach ($YearList as $year){
                                     ?>
-                                    <option value="<?php echo $year->getYearId()?>" <?php
+                                    <option value="<?php echo $year->getYearId();?>" <?php
                                     if (isset($_GET['edit'])&& $year->getYearId()==$getRow->getProjectYearId()) echo 'selected="selected"';
                                     elseif (isset($_POST['create'])&&!empty($_POST['year_id'])&&$year->getYearId()==$_POST['year_id']) echo 'selected="selected"'
                                     ?>><?php echo $year->getYearName();?></option>
@@ -243,9 +243,17 @@ include_once './common/class.common.php';
                 <!--Thumbnail-->
                 <div class="form-group">
                     <label for="thumbnail" class="control-label col-md-3">Thumbnail :</label>
-                    <div class="col-md-7">
+                    <div class="col-md-4">
                         <input type="file" name="thumbnail" id="thumbnail"<?php if (!isset($_GET['edit'])) echo 'required';?>>
                     </div>
+                    <div class="col-md-1 <?php if(isset($_GET['edit'])) echo 'thumbnail';?>">
+                        <img src="<?php
+                        if (isset($_GET['edit'])) echo $getRow->getProjectThumbnail();
+                        elseif (isset($_POST['create'])) echo $_POST['thumbnail'];
+                        ?>">
+                    </div>
+                        
+                    
                 </div>
 
                 <br>
@@ -273,7 +281,7 @@ include_once './common/class.common.php';
     <div class="col-md-12">
         <hr>
     </div>
-    <div class="panel col-md-12" style="max-height: 730px;overflow:auto">
+    <div class="panel col-md-12" style="max-height: 730px; overflow:auto">
         <table class="table table-striped table-bordered table-responsive">
             <!--Header Row-->
             <tr>

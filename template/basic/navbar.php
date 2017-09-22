@@ -1,24 +1,21 @@
-<div style="padding-bottom: 60px">
+<div style="padding-bottom: 50px">
 <nav class="navbar navbar-inverse navstyle navbar-fixed-top" role="navigation">
-    <div class="container">
+    <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="<?php echo PageUtil::$HOME_PAGE;?>" style="font-size: 30px;color: white"><strong>Khulna University Automation</strong></a>
+           <!--  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+           </button> -->
+            <a class="navbar-brand" href="<?php echo PageUtil::$HOME_PAGE;?>" style="font-size: 30px;color: white; margin-left: -7px"><strong>Khulna University Automation</strong></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" style="overflow-y: inherit;float: right" id="bs-example-navbar-collapse-1">
 
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a title="About Us" href="<?php echo PageUtil::$ABOUT;?>"><span>About</span></a>
-                </li>
+            <ul class="nav navbar-nav">
                 <?php
                 if (!isset($_SESSION['login.php'])) {
                     ?>
@@ -29,7 +26,7 @@
                 }else {
                     $globalUser = $_SESSION['globalUser'];
                     ?>
-                    <li class="dropdowna">
+                    <!-- <li class="dropdowna">
                         <a class="dropbtna" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                            href="#"><?php echo $globalUser->getFirstName() . ' ' . $globalUser->getLastName(); ?>
                             <span class="caret"></span></a>
@@ -39,7 +36,7 @@
                             <a href="<?php echo PageUtil::$USER_FORGOT_PASSWORD; ?>">Forgot Password</a>
                             <a href="login.php?logout=true">Logout</a>
                         </div>
-                    </li>
+                    </li> -->
                     <?php
                 }
                 ?>

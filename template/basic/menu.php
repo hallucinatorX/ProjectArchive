@@ -46,16 +46,10 @@ if (isset($_SESSION["globalPage"])){
 if(isset($_SESSION['login.php'])) {
     if(isset($globalMenu)) {
         ?>
-        <div class="navbar navbar-default" role="navigation"
-             style="background-color: whitesmoke; border-color: transparent;padding-top: 5px;height: 70px;font-size:15px">
-            <div class="container">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="collapse navbar-collapse" style="overflow-y: inherit;float: left" id="bs-example-navbar-collapse-2">
+        <nav class="navbar navbar-default" role="navigation"
+             style="background-color: whitesmoke; border-color: transparent;padding-top: 15px;height: 80px;font-size:15px;margin-left: -20px">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse">
                 <!-- Menu -->
                 <ul class="nav navbar-nav">
                     <?php
@@ -112,9 +106,35 @@ if(isset($_SESSION['login.php'])) {
                     }
                     ?>
                 </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                <?php
+                if (!isset($_SESSION['login.php'])) {
+                    ?>
+                    <li>
+                        <a href="<?php echo PageUtil::$LOGIN; ?>"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                    <?php
+                }else {
+                    $globalUser = $_SESSION['globalUser'];
+                    ?>
+                    <li class="dropdowna">
+                        <a class="dropbtna" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                           href="#"><?php echo $globalUser->getFirstName() . ' ' . $globalUser->getLastName(); ?>
+                            <span class="caret"></span></a>
+                        <div class="dropdowna-content">
+                            <a href="<?php echo PageUtil::$HOME; ?>">Home</a>
+                            <a href="<?php echo PageUtil::$USER_DETAILS; ?>">User Details</a>
+                            <a href="<?php echo PageUtil::$USER_FORGOT_PASSWORD; ?>">Forgot Password</a>
+                            <a href="login.php?logout=true">Logout</a>
+                        </div>
+                    </li>
+                    <?php
+                }
+                ?>
+            </ul>
                 </div>
             </div>
-        </div>
+        </nav>
         <?php
     }
 }

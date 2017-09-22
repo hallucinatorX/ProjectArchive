@@ -69,7 +69,7 @@ else{
 
 <body>
 
-<div class="container-fluid" >
+<div class="col-md-12" >
         <div id="menu">
             <?php
                 //do not show the menu for login page
