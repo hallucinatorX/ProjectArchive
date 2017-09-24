@@ -1,14 +1,14 @@
 <!--Assign or remove members form a project-->
 <?php
 include_once './util/class.util.php';
-include_once '/../dao/class.memberdao.php';
+include_once '/../dao/class.projectMemberdao.php';
 
-class MemberBao{
+class ProjectMemberBao{
     private $_MemberDao;
 
     public function __construct()
     {
-        $this->_MemberDao=new MemberDao();
+        $this->_MemberDao=new ProjectMemberDao();
     }
 
     //add Member

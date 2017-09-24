@@ -1,5 +1,5 @@
 <?php
-include_once 'blade/view.searchProject.blade.php';
+include_once 'blade/view.searchThesis.blade.php';
 include_once './common/class.common.php';
 ?>
 
@@ -21,17 +21,6 @@ include_once './common/class.common.php';
             $('#divtitle').hide();
             $('#title').prop('required',false);
             $('#title').val(null);
-        }
-
-        //Language CB
-        if($('#cblanguage').prop('checked')){
-            $('#divlanguage').show();
-            $('#language').prop('required',true);
-        }else{
-            $('#divlanguage').hide();
-            $('#language').prop('required',false);
-            $('#language').val(null);
-
         }
 
         //Year CB
@@ -108,7 +97,7 @@ include_once './common/class.common.php';
 
 <hr>
 
-<div class="container" style="margin-bottom: 20px">
+<div class="container" style="margin-bottom: 40px">
 
     <!--Sidebar-->
     <div class="col-md-3">
@@ -130,15 +119,6 @@ include_once './common/class.common.php';
                 <ul class="nav navbar-nav">
                     <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Title<span class="pull-right"><input type="checkbox" name="cbtitle" id="cbtitle"<?php
                             if (isset($_POST['search'])&&isset($_POST['title'])&&!empty($_POST['title'])){
-                                ?>
-                                checked="checked"
-                                <?php
-                            }
-                            ?> onchange="cbFunction();"></span></li>
-
-                    <!--Language-->
-                    <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Language<span class="pull-right"><input type="checkbox" name="cblanguage" id="cblanguage"<?php
-                            if (isset($_POST['search'])&&isset($_POST['language'])&&!empty($_POST['language'])){
                                 ?>
                                 checked="checked"
                                 <?php
@@ -182,7 +162,7 @@ include_once './common/class.common.php';
                             ?> onchange="cbFunction();"></span></li>
 
                     <!--Teacher-->
-                    <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Teacher<span class="pull-right"><input type="checkbox" name="cbteacher" id="cbteacher"<?php
+                    <li style="padding: 12px;box-shadow: 0 2px 5px rgba(0,0,0,0.15);" >Supervisor<span class="pull-right"><input type="checkbox" name="cbteacher" id="cbteacher"<?php
                             if (isset($_POST['search'])&&isset($_POST['teacher_id'])&&!empty($_POST['teacher_id'])){
                                 ?>
                                 checked="checked"
@@ -218,7 +198,7 @@ include_once './common/class.common.php';
         <div class="panel panel-default" style="box-shadow: 0 3px 8px rgba(0,0,0,0.15);">
 
             <div class="panel-heading" style=" text-align: center">
-                <strong style="font-size: large"><img src="./resources/img/searchProject.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Search Project</strong>
+                <strong style="font-size: large"><img src="./resources/img/searchProject.png" alt="Icon" style="height: 30px;width: 30px;">&nbsp;Search Thesis</strong>
             </div>
 
             <div class="panel-body form-horizontal">
@@ -230,34 +210,9 @@ include_once './common/class.common.php';
                     <div id="divtitle" class="form-group" hidden >
                         <label for="title" class="control-label col-md-3">Title :</label>
                         <div class="col-md-7">
-                            <input type="text" name="title" id="title" class="form-control" placeholder="Project Title" value="<?php
+                            <input type="text" name="title" id="title" class="form-control" placeholder="Thesis Title" value="<?php
                             if (isset($_POST['search'])&&!empty($_POST['title'])) echo $_POST['title'];
                             ?>" required>
-                        </div>
-                    </div>
-
-                    <!--Language-->
-                    <div id="divlanguage" class="form-group" hidden>
-                        <label for="language" class="control-label col-md-3">Language :</label>
-                        <div class="col-md-7">
-                            <select name="language" id="language" class="form-control" required>
-                                <option value="" selected="selected" disabled>Select Language</option>
-                                <?php
-                                $Result=$_SearchProjectBao->getAllLanguages();
-                                if ($Result->getIsSuccess()){
-                                    $LanguageList=$Result->getResultObject();
-                                    foreach ($LanguageList as $language) {
-                                        ?>
-                                        <option value="<?php echo $language->getProjectLanguage();?>"<?php
-                                        if (isset($_POST['search'])&&!empty($_POST['language'])&&$language->getProjectLanguage()==$_POST['language']) echo 'selected="selected"';
-                                        ?>><?php echo $language->getProjectLanguage();?></option>
-                                        <?php
-                                    }
-                                }else{
-                                    echo $Result->getResultObject();
-                                }
-                                ?>
-                            </select>
                         </div>
                     </div>
 
@@ -268,7 +223,7 @@ include_once './common/class.common.php';
                             <select name="year_id" id="year_id" class="form-control" required>
                                 <option value="" selected="selected" disabled>Select Year</option>
                                 <?php
-                                $Result=$_ProjectBao->getAllYears();
+                                $Result=$_ThesisBao->getAllYears();
                                 if ($Result->getIsSuccess()){
                                     $YearList=$Result->getResultObject();
                                     foreach ($YearList as $year) {
@@ -294,7 +249,7 @@ include_once './common/class.common.php';
                             <select name="term_id" id="term_id" class="form-control" required>
                                 <option value="" selected="selected" disabled>Select Term</option>
                                 <?php
-                                $Result=$_ProjectBao->getAllTerms();
+                                $Result=$_ThesisBao->getAllTerms();
                                 if ($Result->getIsSuccess()){
                                     $TermList=$Result->getResultObject();
                                     foreach ($TermList as $term) {
@@ -319,7 +274,7 @@ include_once './common/class.common.php';
                             <select name="course_id" id="course_id" class="form-control" required>
                                 <option value="" selected="selected" disabled>Select Course</option>
                                 <?php
-                                $Result=$_ProjectBao->getAllCourses();
+                                $Result=$_ThesisBao->getAllCourses();
                                 if ($Result->getIsSuccess()){
                                     $CourseList=$Result->getResultObject();
                                     foreach ($CourseList as $course) {
@@ -344,7 +299,7 @@ include_once './common/class.common.php';
                             <select name="discipline_id" id="discipline_id" class="form-control" required>
                                 <option value="" selected="selected" disabled>Select Discipline</option>
                                 <?php
-                                $Result=$_ProjectBao->getAllDisciplines();
+                                $Result=$_ThesisBao->getAllDisciplines();
                                 if ($Result->getIsSuccess()){
                                     $DisciplineList=$Result->getResultObject();
                                     foreach ($DisciplineList as $discipline) {
@@ -369,7 +324,7 @@ include_once './common/class.common.php';
                             <select name="teacher_id" id="teacher_id" class="form-control" required>
                                 <option value="" selected="selected" disabled>Select Teacher</option>
                                 <?php
-                                $Result=$_ProjectBao->getAllTeachers();
+                                $Result=$_ThesisBao->getAllTeachers();
                                 if ($Result->getIsSuccess()){
                                     $TeacherList=$Result->getResultObject();
                                     foreach ($TeacherList as $teacher) {
@@ -394,7 +349,7 @@ include_once './common/class.common.php';
                             <select name="member_id" id="member_id" class="form-control" required>
                                 <option value="" selected="selected" disabled>Select Member</option>
                                 <?php
-                                $Result=$_SearchProjectBao->getAllStudents();
+                                $Result=$_SearchThesisBao->getAllStudents();
                                 if ($Result->getIsSuccess()){
                                     $StudentList=$Result->getResultObject();
                                     foreach ($StudentList as $student) {
@@ -450,58 +405,51 @@ if (isset($_POST['search'])&&(!empty($_POST['title'])||!empty($_POST['language']
             <tr>
                 <th>Title</th>
                 <th>Description</th>
-                <th>Link</th>
-                <th style="text-align: center">Language</th>
+                <th style="text-align: center">Report</th>
                 <th style="text-align: center">Year</th>
                 <th style="text-align: center">Term</th>
                 <th>Course</th>
                 <th>Discipline</th>
-                <th>Teacher</th>
                 <th style="text-align: center">Created At</th>
                 <th style="text-align: center">Updated At</th>
             </tr>
 
             <!--Table Cells-->
             <?php
-            $Result=$_SearchProjectBao->getSearchedProject();
+            $Result=$_SearchThesisBao->getSearchedThesis();
             if($Result->getIsSuccess()){
-                $ProjectList=$Result->getResultObject();
+                $ThesisList=$Result->getResultObject();
 
-                foreach ($ProjectList as $project) {
+                foreach ($ThesisList as $thesis) {
                     ?>
                     <tr>
-                        <td><a href="project_member.php?id=<?php echo $project->getProjectId();?>"><img src="<?php echo $project->getProjectThumbnail();?>" alt="Icon" style="height: 20px;width: 20px;"><?php
-                                echo ' '.$project->getProjectTitle(); ?></a></td>
+                        <td><a href="thesis_member.php?id=<?php echo $thesis->getThesisId();?>"><img src="<?php echo $thesis->getThesisThumbnail();?>" alt="Icon" style="height: 20px;width: 20px;"><?php
+                                echo ' '.$thesis->getThesisTitle(); ?></a></td>
 
-                        <td><?php if(strlen($project->getProjectDescription())>50){
-                                echo substr($project->getProjectDescription(),0,50).'...';
+                        <td><?php if(strlen($thesis->getThesisDescription())>50){
+                                echo substr($thesis->getThesisDescription(),0,50).'...';
                             }else{
-                                echo $project->getProjectDescription();
+                                echo $thesis->getThesisDescription();
                             }  ?></td>
 
-                        <td style="text-align: center"><a href="<?php echo $project->getProjectLink(); ?>" style="text-decoration: none"><?php
-                                if(strlen($project->getProjectLink())>40){
-                                    echo substr($project->getProjectLink(),0,40).'...' ;
+                        <td style="text-align: center"><a href="<?php echo $thesis->getThesisLink(); ?>" style="text-decoration: none"><?php
+                                if(strlen($thesis->getThesisTitle())>40){
+                                    echo substr($thesis->getThesisTitle(),0,40).'...'.'.pdf' ;
                                 }else{
-                                    echo $project->getProjectLink();
+                                    echo $thesis->getThesisTitle().'.pdf';
                                 } ?></a></td>
 
-                        <td style="text-align: center"><?php echo $project->getProjectLanguage();?></td>
+                        <td style="text-align: center"><?php echo $Result=$_ThesisBao->getYear($thesis->getThesisYearId())->getResultObject()->getYearName();?></td>
 
-                        <td style="text-align: center"><?php echo $Result=$_ProjectBao->getYear($project->getProjectYearId())->getResultObject()->getYearName();?></td>
+                        <td style="text-align: center"><?php echo $Result=$_ThesisBao->getTerm($thesis->getThesisTermId())->getResultObject()->getTermName();?></td>
 
-                        <td style="text-align: center"><?php echo $Result=$_ProjectBao->getTerm($project->getProjectTermId())->getResultObject()->getTermName();?></td>
+                        <td><?php echo $Result=$_ThesisBao->getCourse($thesis->getThesisCourseId())->getResultObject()->getCourseTitle();?></td>
 
-                        <td><?php echo $Result=$_ProjectBao->getCourse($project->getProjectCourseId())->getResultObject()->getCourseTitle();?></td>
+                        <td><?php echo $Result=$_ThesisBao->getDiscipline($thesis->getThesisDisciplineId())->getResultObject()->getDisciplineName();?></td>
 
-                        <td><?php echo $Result=$_ProjectBao->getDiscipline($project->getProjectDisciplineId())->getResultObject()->getDisciplineName();?></td>
+                        <td style="text-align: center"><?php echo $thesis->getThesisCreatedAt();?></td>
 
-                        <td><?php $Result=$_ProjectBao->getTeacher($project->getProjectTeacherId())->getResultObject();
-                            echo $Result->getFirstName().' '.$Result->getLastName();?></td>
-
-                        <td style="text-align: center"><?php echo $project->getProjectCreatedAt();?></td>
-
-                        <td style="text-align: center"><?php echo $project->getProjectUpdatedAt();?></td>
+                        <td style="text-align: center"><?php echo $thesis->getThesisUpdatedAt();?></td>
 
                     </tr>
                     <?php

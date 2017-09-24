@@ -4,7 +4,7 @@
 include_once './common/class.common.project.php';
 include_once './util/class.util.php';
 
-class MemberDao{
+class ProjectMemberDao{
     private $_DB;
     private $_StudentProject;
     private $_Student;

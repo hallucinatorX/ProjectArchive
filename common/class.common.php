@@ -176,6 +176,21 @@ class PermissionUtil{
     public static $STUDENT_PROJECT_U='STUDENT_PROJECT_U';
     public static $STUDENT_PROJECT_D='STUDENT_PROJECT_D';
 
+    public static $THESIS_C='THESIS_C';
+    public static $THESIS_R='THESIS_R';
+    public static $THESIS_U='THESIS_U';
+    public static $THESIS_D='THESIS_D';
+
+    public static $STUDENT_THESIS_C='STUDENT_THESIS_C';
+    public static $STUDENT_THESIS_R='STUDENT_THESIS_R';
+    public static $STUDENT_THESIS_U='STUDENT_THESIS_U';
+    public static $STUDENT_THESIS_D='STUDENT_THESIS_D';
+
+    public static $SUPERVISOR_THESIS_C='SUPERVISOR_THESIS_C';
+    public static $SUPERVISOR_THESIS_R='SUPERVISOR_THESIS_R';
+    public static $SUPERVISOR_THESIS_U='SUPERVISOR_THESIS_U';
+    public static $SUPERVISOR_THESIS_D='SUPERVISOR_THESIS_D';
+
 }
 
 class PageUtil{
@@ -213,9 +228,15 @@ class PageUtil{
 
     //Project Archive
     public static $PROJECT='project.php';
-    public static $MEMBER='member.php';
+    public static $PROJECT_MEMBER='project_member.php';
     public static $PROJECT_HOME='project_home.php';
     public static $PROJECT_SEARCH='search_project.php';
+
+    //Thesis Archive
+    public static $THESIS='thesis.php';
+    public static $THESIS_MEMBER='thesis_member.php';
+    public static $THESIS_HOME='thesis_home.php';
+    public static $THESIS_SEARCH='search_thesis.php';
 }
 
 class RouteUtil{
@@ -262,9 +283,15 @@ class RouteUtil{
 
          //Project Archive Routes
          self::$s_Routes[PageUtil::$PROJECT]="/modules/projectArchive/ui/view.project.php";
-         self::$s_Routes[PageUtil::$MEMBER]="/modules/projectArchive/ui/view.member.php";
+         self::$s_Routes[PageUtil::$PROJECT_MEMBER]="/modules/projectArchive/ui/view.projectMember.php";
          self::$s_Routes[PageUtil::$PROJECT_HOME]="/modules/projectArchive/ui/view.projectHome.php";
          self::$s_Routes[PageUtil::$PROJECT_SEARCH]="/modules/projectArchive/ui/view.searchProject.php";
+
+         //Thesis Archive Routes
+         self::$s_Routes[PageUtil::$THESIS]="modules/thesisArchive/ui/view.thesis.php";
+         self::$s_Routes[PageUtil::$THESIS_MEMBER]="modules/thesisArchive/ui/view.thesisMember.php";
+         self::$s_Routes[PageUtil::$THESIS_HOME]="modules/thesisArchive/ui/view.thesisHome.php";
+         self::$s_Routes[PageUtil::$THESIS_SEARCH]="modules/thesisArchive/ui/view.searchThesis.php";
  
 
         //the page not found will redirect to error page
@@ -322,6 +349,9 @@ class MiddlewareUtil{
 
          //Project Archive Middleware
          self::$s_Routes[PageUtil::$PROJECT] = PageUtil::$LOGIN;
+
+         //Thesis Archive Middleware
+         self::$s_Routes[PageUtil::$THESIS]=PageUtil::$LOGIN;
 
     }
 
@@ -392,14 +422,23 @@ class MiddlewareUtil{
                 elseif (!strcasecmp($Page,'project_home.php')){
                     return PageUtil::$PROJECT_HOME;
                 }
+                elseif (!strcasecmp($Page, 'thesis_home.php')) {
+                    return PageUtil::$THESIS_HOME;
+                }
                 elseif (!strcasecmp($Page,'home_page.php')){
                     return PageUtil::$HOME_PAGE;
                 }
-                elseif (!strcasecmp($Page,'member.php')){
-                    return PageUtil::$MEMBER;
+                elseif (!strcasecmp($Page,'project_member.php')){
+                    return PageUtil::$PROJECT_MEMBER;
+                }
+                elseif (!strcasecmp($Page, 'thesis_member.php')) {
+                    return PageUtil::$THESIS_MEMBER;
                 }
                 elseif (!strcasecmp($Page,'search_project.php')){
                     return PageUtil::$PROJECT_SEARCH;
+                }
+                elseif (!strcasecmp($Page, 'search_thesis.php')) {
+                    return PageUtil::$THESIS_SEARCH;
                 }
                 elseif (empty($Page)){
                     return PageUtil::$HOME_PAGE;

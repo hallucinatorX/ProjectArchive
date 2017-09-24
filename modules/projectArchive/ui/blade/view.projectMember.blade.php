@@ -1,11 +1,11 @@
 <?php
 include_once './util/class.util.php';
-include_once '/../../bao/class.memberbao.php';
+include_once '/../../bao/class.projectMemberbao.php';
 include_once '/../../bao/class.projectbao.php';
 
 $_ProjectBao=new ProjectBao();
 $Project=new Project();
-$_MemberBao=new MemberBao();
+$_MemberBao=new ProjectMemberBao();
 $_DB=DBUtil::getInstance();
 
 /*Add Members*/
@@ -19,7 +19,7 @@ if(isset($_GET['auid'])&&isset($_GET['id'])){
 
     if($Result->getIsSuccess()){
         echo '<strong>'.$Result->getResultObject().'</strong>';
-        header("Location:".PageUtil::$MEMBER."?id=".$_GET['id']);
+        header("Location:".PageUtil::$PROJECT_MEMBER."?id=".$_GET['id']);
     }
 }
 
@@ -33,7 +33,7 @@ if(isset($_GET['ruid'])&&isset($_GET['id'])){
 
     if($Result->getIsSuccess()){
         echo '<strong>'.$Result->getResultObject().'</strong>';
-        header("Location:".PageUtil::$MEMBER."?id=".$_GET['id']);
+        header("Location:".PageUtil::$PROJECT_MEMBER."?id=".$_GET['id']);
     }
 }
 

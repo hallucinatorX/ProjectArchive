@@ -89,7 +89,7 @@ Class ProjectBao
     }
 
     //get All Disciplines
-    public function getALlDisciplines(){
+    public function getAllDisciplines(){
         $Result=$this->_ProjectDao->getAllDisciplines();
 
         if(!$Result->getIsSuccess()){

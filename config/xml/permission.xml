@@ -361,4 +361,79 @@
 		<category>STUDENT PROJECT</category>
 	</permission>
 
+	<!--Thesis Category-->
+	<permission>
+		<id>THESIS_C</id>
+		<name>THESIS_C</name>
+		<category>THESIS</category>
+	</permission>
+
+	<permission>
+		<id>THESIS_R</id>
+		<name>THESIS_R</name>
+		<category>THESIS</category>
+	</permission>
+
+	<permission>
+		<id>THESIS_U</id>
+		<name>THESIS_U</name>
+		<category>THESIS</category>
+	</permission>
+
+	<permission>
+		<id>THESIS_D</id>
+		<name>THESIS_D</name>
+		<category>THESIS</category>
+	</permission>
+
+	<!--Student_Thesis Category-->
+	<permission>
+		<id>STUDENT_THESIS_C</id>
+		<name>STUDENT_THESIS_C</name>
+		<category>STUDENT THESIS</category>
+	</permission>
+
+	<permission>
+		<id>STUDENT_THESIS_R</id>
+		<name>STUDENT_THESIS_R</name>
+		<category>STUDENT THESIS</category>
+	</permission>
+
+	<permission>
+		<id>STUDENT_THESIS_U</id>
+		<name>STUDENT_THESIS_U</name>
+		<category>STUDENT THESIS</category>
+	</permission>
+
+	<permission>
+		<id>STUDENT_THESIS_D</id>
+		<name>STUDENT_THESIS_D</name>
+		<category>STUDENT THESIS</category>
+	</permission>
+
+	<!--Supervisor_Thesis Category-->
+	<permission>
+		<id>SUPERVISOR_THESIS_C</id>
+		<name>SUPERVISOR_THESIS_C</name>
+		<category>SUPERVISOR THESIS</category>
+	</permission>
+
+	<permission>
+		<id>SUPERVISOR_THESIS_R</id>
+		<name>SUPERVISOR_THESIS_R</name>
+		<category>SUPERVISOR THESIS</category>
+	</permission>
+
+	<permission>
+		<id>SUPERVISOR_THESIS_U</id>
+		<name>SUPERVISOR_THESIS_U</name>
+		<category>SUPERVISOR THESIS</category>
+	</permission>
+
+	<permission>
+		<id>SUPERVISOR_THESIS_D</id>
+		<name>SUPERVISOR_THESIS_D</name>
+		<category>SUPERVISOR THESIS</category>
+	</permission>
+
 </permissions>

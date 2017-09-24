@@ -328,4 +328,61 @@
 			<Permission>PROJECT_D</Permission>
 		</Permissions>
 	</Menu>
+
+	<!--Thesis Archive-->
+	<Menu>
+		<ParentMenu></ParentMenu>
+		<Title>Thesis Archive</Title>
+		<Permissions>
+			<Permission>THESIS_C</Permission>
+			<Permission>THESIS_R</Permission>
+			<Permission>THESIS_U</Permission>
+			<Permission>THESIS_D</Permission>
+		</Permissions>
+	</Menu>
+
+	<Menu>
+		<ParentMenu>Thesis Archive</ParentMenu>
+		<Title>Thesis</Title>
+		<Permissions>
+			<Permission>THESIS_C</Permission>
+			<Permission>THESIS_R</Permission>
+			<Permission>THESIS_U</Permission>
+			<Permission>THESIS_D</Permission>
+		</Permissions>
+	</Menu>
+	<Menu>
+		<ParentMenu>Thesis</ParentMenu>
+		<Title>Manage Thesis</Title>
+		<Link>thesis.php</Link>
+		<Permissions>
+			<Permission>THESIS_C</Permission>
+			<Permission>THESIS_R</Permission>
+			<Permission>THESIS_U</Permission>
+			<Permission>THESIS_D</Permission>
+		</Permissions>
+	</Menu>
+	<Menu>
+		<ParentMenu>Thesis</ParentMenu>
+		<Title>Browse Thesis</Title>
+		<Link>thesis_home.php</Link>
+		<Permissions>
+			<Permission>THESIS_C</Permission>
+			<Permission>THESIS_R</Permission>
+			<Permission>THESIS_U</Permission>
+			<Permission>THESIS_D</Permission>
+		</Permissions>
+	</Menu>
+	<Menu>
+		<ParentMenu>Thesis</ParentMenu>
+		<Title>Search Thesis</Title>
+		<Link>search_thesis.php</Link>
+		<Permissions>
+			<Permission>THESIS_C</Permission>
+			<Permission>THESIS_R</Permission>
+			<Permission>THESIS_U</Permission>
+			<Permission>THESIS_D</Permission>
+		</Permissions>
+	</Menu>
+
 </Menus>
