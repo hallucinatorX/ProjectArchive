@@ -31,8 +31,8 @@ include_once './common/class.common.php';
                             <a href="<?php echo PageUtil::$THESIS_MEMBER.'?id='.$thesis->getThesisId();?>"><?php echo $thesis->getThesisTitle();?></a>
                         </h4>
                         <p class="card-text" style="padding-top: 5px;text-align: justify"><?php
-                            if(strlen($thesis->getThesisDescription())>100){
-                                echo substr($thesis->getThesisDescription(),0,100).'...';
+                            if(strlen($thesis->getThesisDescription())>80){
+                                echo substr($thesis->getThesisDescription(),0,80).'...';
                             }
                             else{
                                 echo $thesis->getThesisDescription();

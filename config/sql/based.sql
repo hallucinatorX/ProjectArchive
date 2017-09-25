@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2017 at 11:42 AM
+-- Generation Time: Sep 25, 2017 at 04:36 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -48,9 +48,9 @@ CREATE TABLE `pms_project` (
 
 INSERT INTO `pms_project` (`id`, `thumbnail`, `title`, `description`, `link`, `language`, `year_id`, `term_id`, `course_id`, `discipline_id`, `teacher_id`, `created_at`, `updated_at`) VALUES
 ('{0C262E4E-80F5-4367-AF8C-48FA39EAE4C0}', './resources/img/thumbnails/Transport Management System.png', 'Transport Management System', '"Create vehicles as assets. Assign drivers, helpers to bus along with their contact information. \r\n\r\nCreate routes and the stopage along with the google map options \r\n\r\nAdd more features to it, be creative"', 'https://github.com/search?utf8=%E2%9C%93&q=cseku&type=', 'PHP', '3', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 'teacher@gmail.com', '2017-08-28 10:35:47', '2017-08-28 10:35:47'),
-('{66B187F3-123B-46C7-A2DB-84C26C40DCBB}', './resources/img/thumbnails/Improved CSE Discipline website (OOP).png', 'Improved CSE Discipline website (OOP)', '"refresh current website with the given template. \r\n\r\none group work with the new templating. \r\n\r\nOther group work with the admin part for the current database"', 'https://github.com/search?utf8=%E2%9C%93&q=cseku&type=', 'PHP', '3', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 'teacher@gmail.com', '2017-08-28 08:09:20', '2017-09-14 06:34:44'),
+('{66B187F3-123B-46C7-A2DB-84C26C40DCBB}', './resources/img/thumbnails/Improved CSE Discipline website (OOP).png', 'Improved CSE Discipline website (OOP)', '"refresh current website with the given template. \r\n\r\none group work with the new templating. \r\n\r\nOther group work with the admin part for the current database"', 'https://github.com/search?utf8=%E2%9C%93&q=cseku&type=', 'PHP', '3', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 'teacher@gmail.com', '2017-08-28 08:09:20', '2017-09-23 05:41:26'),
 ('{7D42D76F-3EE9-43CE-B2F9-A63051D028E3}', './resources/img/thumbnails/Improved file-folder management system..png', 'Improved file-folder management system.', '"improve the available SimTire file folder system, File allocation, file versioning, file relation should be present\r\n\r\nCreate a beatiful file browsing system"', 'https://github.com/search?utf8=%E2%9C%93&q=cseku&type=', 'PHP', '3', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 'teacher@gmail.com', '2017-08-28 10:09:17', '2017-08-28 10:09:17'),
-('{A5298EE6-822A-4ABF-981D-825CE0FE189B}', './resources/img/thumbnails/Meal Management.png', 'Meal Management', '"Meal system where you create meal at different times of the day, create menu, cost, SimTire user can subscribe and unsuscribe and pay for the meal to consume it\r\n\r\nIdeally it should be related to the housing. So a meal would created on a housing and consumed from there\r\n\r\nDaily, weekly, monthly consumption report, most likely menus, ranking of the meal should be also present"', 'https://github.com/search?utf8=%E2%9C%93&q=cseku&type=', 'PHP', '3', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 'teacher@gmail.com', '2017-08-28 10:08:43', '2017-08-28 10:08:43'),
+('{A5298EE6-822A-4ABF-981D-825CE0FE189B}', './resources/img/thumbnails/Meal Management.png', 'Meal Management', '"Meal system where you create meal at different times of the day, create menu, cost, SimTire user can subscribe and unsuscribe and pay for the meal to consume it\r\n\r\nIdeally it should be related to the housing. So a meal would created on a housing and consumed from there\r\n\r\nDaily, weekly, monthly consumption report, most likely menus, ranking of the meal should be also present"', 'https://github.com/search?utf8=%E2%9C%93&q=cseku&type=', 'PHP', '3', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 'teacher@gmail.com', '2017-08-28 10:08:43', '2017-09-24 10:22:37'),
 ('{A94A0ABA-1AFA-461E-A09D-808A4FB8B522}', './resources/img/thumbnails/Payment Management System.png', 'Payment Management System', '"First of all user can load his account with money. This is just dummy money\r\n\r\nPayment can be done by SimTire user related to different things may be medical bill, library fine, buying stuffs from canteen.\r\n\r\nThere will be a store of items and their price will be there. User can buy things from that store and pay using their balance from the account. \r\n\r\nFor buying something (e.g. book) from the store user will get credit and later credit can be converted to a balance using some forumla."', 'https://github.com/search?utf8=%E2%9C%93&q=cseku&type=', 'PHP', '3', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 'teacher@gmail.com', '2017-08-28 10:11:12', '2017-08-28 10:11:12'),
 ('{CEC76C2B-FA03-4B33-AB9A-B523B7334145}', './resources/img/thumbnails/Improved advanced event calendar.png', 'Improved advanced event calendar', '"apply SimTire on the available event calendar code and new features to it\r\n\r\nVarious types of searching"', 'https://github.com/search?utf8=%E2%9C%93&q=cseku&type=', 'PHP', '3', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 'teacher@gmail.com', '2017-08-28 10:06:10', '2017-09-14 06:27:31'),
 ('{D283BD24-F48F-45FA-A397-ACFABF690E9C}', './resources/img/thumbnails/Project Archieve.png', 'Project Archieve', '"improve current project module to SimTire based project. Project should also inclue member names and their partnership in the project\r\n\r\nA front page for the project module where all the projects along with their thumnail pictures and title are shown using pagination. You select one project and you can see the details of the project and the members of the project. Also, the partneship of project if applicable\r\n\r\nPersone wise project lists should also be there"', 'https://github.com/search?utf8=%E2%9C%93&q=cseku&type=', 'PHP', '3', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', 'teacher@gmail.com', '2017-08-28 10:10:39', '2017-08-28 10:10:39'),
@@ -76,6 +76,8 @@ CREATE TABLE `pms_student_project` (
 
 INSERT INTO `pms_student_project` (`id`, `student_id`, `project_id`) VALUES
 ('{0EC59379-2D22-41D0-B04A-B3019DFD0753}', 'pranta.cse@gmail.com', '{D283BD24-F48F-45FA-A397-ACFABF690E9C}'),
+('{1BDC3395-96DA-40AA-B6D1-FF9B4FE6BF6F}', 'ratul@gamil.com', '{F33491F4-516A-40B3-8D03-557F9A244D1E}'),
+('{29FAC81E-9E5D-4D19-9862-423F0AD19E56}', 'swajon@gmail.com', '{66B187F3-123B-46C7-A2DB-84C26C40DCBB}'),
 ('{3B20A933-25D7-4FCF-8FDE-9D8DBECBE9C8}', 'sakeef@gmail.com', '{D283BD24-F48F-45FA-A397-ACFABF690E9C}'),
 ('{5CA3B069-A981-4D7A-939A-FA46B6E3D165}', 'shahidul@gmail.com', '{E0DDFBEC-EB89-472D-9802-03E322A59281}'),
 ('{7D0A3991-E4F1-4465-8E52-5C1577B38FB1}', 'shuvo@gmail.com', '{66B187F3-123B-46C7-A2DB-84C26C40DCBB}'),
@@ -84,9 +86,7 @@ INSERT INTO `pms_student_project` (`id`, `student_id`, `project_id`) VALUES
 ('{B5907679-9F77-4DAC-96C7-34623B3BF53D}', 'alamin@gmail.com', '{F33491F4-516A-40B3-8D03-557F9A244D1E}'),
 ('{C231CCBA-DD44-462B-9094-033A79B5580F}', 'tanmai@gmail.com', '{D283BD24-F48F-45FA-A397-ACFABF690E9C}'),
 ('{D3871CF6-51BB-4453-B98B-A96177357EE3}', 'imran@gmail.com', '{F33491F4-516A-40B3-8D03-557F9A244D1E}'),
-('{E1F30E11-DDD6-4AEB-A776-3A94B058FCE3}', 'imran@gmail.com', '{66B187F3-123B-46C7-A2DB-84C26C40DCBB}'),
-('{E3CAE932-C271-4C49-9547-56EF0085728B}', 'ratul@gamil.com', '{F33491F4-516A-40B3-8D03-557F9A244D1E}'),
-('{F601FC4D-A516-47AE-AC7D-F61F7C08C6A5}', 'swajon@gmail.com', '{66B187F3-123B-46C7-A2DB-84C26C40DCBB}');
+('{E1F30E11-DDD6-4AEB-A776-3A94B058FCE3}', 'imran@gmail.com', '{66B187F3-123B-46C7-A2DB-84C26C40DCBB}');
 
 -- --------------------------------------------------------
 
@@ -315,10 +315,22 @@ INSERT INTO `tbl_permission` (`ID`, `Name`, `Category`) VALUES
 ('STUDENT_PROJECT_D', 'STUDENT_PROJECT_D', 'STUDENT PROJECT'),
 ('STUDENT_PROJECT_R', 'STUDENT_PROJECT_R', 'STUDENT PROJECT'),
 ('STUDENT_PROJECT_U', 'STUDENT_PROJECT_U', 'STUDENT PROJECT'),
+('STUDENT_THESIS_C', 'STUDENT_THESIS_C', 'STUDENT THESIS'),
+('STUDENT_THESIS_D', 'STUDENT_THESIS_D', 'STUDENT THESIS'),
+('STUDENT_THESIS_R', 'STUDENT_THESIS_R', 'STUDENT THESIS'),
+('STUDENT_THESIS_U', 'STUDENT_THESIS_U', 'STUDENT THESIS'),
+('SUPERVISOR_THESIS_C', 'SUPERVISOR_THESIS_C', 'SUPERVISOR THESIS'),
+('SUPERVISOR_THESIS_D', 'SUPERVISOR_THESIS_D', 'SUPERVISOR THESIS'),
+('SUPERVISOR_THESIS_R', 'SUPERVISOR_THESIS_R', 'SUPERVISOR THESIS'),
+('SUPERVISOR_THESIS_U', 'SUPERVISOR_THESIS_U', 'SUPERVISOR THESIS'),
 ('TERM_C', 'TERM_C', 'TERM'),
 ('TERM_D', 'TERM_D', 'TERM'),
 ('TERM_R', 'TERM_R', 'TERM'),
 ('TERM_U', 'TERM_U', 'TERM'),
+('THESIS_C', 'THESIS_C', 'THESIS'),
+('THESIS_D', 'THESIS_D', 'THESIS'),
+('THESIS_R', 'THESIS_R', 'THESIS'),
+('THESIS_U', 'THESIS_U', 'THESIS'),
 ('USER_C', 'USER_C', 'USER'),
 ('USER_D', 'USER_D', 'USER'),
 ('USER_R', 'USER_R', 'USER'),
@@ -399,66 +411,78 @@ CREATE TABLE `tbl_role_permission` (
 --
 
 INSERT INTO `tbl_role_permission` (`Row`, `RoleID`, `PermissionID`) VALUES
-(1558, 'administrator', 'COURSE_C'),
-(1559, 'administrator', 'COURSE_D'),
-(1560, 'administrator', 'COURSE_R'),
-(1561, 'administrator', 'COURSE_U'),
-(1562, 'administrator', 'DISCIPLINE_C'),
-(1563, 'administrator', 'DISCIPLINE_D'),
-(1564, 'administrator', 'DISCIPLINE_R'),
-(1565, 'administrator', 'DISCIPLINE_U'),
-(1566, 'administrator', 'DISCUSSION_C'),
-(1567, 'administrator', 'DISCUSSION_D'),
-(1568, 'administrator', 'DISCUSSION_R'),
-(1569, 'administrator', 'DISCUSSION_U'),
-(1570, 'administrator', 'DISCUSSION_CAT_C'),
-(1571, 'administrator', 'DISCUSSION_CAT_D'),
-(1572, 'administrator', 'DISCUSSION_CAT_R'),
-(1573, 'administrator', 'DISCUSSION_CAT_U'),
-(1574, 'administrator', 'DISCUSSION_COMMENT_C'),
-(1575, 'administrator', 'DISCUSSION_COMMENT_D'),
-(1576, 'administrator', 'DISCUSSION_COMMENT_R'),
-(1577, 'administrator', 'DISCUSSION_COMMENT_U'),
-(1578, 'administrator', 'PERMISSION_C'),
-(1579, 'administrator', 'PERMISSION_D'),
-(1580, 'administrator', 'PERMISSION_R'),
-(1581, 'administrator', 'PERMISSION_U'),
-(1582, 'administrator', 'POSITION_C'),
-(1583, 'administrator', 'POSITION_D'),
-(1584, 'administrator', 'POSITION_R'),
-(1585, 'administrator', 'POSITION_U'),
-(1586, 'administrator', 'PROJECT_C'),
-(1587, 'administrator', 'PROJECT_D'),
-(1588, 'administrator', 'PROJECT_R'),
-(1589, 'administrator', 'PROJECT_U'),
-(1590, 'administrator', 'ROLE_C'),
-(1591, 'administrator', 'ROLE_D'),
-(1592, 'administrator', 'ROLE_R'),
-(1593, 'administrator', 'ROLE_U'),
-(1594, 'administrator', 'SCHOOL_C'),
-(1595, 'administrator', 'SCHOOL_D'),
-(1596, 'administrator', 'SCHOOL_R'),
-(1597, 'administrator', 'SCHOOL_U'),
-(1598, 'administrator', 'STUDENT_PROJECT_C'),
-(1599, 'administrator', 'STUDENT_PROJECT_D'),
-(1600, 'administrator', 'STUDENT_PROJECT_R'),
-(1601, 'administrator', 'STUDENT_PROJECT_U'),
-(1602, 'administrator', 'TERM_C'),
-(1603, 'administrator', 'TERM_D'),
-(1604, 'administrator', 'TERM_R'),
-(1605, 'administrator', 'TERM_U'),
-(1606, 'administrator', 'USER_C'),
-(1607, 'administrator', 'USER_D'),
-(1608, 'administrator', 'USER_R'),
-(1609, 'administrator', 'USER_U'),
-(1610, 'administrator', 'YEAR_C'),
-(1611, 'administrator', 'YEAR_D'),
-(1612, 'administrator', 'YEAR_R'),
-(1613, 'administrator', 'YEAR_U'),
 (1616, 'student', 'PROJECT_D'),
 (1617, 'student', 'STUDENT_PROJECT_D'),
 (1618, 'teacher', 'PROJECT_D'),
-(1619, 'teacher', 'STUDENT_PROJECT_D');
+(1619, 'teacher', 'STUDENT_PROJECT_D'),
+(1620, 'administrator', 'COURSE_C'),
+(1621, 'administrator', 'COURSE_D'),
+(1622, 'administrator', 'COURSE_R'),
+(1623, 'administrator', 'COURSE_U'),
+(1624, 'administrator', 'DISCIPLINE_C'),
+(1625, 'administrator', 'DISCIPLINE_D'),
+(1626, 'administrator', 'DISCIPLINE_R'),
+(1627, 'administrator', 'DISCIPLINE_U'),
+(1628, 'administrator', 'DISCUSSION_C'),
+(1629, 'administrator', 'DISCUSSION_D'),
+(1630, 'administrator', 'DISCUSSION_R'),
+(1631, 'administrator', 'DISCUSSION_U'),
+(1632, 'administrator', 'DISCUSSION_CAT_C'),
+(1633, 'administrator', 'DISCUSSION_CAT_D'),
+(1634, 'administrator', 'DISCUSSION_CAT_R'),
+(1635, 'administrator', 'DISCUSSION_CAT_U'),
+(1636, 'administrator', 'DISCUSSION_COMMENT_C'),
+(1637, 'administrator', 'DISCUSSION_COMMENT_D'),
+(1638, 'administrator', 'DISCUSSION_COMMENT_R'),
+(1639, 'administrator', 'DISCUSSION_COMMENT_U'),
+(1640, 'administrator', 'PERMISSION_C'),
+(1641, 'administrator', 'PERMISSION_D'),
+(1642, 'administrator', 'PERMISSION_R'),
+(1643, 'administrator', 'PERMISSION_U'),
+(1644, 'administrator', 'POSITION_C'),
+(1645, 'administrator', 'POSITION_D'),
+(1646, 'administrator', 'POSITION_R'),
+(1647, 'administrator', 'POSITION_U'),
+(1648, 'administrator', 'PROJECT_C'),
+(1649, 'administrator', 'PROJECT_D'),
+(1650, 'administrator', 'PROJECT_R'),
+(1651, 'administrator', 'PROJECT_U'),
+(1652, 'administrator', 'ROLE_C'),
+(1653, 'administrator', 'ROLE_D'),
+(1654, 'administrator', 'ROLE_R'),
+(1655, 'administrator', 'ROLE_U'),
+(1656, 'administrator', 'SCHOOL_C'),
+(1657, 'administrator', 'SCHOOL_D'),
+(1658, 'administrator', 'SCHOOL_R'),
+(1659, 'administrator', 'SCHOOL_U'),
+(1660, 'administrator', 'STUDENT_PROJECT_C'),
+(1661, 'administrator', 'STUDENT_PROJECT_D'),
+(1662, 'administrator', 'STUDENT_PROJECT_R'),
+(1663, 'administrator', 'STUDENT_PROJECT_U'),
+(1664, 'administrator', 'STUDENT_THESIS_C'),
+(1665, 'administrator', 'STUDENT_THESIS_D'),
+(1666, 'administrator', 'STUDENT_THESIS_R'),
+(1667, 'administrator', 'STUDENT_THESIS_U'),
+(1668, 'administrator', 'SUPERVISOR_THESIS_C'),
+(1669, 'administrator', 'SUPERVISOR_THESIS_D'),
+(1670, 'administrator', 'SUPERVISOR_THESIS_R'),
+(1671, 'administrator', 'SUPERVISOR_THESIS_U'),
+(1672, 'administrator', 'TERM_C'),
+(1673, 'administrator', 'TERM_D'),
+(1674, 'administrator', 'TERM_R'),
+(1675, 'administrator', 'TERM_U'),
+(1676, 'administrator', 'THESIS_C'),
+(1677, 'administrator', 'THESIS_D'),
+(1678, 'administrator', 'THESIS_R'),
+(1679, 'administrator', 'THESIS_U'),
+(1680, 'administrator', 'USER_C'),
+(1681, 'administrator', 'USER_D'),
+(1682, 'administrator', 'USER_R'),
+(1683, 'administrator', 'USER_U'),
+(1684, 'administrator', 'YEAR_C'),
+(1685, 'administrator', 'YEAR_D'),
+(1686, 'administrator', 'YEAR_R'),
+(1687, 'administrator', 'YEAR_U');
 
 -- --------------------------------------------------------
 
@@ -687,6 +711,90 @@ INSERT INTO `tbl_year` (`ID`, `Name`) VALUES
 ('3', '3rd'),
 ('4', '4th');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tms_student_thesis`
+--
+
+CREATE TABLE `tms_student_thesis` (
+  `id` varchar(40) NOT NULL,
+  `student_id` varchar(40) NOT NULL,
+  `thesis_id` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tms_student_thesis`
+--
+
+INSERT INTO `tms_student_thesis` (`id`, `student_id`, `thesis_id`) VALUES
+('{3F64CF68-E345-45B0-A13D-6C7A2A7B4AC4}', 'imran@gmail.com', '{A905A916-1B2C-4F31-BBC2-094E4B199569}'),
+('{4362D91E-5A5C-4BE0-A96D-A0D5733B2462}', 'alamin@gmail.com', '{326303FD-7149-4F45-95CB-858B96C81508}'),
+('{5BE6D7B7-0D11-49FD-B5CF-88F38A0F3F92}', 'ratul@gamil.com', '{6FBA3E23-0106-443A-A703-C29AC3F7FDDE}'),
+('{6EE98A15-9690-4858-AF9B-D52160B1632F}', 'swajon@gmail.com', '{7CB1DE81-EF72-4BDA-98C5-D281D2FAAA23}'),
+('{C2D55D2B-3959-485E-8989-A6137AB17D9B}', 'sayed@gmail.com', '{7CB1DE81-EF72-4BDA-98C5-D281D2FAAA23}'),
+('{C3D560A4-FDE3-4D4C-AB08-A36C0214D479}', 'shahidul@gmail.com', '{647F6FA4-CB2E-42BA-951C-B8A2F3F4D7FD}'),
+('{E4905276-59E2-41B0-90E9-7D0894276E17}', 'zubayer@gmail.com', '{647F6FA4-CB2E-42BA-951C-B8A2F3F4D7FD}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tms_supervisor_thesis`
+--
+
+CREATE TABLE `tms_supervisor_thesis` (
+  `id` varchar(40) NOT NULL,
+  `supervisor_id` varchar(40) NOT NULL,
+  `thesis_id` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tms_supervisor_thesis`
+--
+
+INSERT INTO `tms_supervisor_thesis` (`id`, `supervisor_id`, `thesis_id`) VALUES
+('{0402A89D-09B7-4FBB-AFE7-0279F713335A}', 'dean@gmail.com', '{7CB1DE81-EF72-4BDA-98C5-D281D2FAAA23}'),
+('{11A059D4-A5D5-47CD-AD54-234DF28F6953}', 'teacher@gmail.com', '{6FBA3E23-0106-443A-A703-C29AC3F7FDDE}'),
+('{1A164A80-37FC-48E9-ABED-EDE2A7C1AF4D}', 'teacher@gmail.com', '{647F6FA4-CB2E-42BA-951C-B8A2F3F4D7FD}'),
+('{1FB59F5F-00C9-45A2-8B68-44048033ABA2}', 'teacher@gmail.com', '{326303FD-7149-4F45-95CB-858B96C81508}'),
+('{22070EEE-C342-40CF-A82C-83D4DD39642F}', 'teacher@gmail.com', '{7CB1DE81-EF72-4BDA-98C5-D281D2FAAA23}'),
+('{A9336057-E97E-48A4-8573-888A8EA6BBA9}', 'teacher@gmail.com', '{A905A916-1B2C-4F31-BBC2-094E4B199569}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tms_thesis`
+--
+
+CREATE TABLE `tms_thesis` (
+  `id` varchar(40) NOT NULL,
+  `thumbnail` text NOT NULL,
+  `title` varchar(256) NOT NULL,
+  `description` text NOT NULL,
+  `link` text NOT NULL,
+  `year_id` varchar(40) NOT NULL,
+  `term_id` varchar(40) NOT NULL,
+  `course_id` varchar(40) NOT NULL,
+  `discipline_id` varchar(40) NOT NULL,
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tms_thesis`
+--
+
+INSERT INTO `tms_thesis` (`id`, `thumbnail`, `title`, `description`, `link`, `year_id`, `term_id`, `course_id`, `discipline_id`, `created_at`, `updated_at`) VALUES
+('{326303FD-7149-4F45-95CB-858B96C81508}', './resources/img/thumbnails/Study of bank customers and employee in 4 local bank of malaysia.png', 'Study of bank customers and employee in 4 local bank of malaysia', 'Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia Study of bank customers and employee in 4 local bank of malaysia', './resources/pdf/report/Study of bank customers and employee in 4 local bank of malaysia.pdf', '4', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', '2017-09-25 04:11:29', '2017-09-25 04:11:29'),
+('{647F6FA4-CB2E-42BA-951C-B8A2F3F4D7FD}', './resources/img/thumbnails/Analytical study of premium CREDIT card.ico', 'Analytical study of premium CREDIT card', 'Analytical study of premium CREDIT card Analytical study of premium CREDIT card Analytical study of premium CREDIT card Analytical study of premium CREDIT card Analytical study of premium CREDIT card Analytical study of premium CREDIT card Analytical study of premium CREDIT card Analytical study of premium CREDIT card Analytical study of premium CREDIT card Analytical study of premium CREDIT card Analytical study of premium CREDIT card', './resources/pdf/report/Analytical study of premium CREDIT card.pdf', '4', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', '2017-09-25 04:17:41', '2017-09-25 04:17:41'),
+('{6FBA3E23-0106-443A-A703-C29AC3F7FDDE}', './resources/img/thumbnails/Analysis on equity share price behaviour.png', 'Analysis on equity share price behaviour', 'Analysis on equity share price behaviour Analysis on equity share price behaviour Analysis on equity share price behaviour Analysis on equity share price behaviour Analysis on equity share price behaviour Analysis on equity share price behaviour Analysis on equity share price behaviour Analysis on equity share price behaviour Analysis on equity share price behaviour Analysis on equity share price behaviour', './resources/pdf/report/Analysis on equity share price behaviour.pdf', '4', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', '2017-09-25 04:15:53', '2017-09-25 04:15:53'),
+('{77590E83-76A0-4725-A4C0-48B4DFC34D4D}', './resources/img/thumbnails/Evolution of mgt technique.png', 'Evolution of mgt technique', 'Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique Evolution of mgt technique', './resources/pdf/report/Evolution of mgt technique.pdf', '4', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', '2017-09-25 04:30:28', '2017-09-25 04:30:28'),
+('{7CB1DE81-EF72-4BDA-98C5-D281D2FAAA23}', './resources/img/thumbnails/Exchange traded fund.png', 'Exchange traded fund', 'Exchange traded fund Exchange traded fund Exchange traded fund Exchange traded fund Exchange traded fund Exchange traded fund Exchange traded fund Exchange traded fund Exchange traded fund Exchange traded fund Exchange traded fund', './resources/pdf/report/Exchange traded fund.pdf', '4', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', '2017-09-25 04:32:57', '2017-09-25 04:32:57'),
+('{A54D497B-C365-43F7-855D-233AC4FE4B9C}', './resources/img/thumbnails/Study on effectiveness of training programme.ico', 'Study on effectiveness of training programme', 'Study on effectiveness of training programme Study on effectiveness of training programme Study on effectiveness of training programme Study on effectiveness of training programme Study on effectiveness of training programme Study on effectiveness of training programme Study on effectiveness of training programme Study on effectiveness of training programme Study on effectiveness of training programme Study on effectiveness of training programme Study on effectiveness of training programme Study on effectiveness of training programme Study on effectiveness of training programme Study on effectiveness of training programme', './resources/pdf/report/Study on effectiveness of training programme.pdf', '4', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', '2017-09-25 04:15:03', '2017-09-25 04:15:03'),
+('{A905A916-1B2C-4F31-BBC2-094E4B199569}', './resources/img/thumbnails/Study on customer perception towards UTI mutual fund.png', 'Study on customer perception towards UTI mutual fund', 'Study on customer perception towards UTI mutual fund Study on customer perception towards UTI mutual fund Study on customer perception towards UTI mutual fund Study on customer perception towards UTI mutual fund Study on customer perception towards UTI mutual fund Study on customer perception towards UTI mutual fund Study on customer perception towards UTI mutual fund Study on customer perception towards UTI mutual fund Study on customer perception towards UTI mutual fund Study on customer perception towards UTI mutual fund Study on customer perception towards UTI mutual fund', './resources/pdf/report/Study on customer perception towards UTI mutual fund.pdf', '4', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', '2017-09-25 04:14:00', '2017-09-25 04:14:00'),
+('{D02FDF5E-0705-4563-BC62-13E13997D0AE}', './resources/img/thumbnails/Analysis of the trade finance pattern.ico', 'Analysis of the trade finance pattern', 'Analysis of the trade finance pattern Analysis of the trade finance pattern Analysis of the trade finance pattern Analysis of the trade finance pattern Analysis of the trade finance pattern Analysis of the trade finance pattern Analysis of the trade finance pattern Analysis of the trade finance pattern Analysis of the trade finance pattern Analysis of the trade finance pattern Analysis of the trade finance pattern Analysis of the trade finance pattern Analysis of the trade finance pattern', './resources/pdf/report/Analysis of the trade finance pattern.pdf', '4', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', '2017-09-25 04:16:48', '2017-09-25 04:16:48'),
+('{DA4F1E3B-CCBA-4801-8CB9-47E5467D5035}', './resources/img/thumbnails/Health & welfare measures in WOVEN TEXTILE COMPANY.ico', 'Health & welfare measures in WOVEN TEXTILE COMPANY', 'Health & welfare measures in WOVEN TEXTILE COMPANY Health & welfare measures in WOVEN TEXTILE COMPANY Health & welfare measures in WOVEN TEXTILE COMPANY Health & welfare measures in WOVEN TEXTILE COMPANY Health & welfare measures in WOVEN TEXTILE COMPANY Health & welfare measures in WOVEN TEXTILE COMPANY Health & welfare measures in WOVEN TEXTILE COMPANY Health & welfare measures in WOVEN TEXTILE COMPANY Health & welfare measures in WOVEN TEXTILE COMPANY', './resources/pdf/report/Health & welfare measures in WOVEN TEXTILE COMPANY.pdf', '4', '{22EDE2D2-D36C-4160-9D2A-80184B8AD35B}', '5', '{FFDB1CB8-AF34-4381-8971-9784DCB516C5}', '2017-09-25 04:31:57', '2017-09-25 04:31:57');
+
 --
 -- Indexes for dumped tables
 --
@@ -826,6 +934,32 @@ ALTER TABLE `tbl_year`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `tms_student_thesis`
+--
+ALTER TABLE `tms_student_thesis`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `student_id` (`student_id`),
+  ADD KEY `thesis_id` (`thesis_id`);
+
+--
+-- Indexes for table `tms_supervisor_thesis`
+--
+ALTER TABLE `tms_supervisor_thesis`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `supervisor_id` (`supervisor_id`),
+  ADD KEY `thesis_id` (`thesis_id`);
+
+--
+-- Indexes for table `tms_thesis`
+--
+ALTER TABLE `tms_thesis`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `year_id` (`year_id`),
+  ADD KEY `term_id` (`term_id`),
+  ADD KEY `course_id` (`course_id`),
+  ADD KEY `discipline_id` (`discipline_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -833,7 +967,7 @@ ALTER TABLE `tbl_year`
 -- AUTO_INCREMENT for table `tbl_role_permission`
 --
 ALTER TABLE `tbl_role_permission`
-  MODIFY `Row` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1620;
+  MODIFY `Row` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1688;
 --
 -- AUTO_INCREMENT for table `tbl_user_position`
 --
@@ -889,6 +1023,29 @@ ALTER TABLE `tbl_discipline`
 --
 ALTER TABLE `tbl_school`
   ADD CONSTRAINT `tbl_school_ibfk_1` FOREIGN KEY (`DeanID`) REFERENCES `tbl_user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tms_student_thesis`
+--
+ALTER TABLE `tms_student_thesis`
+  ADD CONSTRAINT `tms_student_thesis_ibfk_1` FOREIGN KEY (`thesis_id`) REFERENCES `tms_thesis` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tms_student_thesis_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `tbl_user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tms_supervisor_thesis`
+--
+ALTER TABLE `tms_supervisor_thesis`
+  ADD CONSTRAINT `tms_supervisor_thesis_ibfk_1` FOREIGN KEY (`thesis_id`) REFERENCES `tms_thesis` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tms_supervisor_thesis_ibfk_2` FOREIGN KEY (`supervisor_id`) REFERENCES `tbl_user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tms_thesis`
+--
+ALTER TABLE `tms_thesis`
+  ADD CONSTRAINT `tms_thesis_ibfk_1` FOREIGN KEY (`year_id`) REFERENCES `tbl_year` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tms_thesis_ibfk_2` FOREIGN KEY (`term_id`) REFERENCES `tbl_term` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tms_thesis_ibfk_3` FOREIGN KEY (`course_id`) REFERENCES `tbl_course` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tms_thesis_ibfk_4` FOREIGN KEY (`discipline_id`) REFERENCES `tbl_discipline` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

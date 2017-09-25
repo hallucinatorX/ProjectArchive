@@ -31,8 +31,8 @@ include_once './common/class.common.php';
                             <a href="<?php echo PageUtil::$PROJECT_MEMBER.'?id='.$project->getProjectId();?>"><?php echo $project->getProjectTitle();?></a>
                         </h4>
                         <p class="card-text" style="padding-top: 5px;text-align: justify"><?php
-                            if(strlen($project->getProjectDescription())>100){
-                                echo substr($project->getProjectDescription(),0,100).'...';
+                            if(strlen($project->getProjectDescription())>80){
+                                echo substr($project->getProjectDescription(),0,80).'...';
                             }
                             else{
                                 echo $project->getProjectDescription();
